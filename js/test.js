@@ -67,7 +67,7 @@ function updateVisualization() {
         .attr("cy", function(d) {
             return y(d.y);
         })
-        .attr("r", 5);
+        .attr("r", 7);
 
     // Exit
     circs.exit().remove();
