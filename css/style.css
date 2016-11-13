@@ -1,0 +1,85 @@
+
+/* YOUR CSS STYLES */
+body {
+    background-color: #d7e3eb;
+}
+
+#title{
+    padding-left: 27%;
+    background-color: #ebcccc;
+
+}
+
+.spacer{
+    padding:20px;
+}
+
+.subtitle{
+    text-align: center;
+}
+
+.paragraph{
+    padding-top: 2%;
+    font-size: 1.2em;
+}
+
+.info{
+    background-color: #eba8a9;
+}
+
+.quote{
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ebcccc;
+}
+
+.fact{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.scatter{
+    background-color: #ebebe6;
+}
+
+.legend-label {
+    font-size: .7em;
+}
+
+.NaN { fill : black}
+.q0-9 { fill: #960108 }
+.q1-9 { fill: #c60711 }
+.q2-9 { fill: #d9020c }
+.q3-9 { fill: #e7303c }
+.q4-9 { fill: #e75358 }
+.q5-9 { fill: #e75f6b }
+.q6-9 { fill: #e7727e }
+.q7-9 { fill: #e795a3 }
+.q8-9 { fill: #e7bec7 }
+
+
+/* Styles for Vis 2 */
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font-family: sans-serif;
+    font-size: 10px;
+}
+.axis-label{
+    font-size:10px;
+}
+
+.scatter-point{opacity:.7;}
+.African {fill: #ff7d07;}
+.Eastern-Mediterranean { fill: #7b1ea5;}
+.European { fill: blue;}
+.Region-of-the-Americas {fill: red}
+.South-East-Asia {fill: green}
+.Western-Pacific{fill:cyan}
