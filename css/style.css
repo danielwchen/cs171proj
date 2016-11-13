@@ -6,7 +6,7 @@ body {
 
 #title{
     padding-left: 27%;
-    background-color: #ebcccc;
+    background-color: #7786eb;
 
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 .info{
-    background-color: #eba8a9;
+    background-color: #6b86eb;
 }
 
 .quote{
@@ -32,7 +32,7 @@ body {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #ebcccc;
+    background-color: #6b8feb;
 }
 
 .fact{
@@ -47,17 +47,6 @@ body {
 .legend-label {
     font-size: .7em;
 }
-
-.NaN { fill : black}
-.q0-9 { fill: #960108 }
-.q1-9 { fill: #c60711 }
-.q2-9 { fill: #d9020c }
-.q3-9 { fill: #e7303c }
-.q4-9 { fill: #e75358 }
-.q5-9 { fill: #e75f6b }
-.q6-9 { fill: #e7727e }
-.q7-9 { fill: #e795a3 }
-.q8-9 { fill: #e7bec7 }
 
 
 /* Styles for Vis 2 */
@@ -75,11 +64,3 @@ body {
 .axis-label{
     font-size:10px;
 }
-
-.scatter-point{opacity:.7;}
-.African {fill: #ff7d07;}
-.Eastern-Mediterranean { fill: #7b1ea5;}
-.European { fill: blue;}
-.Region-of-the-Americas {fill: red}
-.South-East-Asia {fill: green}
-.Western-Pacific{fill:cyan}

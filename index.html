@@ -23,10 +23,10 @@
 <div class="container">
     <div class="row spacer"></div>
     <div class="row">
-        <div class="col-md-6 paragraph">
+        <div class="col-md-3 paragraph">
             The world is getting hotter
         </div>
-        <div class="col-md-6">
+        <div class="col-md-9">
             <img src="img/giss_temperature.png">
         </div>
     </div>
@@ -45,81 +45,25 @@
             both in the past and projected into the future
         </div>
         <div class="col-md-6">
-            <img src="img/kiribati.jpg">
+            <img src="img/kiribati.jpg" height="256" width="440">
         </div>
         <div class="col-md-3 info">
             <h4>Economic development and poverty</h4>
             Many Equitorial Pacific Islands are in danger.
         </div>
     </div>
+    <div class="row spacer"></div>
     <div class="row quote">
         “This is newer and more original” - Daniel Chen
-    </div>
-    <div class="row spacer"></div>
-    <div class="row subtitle">
-        <h2>The Situation Around the World</h2>
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            <div class="row spacer"></div>
-            <div class="row spacer"></div>
-            <div class="row spacer"></div>
-            <form id="checkboxes" onchange="updateScatterPlot()" class="scatter">
-                <input type="checkbox" name="region" id="African" checked> African<br>
-                <input type="checkbox" name="region" id="Eastern-Mediterranean" checked> Eastern Mediterranean<br>
-                <input type="checkbox" name="region" id="European" checked> European<br>
-                <input type="checkbox" name="region" id="Region-of-the-Americas" checked> Americas<br>
-                <input type="checkbox" name="region" id="South-East-Asia" checked> Southeast Asia<br>
-                <input type="checkbox" name="region" id="Western-Pacific" checked> Western Pacific<br>
-            </form>
-        </div>
-        <div class="col-md-7">
-            <div id="scatterplot-area" class="scatter"></div>
-        </div>
-        <div class="col-md-3">
-            <div class="row spacer"></div>
-            <div class="row spacer"></div>
-            <div class="row fact">
-                At least 1.8 billion people globally use a source of drinking water that
-                is fecally contaminated.
-            </div>
-            <div class="row spacer"></div>
-            <div class="row fact">
-                2.4 billion people lack access to basic sanitation services, such as toilets or
-                latrines.
-            </div>
-        </div>
-    </div>
-    <div class="row spacer"></div>
-    <div class="row quote">
-        ““Safe water, clean hands, healthy bodies. Time lost to sickness is reduced and people can
-        get back to the work of lifting themselves out of poverty.”
-    </div>
-    <div class="row paragraph subtitle">
-        <h2>What can we do?</h2>
-        Civil society organizations should work to keep governments accountable, invest in water
-        research and development, and promote the inclusion of women, youth and indigenous
-        communities in water resources governance.
-        Generating awareness of these roles and turning them into action will lead to win-win results
-        and increased sustainability and integrity for both human and ecological systems.
-    </div>
-    <div class="row spacer"></div>
-    <div class="row spacer"></div>
-    <div class="row subtitle">
-        Created by Zac Bathen for CS171 Midterm
     </div>
 </div>
 
 <!-- Load JS libraries -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/queue.min.js"></script>
+<script src="js/queue.v1.min.js"></script>
 <script src="js/topojson.js"></script>
 <script src="js/d3.min.js"></script>
-
-<!-- Choropleth and second visualization -->
-<script src="js/vis-choropleth.js"></script>
-<script src="js/vis-second.js"></script>
 
 </body>
 </html>
