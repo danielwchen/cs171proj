@@ -16,14 +16,14 @@ CongressVis.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = {top: 70, right: 0, bottom: 0, left: 100};
-    vis.width = 600 - vis.margin.left - vis.margin.right;
-    vis.height = 1000 - vis.margin.top - vis.margin.bottom;
+    vis.margin = {top: 50, right: 50, bottom: 50, left: 50};
+    vis.width = 2000 - vis.margin.left - vis.margin.right;
+    vis.height = 2000 - vis.margin.top - vis.margin.bottom;
 
 
     vis.senHeight = 25;
     vis.senWidth = 50;
-    vis.senPadding = 10;
+    vis.senPadding = 3;
 
     vis.svg = d3.select(vis.parentElement).append("svg")
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -31,37 +31,53 @@ CongressVis.prototype.initVis = function() {
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
+    vis.svg.append("text")
+        .text("Climate Deniers")
+        // .attr("text-anchor","middle")
+        .attr("y",0)
+        .attr("x",vis.width * 3 / 4 - 50);
+
+    vis.svg.append("text")
+        .text("Climate Champions")
+        // .attr("text-anchor","middle")
+        .attr("y",0)
+        .attr("x",vis.width / 4);
+
+    vis.svg.append("line")
+        .attr("y1", 0)
+        .attr("y2", 8*vis.senHeight)
+        .attr("x1", vis.width/2 + 25)
+        .attr("x2", vis.width/2 + 25)
+        .attr("stroke","black")
+        .attr("stroke-weight",2);
+
+
     vis.wrangleData();
 };
 
 CongressVis.prototype.wrangleData = function() {
     var vis = this;
 
-    // var input = d3.select(".form-control").property("value");
-    // sortedData = JSON.parse(JSON.stringify(displayData));;
-    // if(input == "default") {
-    // } else {
-    //     sortedData.sort(function(a,b) {
-    //         return b[input] - a[input];
-    //     });
-    // }
-    //
-    // sortedData.forEach(function(d,index) {
-    //     displayData.forEach(function(d2,index2) {
-    //         if (d.Family == d2.Family) {
-    //             displayData[index2].index = index;
-    //         }
-    //     });
-    // });
+    vis.sortParam = d3.select(".form-control").property("value")
 
     vis.data = vis.data.sort(function(a, b) {
         return compareStrings(a.Senator, b.Senator);
     });
 
-    vis.data = vis.data.sort(function(a, b) {
-        return compareStrings(a.State, b.State);
-    });
+    if (vis.sortParam != "Senator") {
+        vis.data = vis.data.sort(function(a, b) {
+            return compareStrings(a.State, b.State);
+        });
+        if (vis.sortParam != "State") {
+            vis.data = vis.data.sort(function(a, b) {
+                return b[vis.sortParam] - a[vis.sortParam];
+            });
 
+        }
+    }
+
+    vis.believe = vis.data.filter(function(d) { return d.BelieveClimateChange == "Yes" });
+    vis.deny = vis.data.filter(function(d) { return d.BelieveClimateChange == "No" });
 
 
 
@@ -73,41 +89,100 @@ CongressVis.prototype.updateVis = function() {
     var vis = this;
 
     vis.tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
-        return d.Senator + ", " + d.State;
+        return d.Senator + ", " + d.State + ", " + vis.sortParam + ": " + d[vis.sortParam];
     });
 
-    vis.senIcons = vis.svg.selectAll(".senIcons")
-        .data(vis.data);
+    vis.senBelieveIcons = vis.svg.selectAll(".senBelieveIcons")
+        .data(vis.believe);
 
     // Add
-    vis.senIcons.enter().append("rect")
-        .attr("class", "senIcons");
+    vis.senBelieveIcons.enter().append("rect")
+        .attr("class", "senBelieveIcons");
 
+
+    var yholder = -1
     // Update
-    vis.senIcons
-        .attr("x", function(d) {
+    vis.senBelieveIcons
+        .attr("x", function(d,index) {
             // Some complicated function
-            return vis.width/2;
+            return vis.width/2 - 30 - (index % 10) * (vis.senWidth + vis.senPadding);
         })
         .attr("width", vis.senWidth)
-        .attr("y", function(d,index) { return index * (vis.senHeight + vis.senPadding); })
+        .attr("y", function(d,index) {
+            // Some complicated function
+            if (index % 20 == 0) {
+                yholder++;
+            }
+            return 5 + yholder * (vis.senHeight + vis.senPadding);
+        })
         .attr("height", vis.senHeight)
         .attr("fill", function (d) {
-            if (d.BelieveClimateChange == "Yes") {
-                return "blue";
-            } else {
+            if (d.Party == "Republican") {
                 return "red";
+            } else {
+                return "blue";
             }
         })
         .on('mouseover', vis.tip.show)
         .on('mouseout', vis.tip.hide);
 
     // Remove
-    vis.senIcons.exit().remove();
+    vis.senBelieveIcons.exit().remove();
 
     // Invoke tooltip
-    vis.senIcons.call(vis.tip)
+    vis.senBelieveIcons.call(vis.tip)
 
+    vis.senDenyIcons = vis.svg.selectAll(".senDenyIcons")
+        .data(vis.deny);
+
+    // Add
+    vis.senDenyIcons.enter().append("rect")
+        .attr("class", "senDenyIcons");
+
+
+    yholder = -1
+    // Update
+    vis.senDenyIcons
+        .attr("x", function(d,index) {
+            // Some complicated function
+            return 30 + vis.width/2 + (index % 10) * (vis.senWidth + vis.senPadding);
+        })
+        .attr("width", vis.senWidth)
+        .attr("y", function(d,index) {
+            // Some complicated function
+            if (index % 20 == 0) {
+                yholder++;
+            }
+            return 5 + yholder * (vis.senHeight + vis.senPadding);
+        })
+        .attr("height", vis.senHeight)
+        .attr("fill", function (d) {
+            if (d.Party == "Republican") {
+                return "red";
+            } else {
+                return "blue";
+            }
+        })
+        .on('mouseover', vis.tip.show)
+        .on('mouseout', vis.tip.hide);
+
+    // Remove
+    vis.senDenyIcons.exit().remove();
+
+    // Invoke tooltip
+    vis.senDenyIcons.call(vis.tip)
+
+
+    d3.select(".form-control")
+        .on("change", function() {
+            console.log("hi")
+            vis.wrangleData();
+        });
+
+
+    console.log(vis.believe);
+    console.log(vis.deny)
+    console.log(yholder)
 };
 
 function compareStrings(a, b) {
@@ -117,8 +192,3 @@ function compareStrings(a, b) {
 
     return (a < b) ? -1 : (a > b) ? 1 : 0;
 }
-
-d3.select(".form-control")
-    .on("change", function() {
-        vis.wrangleData();
-    });
