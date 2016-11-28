@@ -16,9 +16,9 @@ CongressVis.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = {top: 50, right: 50, bottom: 50, left: 50};
-    vis.width = 2000 - vis.margin.left - vis.margin.right;
-    vis.height = 2000 - vis.margin.top - vis.margin.bottom;
+    vis.margin = {top: 30, right: 0, bottom: 0, left: 0};
+    vis.width = 1000 - vis.margin.left - vis.margin.right;
+    vis.height = 700 - vis.margin.top - vis.margin.bottom;
 
 
     vis.senHeight = 25;
@@ -130,7 +130,7 @@ CongressVis.prototype.updateVis = function() {
     vis.senBelieveIcons.exit().remove();
 
     // Invoke tooltip
-    vis.senBelieveIcons.call(vis.tip)
+    vis.senBelieveIcons.call(vis.tip);
 
     vis.senDenyIcons = vis.svg.selectAll(".senDenyIcons")
         .data(vis.deny);
