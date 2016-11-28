@@ -1,207 +1,124 @@
-/**
- * Created by Daniel on 11/26/16.
+/*
+ *  CongressVis - Object constructor function
+ *  @param _parentElement   -- HTML element in which to draw the visualization
+ *  @param _data            -- Array with all stations of the bike-sharing network
  */
 
-var marriages = [[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
-    [0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0],
-    [0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0],
-    [0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0],
-    [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,1],
-    [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0],
-    [1,1,1,0,0,0,0,0,0,0,0,0,1,1,0,1],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0],
-    [0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1],
-    [0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0],
-    [0,0,0,1,1,0,0,0,0,0,1,0,1,0,0,0],
-    [0,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0]];
-var businessties = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,1,1,0,0,1,0,1,0,0,0,0,0],
-    [0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0],
-    [0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0],
-    [0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0],
-    [0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0],
-    [0,0,0,1,1,0,1,0,0,0,1,0,0,0,0,0],
-    [0,0,1,0,0,1,0,0,0,1,0,0,0,1,0,1],
-    [0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
-    [0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]];
+CongressVis = function(_parentElement, _data) {
 
-var nullData = [{thing: "thing"}];
-var displayData;
-var sortedData;
+    this.parentElement = _parentElement;
+    this.data = _data;
 
-var cellHeight = 20, cellWidth = 20, cellPadding = 10;
+    this.initVis();
+};
 
-var margin = {top: 70, right: 0, bottom: 0, left: 100};
-// Width and height as the inner dimensions of the chart area
-var width = 600 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+CongressVis.prototype.initVis = function() {
 
-var svg = d3.select("#vis").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var vis = this;
 
-var keysvg = d3.select("#key").append("svg")
-    .attr("width", 400)
-    .attr("height", 50)
-    .append("g");
+    vis.margin = {top: 70, right: 0, bottom: 0, left: 100};
+    vis.width = 600 - vis.margin.left - vis.margin.right;
+    vis.height = 1000 - vis.margin.top - vis.margin.bottom;
 
-keysvg.append("path")
-    .attr("d", 'M 30 10 l 20 0 l 0 20 z')
-    .attr("fill", "purple");
 
-keysvg.append("path")
-    .attr("d", 'M 170 10 l 0 20 l 20 0 z')
-    .attr("fill", "orange");
+    vis.senHeight = 25;
+    vis.senWidth = 50;
+    vis.senPadding = 10;
 
-keysvg.append("text")
-    .text("Marriage")
-    .attr("x", "55")
-    .attr("y", "25");
+    vis.svg = d3.select(vis.parentElement).append("svg")
+        .attr("width", vis.width + vis.margin.left + vis.margin.right)
+        .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
-keysvg.append("text")
-    .text("Business Tie")
-    .attr("x", "195")
-    .attr("y", "25");
+    vis.wrangleData();
+};
 
-var rows = [];
-for(var i = 0; i < 16; i++) {
-    rows[i] = svg.append("g")
-        .attr("transform", "translate(0,"+i*(cellHeight + cellPadding)+")");
-}
+CongressVis.prototype.wrangleData = function() {
+    var vis = this;
 
-queue()
-    .defer(d3.csv, "data/florentine-familiy-attributes.csv")
-    .await(function(error, families){
+    // var input = d3.select(".form-control").property("value");
+    // sortedData = JSON.parse(JSON.stringify(displayData));;
+    // if(input == "default") {
+    // } else {
+    //     sortedData.sort(function(a,b) {
+    //         return b[input] - a[input];
+    //     });
+    // }
+    //
+    // sortedData.forEach(function(d,index) {
+    //     displayData.forEach(function(d2,index2) {
+    //         if (d.Family == d2.Family) {
+    //             displayData[index2].index = index;
+    //         }
+    //     });
+    // });
 
-        // --> PROCESS DATA
-        families.forEach(function(d,index) {
-            families[index].businessValues = businessties[index];
-            families[index].marriageValues = marriages[index];
-            families[index].businessCount = businessties[index].reduce(function(a, b) { return a + b; }, 0);
-            families[index].marriageCount = marriages[index].reduce(function(a, b) { return a + b; }, 0);
-            families[index].relationsCount = families[index].businessCount + families[index].marriageCount;
-        });
-        displayData = families;
-
-        wrangleData();
+    vis.data = vis.data.sort(function(a, b) {
+        return compareStrings(a.Senator, b.Senator);
     });
 
-function wrangleData() {
-    var input = d3.select(".form-control").property("value");
-    sortedData = JSON.parse(JSON.stringify(displayData));;
-    if(input == "default") {
-    } else {
-        sortedData.sort(function(a,b) {
-            return b[input] - a[input];
-        });
-    }
+    vis.data = vis.data.sort(function(a, b) {
+        return compareStrings(a.State, b.State);
+    });
 
-    sortedData.forEach(function(d,index) {
-        displayData.forEach(function(d2,index2) {
-            if (d.Family == d2.Family) {
-                displayData[index2].index = index;
+
+
+
+    vis.updateVis();
+
+};
+
+CongressVis.prototype.updateVis = function() {
+    var vis = this;
+
+    vis.tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
+        return d.Senator + ", " + d.State;
+    });
+
+    vis.senIcons = vis.svg.selectAll(".senIcons")
+        .data(vis.data);
+
+    // Add
+    vis.senIcons.enter().append("rect")
+        .attr("class", "senIcons");
+
+    // Update
+    vis.senIcons
+        .attr("x", function(d) {
+            // Some complicated function
+            return vis.width/2;
+        })
+        .attr("width", vis.senWidth)
+        .attr("y", function(d,index) { return index * (vis.senHeight + vis.senPadding); })
+        .attr("height", vis.senHeight)
+        .attr("fill", function (d) {
+            if (d.BelieveClimateChange == "Yes") {
+                return "blue";
+            } else {
+                return "red";
             }
-        });
-    });
+        })
+        .on('mouseover', vis.tip.show)
+        .on('mouseout', vis.tip.hide);
 
-    createVis();
+    // Remove
+    vis.senIcons.exit().remove();
+
+    // Invoke tooltip
+    vis.senIcons.call(vis.tip)
+
+};
+
+function compareStrings(a, b) {
+    // Assuming you want case-insensitive comparison
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+
+    return (a < b) ? -1 : (a > b) ? 1 : 0;
 }
-
-function createVis() {
-
-    var colLabel = svg.selectAll("text")
-        .data(displayData);
-
-    colLabel.enter().append("text")
-        .attr("class","col-label")
-        .text(function(d) {return d.Family})
-        .attr("text-anchor","start")
-        .attr("transform","rotate(-90)")
-        .attr("y", function(d,index) {return (cellWidth + cellPadding) * index + 15;})
-        .attr("x", 5);
-
-    for(var i = 0; i < 16; i++) {
-        var rowLabel = rows[i].selectAll("text")
-            .data(nullData);
-
-        rowLabel.enter().append("text")
-            .attr("class","row-label")
-            .text(displayData[i].Family)
-            .attr("text-anchor","end")
-            .attr("y", 15)
-            .attr("x", -5);
-
-        var upperTrianglePath = rows[i].selectAll(".upper-triangle")
-            .data(displayData[i].marriageValues);
-
-        upperTrianglePath.enter().append("path")
-            .attr("class", "upper-triangle");
-
-        upperTrianglePath
-            .attr("d", function (d, index) {
-                // Shift the triangles on the x-axis (columns)
-                var x = (cellWidth + cellPadding) * index;
-
-                // All triangles of the same row have the same y-coordinates
-                // Vertical shifting is already done by transforming the group elements
-                var y = 0;
-
-                return 'M ' + x + ' ' + y + ' l ' + cellWidth + ' 0 l 0 ' + cellHeight + ' z';
-            })
-            .attr("fill", function (d, index) {
-                if (d == 1) {
-                    return "purple"
-                } else {
-                    return "lightgray"
-                }
-            });
-
-        // D3's enter, update, exit pattern
-        var lowerTrianglePath = rows[i].selectAll(".lower-triangle")
-            .data(displayData[i].businessValues);
-
-        lowerTrianglePath.enter().append("path")
-            .attr("class", "lower-triangle");
-
-        lowerTrianglePath
-            .attr("d", function (d, index) {
-                // Shift the triangles on the x-axis (columns)
-                var x = (cellWidth + cellPadding) * index;
-
-                // All triangles of the same row have the same y-coordinates
-                // Vertical shifting is already done by transforming the group elements
-                var y = 0;
-
-                return 'M ' + x + ' ' + y + ' l 0 ' + cellHeight + ' l ' + cellWidth + ' 0 z';
-            })
-            .attr("fill", function (d, index) {
-                if (d == 1) {
-                    return "orange"
-                } else {
-                    return "lightgray"
-                }
-            });
-
-        console.log(sortedData[i].index*(cellHeight + cellPadding))
-        rows[i].transition().duration(800).attr("transform","translate(0,"+displayData[i].index*(cellHeight + cellPadding) + ")");
-    }
-
-}
-
 
 d3.select(".form-control")
     .on("change", function() {
-        wrangleData();
+        vis.wrangleData();
     });

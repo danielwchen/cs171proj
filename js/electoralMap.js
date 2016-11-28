@@ -17,9 +17,9 @@ ElectoralMap.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.width = 1000;
+    vis.width = 500;
 
-    vis.height = 600;
+    vis.height = 300;
 
     vis.svg = d3.select(vis.parentElement).append("svg")
         .attr("width", vis.width)
@@ -35,8 +35,6 @@ ElectoralMap.prototype.wrangleData = function() {
     var vis = this;
 
     for (var i = 0; i < vis.data.length; i++) {
-
-        console.log(vis.data[i].State)
         for (var j = 0; j < vis.json.features.length; j++) {
             if (vis.json.features[j].properties.name == vis.data[i].State) {
                 vis.json.features[j].properties.senDeniers = vis.data[i].senDeniers;
@@ -44,8 +42,6 @@ ElectoralMap.prototype.wrangleData = function() {
             }
         }
     }
-
-    // console.log(vis.json)
 
 
     // vis.displayData = vis.data;
@@ -60,7 +56,7 @@ ElectoralMap.prototype.updateVis = function() {
 
     vis.projection = d3.geo.albersUsa()
         .translate([vis.width / 2, vis.height / 2])
-        .scale([1000]);
+        .scale([300]);
 
     vis.path = d3.geo.path()
         .projection(vis.projection);
@@ -76,6 +72,6 @@ ElectoralMap.prototype.updateVis = function() {
             else if (d.properties.senDeniers == 1) {return "purple"}
             else {return "blue"}
         })
-        .on("mouseover",function(d) { console.log (d.properties.senDeniers)});
+        .on("mouseover",function(d) { console.log (d.properties.name + " " + d.properties.senDeniers)});
 
 };

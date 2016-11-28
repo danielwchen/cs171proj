@@ -46,6 +46,9 @@ function loadData() {
                 return d['115Member'] == 1;
             });
 
+            senCSV = senCSV.filter(function(d) {
+                return d['Senator'] != "TBD";
+            });
 
             senCSV.forEach(function(d) {
                 d.AgeAtTakingOfficeDay = +d.AgeAtTakingOfficeDay;
