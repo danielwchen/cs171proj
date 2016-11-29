@@ -4,10 +4,11 @@
  *  @param _data            -- Array with all stations of the bike-sharing network
  */
 
-CongressVis = function(_parentElement, _data) {
+CongressVis = function(_parentElement, _data, _eventHandler) {
 
     this.parentElement = _parentElement;
     this.data = _data;
+    this.eventHandler = _eventHandler;
 
     this.initVis();
 };
@@ -17,12 +18,12 @@ CongressVis.prototype.initVis = function() {
     var vis = this;
 
     vis.margin = {top: 30, right: 0, bottom: 0, left: 0};
-    vis.width = 1000 - vis.margin.left - vis.margin.right;
+    vis.width = 900 - vis.margin.left - vis.margin.right;
     vis.height = 700 - vis.margin.top - vis.margin.bottom;
 
 
-    vis.senHeight = 25;
-    vis.senWidth = 50;
+    vis.senHeight = 20;
+    vis.senWidth = 40;
     vis.senPadding = 3;
 
     vis.svg = d3.select(vis.parentElement).append("svg")
@@ -46,8 +47,8 @@ CongressVis.prototype.initVis = function() {
     vis.svg.append("line")
         .attr("y1", 0)
         .attr("y2", 8*vis.senHeight)
-        .attr("x1", vis.width/2 + 25)
-        .attr("x2", vis.width/2 + 25)
+        .attr("x1", vis.width/2 + 12)
+        .attr("x2", vis.width/2 + 12)
         .attr("stroke","black")
         .attr("stroke-weight",2);
 
@@ -89,7 +90,7 @@ CongressVis.prototype.updateVis = function() {
     var vis = this;
 
     vis.tip = d3.tip().attr('class', 'd3-tip').html(function(d) {
-        return d.Senator + ", " + d.State + ", " + vis.sortParam + ": " + d[vis.sortParam];
+        return d.Party + " Sen " + d.Senator + ", " + d.State + ", " + vis.sortParam + ": " + d[vis.sortParam];
     });
 
     vis.senBelieveIcons = vis.svg.selectAll(".senBelieveIcons")
@@ -99,8 +100,7 @@ CongressVis.prototype.updateVis = function() {
     vis.senBelieveIcons.enter().append("rect")
         .attr("class", "senBelieveIcons");
 
-
-    var yholder = -1
+    var yholder = -1;
     // Update
     vis.senBelieveIcons
         .attr("x", function(d,index) {
@@ -110,7 +110,7 @@ CongressVis.prototype.updateVis = function() {
         .attr("width", vis.senWidth)
         .attr("y", function(d,index) {
             // Some complicated function
-            if (index % 20 == 0) {
+            if (index % 10 == 0) {
                 yholder++;
             }
             return 5 + yholder * (vis.senHeight + vis.senPadding);
@@ -123,8 +123,12 @@ CongressVis.prototype.updateVis = function() {
                 return "blue";
             }
         })
-        .on('mouseover', vis.tip.show)
-        .on('mouseout', vis.tip.hide);
+        .on('mouseover', vis.tip.show
+            // $(vis.eventHandler).trigger("stateOver", d.State);
+        )
+        .on('mouseout', vis.tip.hide
+            // $(vis.eventHandler).trigger("stateOff");
+        );
 
     // Remove
     vis.senBelieveIcons.exit().remove();
@@ -150,7 +154,7 @@ CongressVis.prototype.updateVis = function() {
         .attr("width", vis.senWidth)
         .attr("y", function(d,index) {
             // Some complicated function
-            if (index % 20 == 0) {
+            if (index % 10 == 0) {
                 yholder++;
             }
             return 5 + yholder * (vis.senHeight + vis.senPadding);
@@ -164,7 +168,8 @@ CongressVis.prototype.updateVis = function() {
             }
         })
         .on('mouseover', vis.tip.show)
-        .on('mouseout', vis.tip.hide);
+        .on('mouseout', vis.tip.hide
+        );
 
     // Remove
     vis.senDenyIcons.exit().remove();
@@ -175,14 +180,8 @@ CongressVis.prototype.updateVis = function() {
 
     d3.select(".form-control")
         .on("change", function() {
-            console.log("hi")
             vis.wrangleData();
         });
-
-
-    console.log(vis.believe);
-    console.log(vis.deny)
-    console.log(yholder)
 };
 
 function compareStrings(a, b) {
@@ -192,3 +191,41 @@ function compareStrings(a, b) {
 
     return (a < b) ? -1 : (a > b) ? 1 : 0;
 }
+
+CongressVis.prototype.onStateOver = function(state) {
+    var vis = this;
+
+    if (state) {
+        vis.senBelieveIcons
+            .attr("fill",function(d) {
+                if(d.State == state) {
+                    if (d.Party == "Republican") {return "red"}
+                    else {return "blue"}
+                } else {
+                    if (d.Party == "Republican") {return "#FFCACA"}
+                    else {return "#CACAFF"}
+                }
+            });
+        vis.senDenyIcons
+            .attr("fill",function(d) {
+                if(d.State == state) {
+                    if (d.Party == "Republican") {return "red"}
+                    else {return "blue"}
+                } else {
+                    if (d.Party == "Republican") {return "#FFCACA"}
+                    else {return "#CACAFF"}
+                }
+            });
+    } else {
+        vis.senBelieveIcons
+            .attr("fill",function(d) {
+                if (d.Party == "Republican") {return "red"}
+                else {return "blue"}
+            });
+        vis.senDenyIcons
+            .attr("fill",function(d) {
+                if (d.Party == "Republican") {return "red"}
+                else {return "blue"}
+            });
+    }
+};

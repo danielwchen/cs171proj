@@ -1,34 +1,15 @@
-var allData = [];
 var stateTotalData;
 var senData;
 
-// Variable for the visualization instance
 var electoralMap;
 var congressVis;
 
 var dateFormatter = d3.time.format("%d-%b-%Y");
 
-// Start application by loading the data
 loadData();
 
 function loadData() {
 
-
-    // $.getJSON(proxy+url, function(jsonData){
-    //
-    //     data = jsonData.station;
-    //     data.forEach(function(d){
-    //         d.id = +d.id;
-    //         d.lat = +d.lat;
-    //         d.long = +d.long;
-    //         // d.nbBikes = +d.nbBikes;
-    //         // d.nbEmptyDocks = +d.nbEmptyDocks;
-    //     });
-    //
-    //     $("#station-count").text(data.length);
-    //
-    //
-    // });
     queue()
         .defer(d3.csv, "data/electoral/stateDeniersTotal.csv")
         .defer(d3.csv, "data/electoral/senators.csv")
@@ -58,8 +39,6 @@ function loadData() {
                 d.YearNextElection = +d.YearNextElection;
                 d.YearsInOffice = +d.YearsInOffice;
             });
-            // console.log(totalCSV);
-            // console.log(senCSV);
 
             stateTotalData = totalCSV;
             senData = senCSV;
@@ -73,12 +52,14 @@ function createVis() {
 
     var EventHandler = {};
     electoralMap = new ElectoralMap("#electoral-map",stateTotalData,EventHandler);
-    congressVis = new CongressVis("#congress-vis",senData);
-    // $(EventHandler).bind("selectionChanged", function(event, rangeStart, rangeEnd){
-        // $("#startDate").text(dateFormatter(rangeStart));
-        // $("#endDate").text(dateFormatter(rangeEnd));
-        // ageVis.onSelectionChange(rangeStart, rangeEnd);
-        // prioVis.onSelectionChange(rangeStart, rangeEnd);
-    // });
+    congressVis = new CongressVis("#congress-vis",senData,EventHandler);
+    $(EventHandler).bind("stateOver", function(event, stateHover){
+        electoralMap.onStateOver(stateHover);
+        congressVis.onStateOver(stateHover);
+    });
+    $(EventHandler).bind("stateOff", function(event){
+        electoralMap.onStateOver(null);
+        congressVis.onStateOver(null);
+    });
 
 }

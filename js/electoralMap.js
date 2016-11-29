@@ -17,7 +17,7 @@ ElectoralMap.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.width = 500;
+    vis.width = 300;
 
     vis.height = 300;
 
@@ -56,7 +56,7 @@ ElectoralMap.prototype.updateVis = function() {
 
     vis.projection = d3.geo.albersUsa()
         .translate([vis.width / 2, vis.height / 2])
-        .scale([300]);
+        .scale([350]);
 
     vis.path = d3.geo.path()
         .projection(vis.projection);
@@ -72,6 +72,41 @@ ElectoralMap.prototype.updateVis = function() {
             else if (d.properties.senDeniers == 1) {return "purple"}
             else {return "blue"}
         })
-        .on("mouseover",function(d) { console.log (d.properties.name + " " + d.properties.senDeniers)});
+        .on("mouseover",function(d) {
+            $(vis.eventHandler).trigger("stateOver", d.properties.name);
+        })
+        .on("mouseout",function(d) {
+            $(vis.eventHandler).trigger("stateOff");
+        });
 
+
+
+};
+
+ElectoralMap.prototype.onStateOver = function(state) {
+    var vis = this;
+
+    if (state) {
+        vis.svg.selectAll("path")
+            .data(vis.json.features)
+            .attr("fill",function(d) {
+            if(d.properties.name == state) {
+                if (d.properties.senDeniers == 2) {return "red"}
+                else if (d.properties.senDeniers == 1) {return "purple"}
+                else {return "blue"}
+            } else {
+                if (d.properties.senDeniers == 2) {return "#FF6464"}
+                else if (d.properties.senDeniers == 1) {return "#BB88B2"}
+                else {return "#6464FF"}
+            }
+        })
+    } else {
+        vis.svg.selectAll("path")
+            .data(vis.json.features)
+            .attr("fill",function(d) {
+                if (d.properties.senDeniers == 2) {return "red"}
+                else if (d.properties.senDeniers == 1) {return "purple"}
+                else {return "blue"}
+            })
+    }
 };
