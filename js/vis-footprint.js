@@ -4,7 +4,7 @@
 var margin = {top: 50, right: 50, bottom: 50, left: 50};
 
 var width = 900 - margin.left - margin.right,
-    height = 5900 - margin.top - margin.bottom;
+    height = 14600 - margin.top - margin.bottom;
 
 var svg = d3.select("#footprint-vis").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -12,9 +12,9 @@ var svg = d3.select("#footprint-vis").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var svgSide = d3.select("#avg-footprint").append("svg")
-    .attr("width", 200)
-    .attr("height", 200);
+// var svgSide = d3.select("#avg-footprint").append("svg")
+//     .attr("width", 200)
+//     .attr("height", 200);
 
 var r = d3.scale.linear()
     .range([1,200]);
@@ -49,7 +49,9 @@ function updateVisualization() {
         return getData(b) - getData(a);
     });
 
+    var extra = ($('input[name="dataS"]:checked').val() == "total") ? 8700 : 0;
 
+    // var avg = data.reduce(function(a, b) { return getData(a) + getData(b); }) / data.length;
 
     yPlaceholder = 0;
 
@@ -84,21 +86,17 @@ function updateVisualization() {
             return width - 200;
         })
         .attr("cy", function(d) {
-            d.yVal = height - yPlaceholder - 20 - r(getData(d));
+            d.yVal = height - yPlaceholder - 20 - r(getData(d)) - extra;
             yPlaceholder = yPlaceholder + 20 + 2*r(getData(d));
             return d.yVal;
         })
         .attr("r", function(d) {return r(getData(d))})
         .on('mouseover', tip.show)
-        .on('mouseout', tip.hide); // Population;
+        .on('mouseout', tip.hide);
 
     markers
         .attr("d", function(d, index){
-            // Shift the triangles on the x-axis (columns)
             var x = width - 250 - r(getData(d));
-
-            // All triangles of the same row have the same y-coordinates
-            // Vertical shifting is already done by transforming the group elements
             var y = d.yVal - 20;
 
             return 'M ' + x + ' ' + y + ' l 50 20 l -50 20 z';
@@ -127,6 +125,12 @@ function updateVisualization() {
     // Exit
     circs.exit().remove();
     markers.exit().remove();
+
+    // svgSide
+    //     .append("circle")
+    //     .attr("x", 0)
+    //     .attr("y", 0)
+    //     .attr("r", r(avg));
 }
 
 function getData(country){
