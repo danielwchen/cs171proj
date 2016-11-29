@@ -63,3 +63,9 @@ function createVis() {
     });
 
 }
+
+
+// Birthdate 1930-1939, 1940-1949, 1950-1959, 1960-1969, 1970-1979
+// Age when taking office 30-39, 40-49, 50-59, 60-69
+// Years in office 0-9, 10-19, 20-29, 30-39, 40-49
+// Year of next election 2018, 2020, 2022
