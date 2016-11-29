@@ -37,20 +37,26 @@
         <h2>Emission Inequality</h2>
     </div>
     <div class="row">
-        <div class="col-md-3 info">
-            <h4>The world is far from equal when it comes to carbon emissions.</h4>
+
+    </div>
+    <div class="row">
+        <div class="col-md-9" style="overflow:auto; height:450px;">
+            <!-- Add carbon footprint vis here-->
+            <div id="footprint-vis"></div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-3">
             <div class="row">
-                <div class="col-md-6">
-                    <img src="img/carcar_shoe.jpg" width="300" height="300">
-                </div>
-                <div class="col-md-6">
-                    <img src="img/DSC07294.jpg" height="300" width="300">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <form id="dataSelect" action="" onchange="updateVisualization()">
+                        <input type="radio" name="dataS" value="total" checked="checked"> Total CO2 Output<br>
+                        <input type="radio" name="dataS" value="pc"> Per Capita CO2 Output<br>
+                    </form>
                 </div>
             </div>
-            <!-- Add carbon footprint vis here-->
-            <div id="footprintvis"></div>
+            <div class="row">
+                <div id="avg-footprint"></div>
+            </div>
         </div>
     </div>
     <div class="row spacer"></div>
@@ -65,11 +71,6 @@
 
 <!-- Choropleth and second visualization -->
 <script src="js/vis-footprint.js"></script>
-
-</body>
-</html></title>
-</head>
-<body>
 
 </body>
 </html>
