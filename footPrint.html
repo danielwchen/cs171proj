@@ -20,14 +20,49 @@
 
 <div class="container">
     <div class="row spacer"></div>
-    <div class="row">
-        <img src="img/carbon-footprint_med.jpeg">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <h1>U.S. Carbon Emissions</h1>
+                <h2>Tons of carbon per capita</h2>
+                <br>
+                <h3>See how your actions can change carbon emissions for 2017.</h3>
+                If you and
+                <input type="number" min="0" max="318900000" step="1000" value="10000" id="population" onchange="brushed()">
+                other people decided to
+
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="rankingType"></label>
+                        <select onchange="brushed()" class="form-control" id="activity">
+                            <option value="nothing">Change nothing</option>
+                            <option value="Electricity">Stop electricity</option>
+                            <option value="Transportation">Stop transporting</option>
+                            <option value="Industry">Halt industry</option>
+                            <option value="Agriculture">Stop growing stuff</option>
+                            <option value="Commercial">Stop buying stuff</option>
+                            <option value="Residential">Stop living somewhere</option>
+                            <option value="Territories">Leave the territories</option>
+                        </select>
+                    </div>
+                </form>
+                for a year:
+
+
+                <!-- Visualization placeholders -->
+                <div id="stacked-area-chart"></div>
+                <div id="timeline"></div>
+
+            </div>
+        </div>
+
     </div>
-    <div class="row spacer"></div>
     <div class="row quote">
-        “What do you mean?” - Meg Knister
+
     </div>
-    <div class="row spacer"></div>
     <div class="row subtitle">
         <h2>Emission Inequality</h2>
     </div>
@@ -64,7 +99,12 @@
 <script src="js/d3.min.js"></script>
 <script src="js/d3.tip.js"></script>
 
+<!-- Visualization objects -->
+<script src="js/stackedAreaChart.js"></script>
+<script src="js/timeline.js"></script>
+
 <!-- Choropleth and second visualization -->
+<script src="js/co2emis_main.js"></script>
 <script src="js/vis-footprint.js"></script>
 
 </body>

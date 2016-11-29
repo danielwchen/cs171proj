@@ -121,15 +121,15 @@ StackedAreaChart.prototype.wrangleData = function(){
 
 	// In the first step no data wrangling/filtering needed
 	vis.displayData = vis.stack(transposedData);
-	console.log("displayData: ");
-	console.log(vis.displayData);
-	console.log("After display data has been set");
-	console.log(vis.data[end]);
+	// console.log("displayData: ");
+	// console.log(vis.displayData);
+	// console.log("After display data has been set");
+	// console.log(vis.data[end]);
 
 	// Update the visualization
   vis.updateVis();
-	console.log("After updateVis");
-	console.log(vis.data[end]);
+	// console.log("After updateVis");
+	// console.log(vis.data[end]);
 }
 
 
