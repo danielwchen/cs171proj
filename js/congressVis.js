@@ -94,7 +94,7 @@ CongressVis.prototype.updateVis = function() {
     });
 
     vis.senBelieveIcons = vis.svg.selectAll(".senBelieveIcons")
-        .data(vis.believe);
+        .data(vis.believe, function(d) { return d.Senator });
 
     // Add
     vis.senBelieveIcons.enter().append("rect")
@@ -103,19 +103,6 @@ CongressVis.prototype.updateVis = function() {
     var yholder = -1;
     // Update
     vis.senBelieveIcons
-        .attr("x", function(d,index) {
-            // Some complicated function
-            return vis.width/2 - 30 - (index % 10) * (vis.senWidth + vis.senPadding);
-        })
-        .attr("width", vis.senWidth)
-        .attr("y", function(d,index) {
-            // Some complicated function
-            if (index % 10 == 0) {
-                yholder++;
-            }
-            return 5 + yholder * (vis.senHeight + vis.senPadding);
-        })
-        .attr("height", vis.senHeight)
         .attr("fill", function (d) {
             if (d.Party == "Republican") {
                 return "red";
@@ -123,9 +110,25 @@ CongressVis.prototype.updateVis = function() {
                 return "blue";
             }
         })
+        .attr("width", vis.senWidth)
+        .attr("height", vis.senHeight)
+        .transition().duration(1000)
+        .attr("x", function(d,index) {
+            // Some complicated function
+            return vis.width/2 - 30 - (index % 10) * (vis.senWidth + vis.senPadding);
+        })
+        .attr("y", function(d,index) {
+            // Some complicated function
+            if (index % 10 == 0) {
+                yholder++;
+            }
+            return 5 + yholder * (vis.senHeight + vis.senPadding);
+        });
+
+    vis.senBelieveIcons
         .on('mouseover', vis.tip.show
-            // $(vis.eventHandler).trigger("stateOver", d.State);
-        )
+        // $(vis.eventHandler).trigger("stateOver", d.State);
+    )
         .on('mouseout', vis.tip.hide
             // $(vis.eventHandler).trigger("stateOff");
         );
@@ -137,29 +140,16 @@ CongressVis.prototype.updateVis = function() {
     vis.senBelieveIcons.call(vis.tip);
 
     vis.senDenyIcons = vis.svg.selectAll(".senDenyIcons")
-        .data(vis.deny);
+        .data(vis.deny, function(d) { return d.Senator });
 
     // Add
     vis.senDenyIcons.enter().append("rect")
         .attr("class", "senDenyIcons");
 
 
-    yholder = -1
+    yholder = -1;
     // Update
     vis.senDenyIcons
-        .attr("x", function(d,index) {
-            // Some complicated function
-            return 30 + vis.width/2 + (index % 10) * (vis.senWidth + vis.senPadding);
-        })
-        .attr("width", vis.senWidth)
-        .attr("y", function(d,index) {
-            // Some complicated function
-            if (index % 10 == 0) {
-                yholder++;
-            }
-            return 5 + yholder * (vis.senHeight + vis.senPadding);
-        })
-        .attr("height", vis.senHeight)
         .attr("fill", function (d) {
             if (d.Party == "Republican") {
                 return "red";
@@ -167,9 +157,24 @@ CongressVis.prototype.updateVis = function() {
                 return "blue";
             }
         })
+        .attr("width", vis.senWidth)
+        .attr("height", vis.senHeight)
+        .transition().duration(1000)
+        .attr("x", function(d,index) {
+            // Some complicated function
+            return 30 + vis.width/2 + (index % 10) * (vis.senWidth + vis.senPadding);
+        })
+        .attr("y", function(d,index) {
+            // Some complicated function
+            if (index % 10 == 0) {
+                yholder++;
+            }
+            return 5 + yholder * (vis.senHeight + vis.senPadding);
+        });
+
+    vis.senDenyIcons
         .on('mouseover', vis.tip.show)
-        .on('mouseout', vis.tip.hide
-        );
+        .on('mouseout', vis.tip.hide);
 
     // Remove
     vis.senDenyIcons.exit().remove();
@@ -196,7 +201,7 @@ CongressVis.prototype.onStateOver = function(state) {
     var vis = this;
 
     if (state) {
-        vis.senBelieveIcons
+        vis.senBelieveIcons.transition().duration(80)
             .attr("fill",function(d) {
                 if(d.State == state) {
                     if (d.Party == "Republican") {return "red"}
@@ -206,7 +211,7 @@ CongressVis.prototype.onStateOver = function(state) {
                     else {return "#CACAFF"}
                 }
             });
-        vis.senDenyIcons
+        vis.senDenyIcons.transition().duration(80)
             .attr("fill",function(d) {
                 if(d.State == state) {
                     if (d.Party == "Republican") {return "red"}
@@ -217,12 +222,12 @@ CongressVis.prototype.onStateOver = function(state) {
                 }
             });
     } else {
-        vis.senBelieveIcons
+        vis.senBelieveIcons.transition().duration(80)
             .attr("fill",function(d) {
                 if (d.Party == "Republican") {return "red"}
                 else {return "blue"}
             });
-        vis.senDenyIcons
+        vis.senDenyIcons.transition().duration(80)
             .attr("fill",function(d) {
                 if (d.Party == "Republican") {return "red"}
                 else {return "blue"}

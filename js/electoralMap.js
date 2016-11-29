@@ -88,7 +88,7 @@ ElectoralMap.prototype.onStateOver = function(state) {
 
     if (state) {
         vis.svg.selectAll("path")
-            .data(vis.json.features)
+            .data(vis.json.features).transition().duration(80)
             .attr("fill",function(d) {
             if(d.properties.name == state) {
                 if (d.properties.senDeniers == 2) {return "red"}
@@ -102,7 +102,7 @@ ElectoralMap.prototype.onStateOver = function(state) {
         })
     } else {
         vis.svg.selectAll("path")
-            .data(vis.json.features)
+            .data(vis.json.features).transition().duration(80)
             .attr("fill",function(d) {
                 if (d.properties.senDeniers == 2) {return "red"}
                 else if (d.properties.senDeniers == 1) {return "purple"}
