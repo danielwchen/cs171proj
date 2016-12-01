@@ -23,7 +23,6 @@ body {
 
 #electoral-college-BG {
     background-image: url("../img/United_States_Capitol_-_west_front.jpg");
-    back
 }
 
 #title{
@@ -35,25 +34,16 @@ body {
     padding:20px;
 }
 
-.subtitle{
-    text-align: center;
+#footprint-vis {
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: #5bc0de;
 }
 
-.paragraph{
-    padding-top: 2%;
-    font-size: 1.2em;
-}
-
-.quote{
-    font-size: 1.5em;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.fact{
-    font-size: 1.2em;
-    font-weight: bold;
+.carbon-sidebar {
+    background-color: #5bc0de;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {

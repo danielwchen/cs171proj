@@ -3,18 +3,16 @@
 
 var margin = {top: 50, right: 50, bottom: 50, left: 50};
 
-var width = 900 - margin.left - margin.right,
+var width = 800 - margin.left - margin.right,
     height = 14600 - margin.top - margin.bottom;
 
 var svg = d3.select("#footprint-vis").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("height", height + margin.top + margin.bottom);
 
-// var svgSide = d3.select("#avg-footprint").append("svg")
-//     .attr("width", 200)
-//     .attr("height", 200);
+var svgSide = d3.select("#avg-footprint").append("svg")
+    .attr("width", 300)
+    .attr("height", 370);
 
 var r = d3.scale.linear()
     .range([1,200]);
@@ -51,7 +49,9 @@ function updateVisualization() {
 
     var extra = ($('input[name="dataS"]:checked').val() == "total") ? 8700 : 0;
 
-    // var avg = data.reduce(function(a, b) { return getData(a) + getData(b); }) / data.length;
+    var sum = data.map(function(d){return getData(d);}).reduce(function(a, b){return a + b;},0);
+    var avg = sum / data.length;
+    var median = getData(data[Math.floor(data.length / 2)]);
 
     yPlaceholder = 0;
 
@@ -80,7 +80,7 @@ function updateVisualization() {
     circs
         .attr("class", "country-circ")
         .attr("fill", function(d) {
-            return "blue";
+            return "black";
         })
         .attr("cx", function(d) {
             return width - 200;
@@ -95,7 +95,7 @@ function updateVisualization() {
         .on('mouseout', tip.hide);
 
     markers
-        .attr("d", function(d, index){
+        .attr("d", function(d){
             var x = width - 250 - r(getData(d));
             var y = d.yVal - 20;
 
@@ -118,19 +118,38 @@ function updateVisualization() {
                 default:
                     return "none";
             }
-
         });
-
 
     // Exit
     circs.exit().remove();
     markers.exit().remove();
 
-    // svgSide
-    //     .append("circle")
-    //     .attr("x", 0)
-    //     .attr("y", 0)
-    //     .attr("r", r(avg));
+    svgSide.selectAll("*").remove();
+
+    svgSide
+        .append("circle")
+            .attr("cx", 50)
+            .attr("cy", 300)
+            .attr("r", r(avg))
+            .attr("fill", "black");
+    svgSide
+        .append("text")
+            .text("mean value")
+            .attr("x", 50)
+            .attr("y", 280 - r(avg))
+            .attr("text-anchor", "middle");
+    svgSide
+        .append("circle")
+            .attr("cx", 200)
+            .attr("cy", 300)
+            .attr("r", r(median))
+            .attr("fill", "black");
+    svgSide
+        .append("text")
+            .text("median value")
+            .attr("x", 200)
+            .attr("y", 280 - r(avg))
+            .attr("text-anchor", "middle");
 }
 
 function getData(country){
