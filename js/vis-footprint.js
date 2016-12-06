@@ -15,7 +15,7 @@ var svgSide = d3.select("#avg-footprint").append("svg")
     .attr("height", 370);
 
 var r = d3.scale.linear()
-    .range([1,200]);
+    .range([3,200]);
 
 var yPlaceholder = 0;
 
@@ -31,6 +31,8 @@ function loadData() {
         csv.forEach(function(d){
             d.Total = +d.Total;
             d.PC = +d.PC;
+            d.TotalRadius = Math.sqrt(d.Total)/3.14;
+            d.PCRadius = Math.sqrt(d.PC)/3.14;
         });
 
         data = csv;
@@ -72,7 +74,7 @@ function updateVisualization() {
         .append("path");
 
     var tip = d3.tip().attr('class', 'd3-tip').offset([-10,0]).html(function(d) {
-        return d.Country + " " + getData(d);
+        return d.Country + " " + getLabelData(d);
     });
 
     svg.call(tip);
@@ -128,14 +130,14 @@ function updateVisualization() {
 
     svgSide
         .append("circle")
-            .attr("cx", 50)
+            .attr("cx", 75)
             .attr("cy", 300)
             .attr("r", r(avg))
             .attr("fill", "black");
     svgSide
         .append("text")
-            .text("mean value")
-            .attr("x", 50)
+            .text("mean value (" + Math.round(r(avg), -3) + ")")
+            .attr("x", 75)
             .attr("y", 280 - r(avg))
             .attr("text-anchor", "middle");
     svgSide
@@ -146,13 +148,18 @@ function updateVisualization() {
             .attr("fill", "black");
     svgSide
         .append("text")
-            .text("median value")
+            .text("median value (" + Math.round(r(median),-3) + ")")
             .attr("x", 200)
             .attr("y", 280 - r(avg))
             .attr("text-anchor", "middle");
 }
 
 function getData(country){
+    var input = $('input[name="dataS"]:checked').val();
+    return (input == "total") ? country.TotalRadius : country.PCRadius;
+}
+
+function getLabelData(country){
     var input = $('input[name="dataS"]:checked').val();
     return (input == "total") ? country.Total : country.PC;
 }
