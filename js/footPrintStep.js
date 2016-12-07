@@ -54,7 +54,15 @@ FootStep.prototype.updateVis = function(newData, radiusScale){
         .transition().duration(1000)
         .attr("class", "country-circ")
         .attr("fill", function(d) {
-            return "black";
+            switch(d.Continent){
+                case "Africa": return "orange";
+                case "Asia": return "green";
+                case "Europe": return "blue";
+                case "North America": return "Red";
+                case "Oceania": return "purple";
+                case "South America": return "yellow";
+                default: console.warn("unrecognized continent"); return "black";
+            }
         })
         .attr("cy", function(d) {
             return vis.height/2 + 50;

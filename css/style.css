@@ -59,6 +59,33 @@ body {
     color:black;
 }
 
+#sections {
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    top: 0px;
+    z-index: 90;
+}
+
+.step {
+    margin-bottom: 300px;
+    height: 530px;
+    overflow:auto;
+    width:400px;
+}
+
+#vis {
+    display: inline-block;
+    position: fixed;
+    top: 60px;
+    z-index: 1;
+    margin-left: 0;
+
+    height: 800px;
+    width: 800px;
+    background-color: #ddd;
+}
+
 
 /*********************/
 /*  TOOLTIP OVERLAY  */

@@ -81,3 +81,30 @@ function getData(country){
     var dataType = $('input[name="dataS"]:checked').val();
     return (dataType == "total") ? country.TotalRadius : country.PCRadius;
 }
+
+
+// Scrolling Functionality!
+
+var sections = d3.selectAll('.step');
+
+sectionPositions = [];
+var startPos;
+sections.each(function(d,i) {
+    var top = this.getBoundingClientRect().top;
+
+    if(i === 0) {
+        startPos = top;
+    }
+    sectionPositions.push(top - startPos);
+});
+
+d3.select(window)
+    .on("scroll.scroller", position);
+
+function position() {
+    var pos = window.pageYOffset - 10;
+    var sectionIndex = d3.bisect(sectionPositions, pos);
+    sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+    console.log(sectionIndex);
+}
