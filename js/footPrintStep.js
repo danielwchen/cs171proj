@@ -3,9 +3,10 @@
 FootStep - Object constructor for side scrolling footprint vis
  */
 
-FootStep = function(_parentElement, _data){
+FootStep = function(_parentElement, _data, _radiusScale){
     this.parentElement = _parentElement;
     this.data = _data;
+    this.r = _radiusScale;
     this.initVis();
 };
 
@@ -14,34 +15,23 @@ FootStep.prototype.initVis = function(){
 
     vis.margin = {top: 50, right: 50, bottom: 50, left: 50};
 
+    vis.spacing = 50;
+
     vis.svg = d3.select(vis.parentElement).append("svg");
 
-    vis.r = d3.scale.linear()
-        .range([3,200]);
-
-    vis.updateVis()
+    vis.updateVis([])
 
 };
 
-FootStep.prototype.updateVis = function(){
+FootStep.prototype.updateVis = function(newData, radiusScale){
     var vis = this;
-
-    vis.data = vis.data.sort(function(a,b) {
-        return getData(b) - getData(a);
-    });
-
-    var sum = vis.data.map(function(d){return getData(d);}).reduce(function(a, b){return a + b;},0);
-    var avg = sum / vis.data.length;
-    var median = getData(vis.data[Math.floor(vis.data.length / 2)]);
-
-    vis.xPlaceholder = 0;
-
-    console.log(vis.data);
-
-    vis.r.domain(d3.extent(vis.data, function(d){return getData(d);}));
+    if (newData.length != 0){
+        vis.data = newData;
+        vis.r = radiusScale;
+    }
 
     vis.width = vis.getPhysSize(vis.data) + 200 - vis.margin.left - vis.margin.right,
-        vis.height = 420 - vis.margin.top - vis.margin.bottom;
+        vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
     vis.svg
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -59,20 +49,23 @@ FootStep.prototype.updateVis = function(){
 
     vis.svg.call(vis.tip);
 
+    vis.xPlaceholder = 0;
     vis.circs
+        .transition().duration(1000)
         .attr("class", "country-circ")
         .attr("fill", function(d) {
             return "black";
         })
         .attr("cy", function(d) {
-            return vis.height - 100;
+            return vis.height/2 + 50;
         })
         .attr("cx", function(d) {
-            d.yVal = vis.width - vis.xPlaceholder - 20 - vis.r(getData(d)) - vis.extra;
+            d.yVal = vis.width - vis.xPlaceholder - 20 - vis.r(getData(d));
             vis.xPlaceholder = vis.xPlaceholder + 20 + 2*vis.r(getData(d));
             return d.yVal;
         })
-        .attr("r", function(d) {return vis.r(getData(d))})
+        .attr("r", function(d) {return vis.r(getData(d))});
+    vis.circs
         .on('mouseover', vis.tip.show)
         .on('mouseout', vis.tip.hide);
 
@@ -86,7 +79,7 @@ FootStep.prototype.getPhysSize = function(countryList){
 
     var physSize = 0;
     countryList.forEach(function(country){
-        physSize += (vis.r(getData(country)) + 20);
+        physSize += (2*vis.r(getData(country)) + 20);
     });
     return physSize;
 };

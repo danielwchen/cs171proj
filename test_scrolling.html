@@ -8,14 +8,16 @@
         #sections {
             position: relative;
             display: inline-block;
-            width: 320px;
+            width: 400px;
             top: 0px;
             z-index: 90;
         }
 
         .step {
-            margin-bottom: 100px;
-            height: 600px;
+            margin-bottom: 300px;
+            height: 530px;
+            overflow:auto;
+            width:400px;
         }
 
         #vis {
@@ -30,52 +32,49 @@
             background-color: #ddd;
         }
     </style>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
 
-<form id="dataSelect" action="" onchange="updateVisualization()">
-    <input type="radio" name="dataS" value="total" checked="checked"> Total CO2 Output<br>
-    <input type="radio" name="dataS" value="pc"> Per Capita CO2 Output<br>
-</form>
 <div id='graphic'>
     <div id='sections'>
+        <section class="step" style="">
+            <div id="footprint-vis1"></div>
+        </section>
         <section class="step">
-            <div class="title">OpenVis Conf 2013</div>
-            I did what no presenter should ever do: I watched my own talk...
-        </section>
-        <section class="step" style="overflow:auto; width:320px;">
-            <div id="footprint-vis1" ></div>
-        </section>
-        <section class="step" style="overflow:auto; width:320px;">
             <div id="footprint-vis2" ></div>
         </section>
-        <section class="step" style="overflow:auto; width:320px;">
+        <section class="step">
             <div id="footprint-vis3" ></div>
         </section>
-        <section class="step" style="overflow:auto; width:320px;">
+        <section class="step">
             <div id="footprint-vis4" ></div>
         </section>
-        <section class="step" style="overflow:auto; width:320px;">
+        <section class="step">
             <div id="footprint-vis5" ></div>
         </section>
-        <section class="step" style="overflow:auto; width:320px;">
+        <section class="step">
             <div id="footprint-vis6" ></div>
         </section>
-        <section class="step" style="overflow:auto; width:320px;">
+        <section class="step">
             <div id="footprint-vis7" ></div>
         </section>
-        <section class="step" style="overflow:auto; width:320px;">
+        <section class="step">
             <div id="footprint-vis8" ></div>
         </section>
-        <section class="step" style="overflow:auto; width:320px;">
+        <section class="step">
             <div id="footprint-vis9" ></div>
         </section>
-        <section class="step" style="overflow:auto; width:320px;">
+        <section class="step">
             <div id="footprint-vis10" ></div>
         </section>
     </div>
     <div id='vis'>
+        <form id="dataSelect" action="" onchange="updateVisualization()">
+            <input type="radio" name="dataS" value="total" checked="checked"> Total CO2 Output<br>
+            <input type="radio" name="dataS" value="pc"> Per Capita CO2 Output<br>
+        </form>
     </div>
 </div>
 
@@ -107,10 +106,6 @@
 
         console.log(sectionIndex);
     }
-
-
-
-
 </script>
 <script src="js/footPrintStep.js"></script>
 <script src="js/footprints_test.js"></script>

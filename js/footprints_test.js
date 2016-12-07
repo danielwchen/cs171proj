@@ -1,10 +1,7 @@
 
-// SVG drawing area
-var dataType = $('input[name="dataS"]:checked').val();
-
-var allData = [];
-var data;
-var footSteps = [];
+var allData = [],
+    footSteps = [],
+    data;
 
 loadData();
 
@@ -23,16 +20,20 @@ function loadData() {
         data = csv;
 
         // Draw the visualization for the first time
-        updateVisualization();
+        initVisualization();
     });
 
 }
 
-function updateVisualization() {
+function initVisualization() {
 
     data = data.sort(function (a, b) {
         return getData(b) - getData(a);
     });
+
+    var radiusScale = d3.scale.linear()
+        .range([3,200])
+        .domain(d3.extent(data, function(d){return getData(d);}));
 
     allData.push(data.slice(0, 4));
     for (i = 4; i < 164;) {
@@ -42,15 +43,41 @@ function updateVisualization() {
             allData.push(data.slice(start = i));
         }
     }
-    console.log(allData);
+    allData = allData.reverse();
 
     var visNumber = 1;
     allData.forEach(function(d){
-        footSteps.push(new FootStep("#footprint-vis" + visNumber, d));
+        footSteps.push(new FootStep("#footprint-vis" + visNumber, d, radiusScale));
         visNumber += 1;
     });
 }
 
+function updateVisualization(){
+
+    data = data.sort(function (a, b) {
+        return getData(b) - getData(a);
+    });
+
+    var radiusScale = d3.scale.linear()
+        .range([3,200])
+        .domain(d3.extent(data, function(d){return getData(d);}));
+
+    allData.push(data.slice(0, 4));
+    for (i = 4; i < 164;) {
+        allData.push(data.slice(i, i + 20));
+        i += 20;
+        if (i >= 164) {
+            allData.push(data.slice(start = i));
+        }
+    }
+    allData = allData.reverse();
+
+    for(i=0;i<footSteps.length;i++){
+        footSteps[i].updateVis(allData[i], radiusScale);
+    }
+}
+
 function getData(country){
+    var dataType = $('input[name="dataS"]:checked').val();
     return (dataType == "total") ? country.TotalRadius : country.PCRadius;
 }
