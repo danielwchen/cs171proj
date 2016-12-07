@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tester</title>
+
+    <style>
+        #sections {
+            position: relative;
+            display: inline-block;
+            width: 320px;
+            top: 0px;
+            z-index: 90;
+        }
+
+        .step {
+            margin-bottom: 100px;
+            height: 600px;
+        }
+
+        #vis {
+            display: inline-block;
+            position: fixed;
+            top: 60px;
+            z-index: 1;
+            margin-left: 0;
+
+            height: 800px;
+            width: 800px;
+            background-color: #ddd;
+        }
+    </style>
+
+</head>
+<body>
+
+<form id="dataSelect" action="" onchange="updateVisualization()">
+    <input type="radio" name="dataS" value="total" checked="checked"> Total CO2 Output<br>
+    <input type="radio" name="dataS" value="pc"> Per Capita CO2 Output<br>
+</form>
+<div id='graphic'>
+    <div id='sections'>
+        <section class="step">
+            <div class="title">OpenVis Conf 2013</div>
+            I did what no presenter should ever do: I watched my own talk...
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis1" ></div>
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis2" ></div>
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis3" ></div>
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis4" ></div>
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis5" ></div>
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis6" ></div>
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis7" ></div>
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis8" ></div>
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis9" ></div>
+        </section>
+        <section class="step" style="overflow:auto; width:320px;">
+            <div id="footprint-vis10" ></div>
+        </section>
+    </div>
+    <div id='vis'>
+    </div>
+</div>
+
+<script src="js/d3.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/d3.tip.js"></script>
+<script>
+
+    var sections = d3.selectAll('.step');
+
+    sectionPositions = [];
+    var startPos;
+    sections.each(function(d,i) {
+        var top = this.getBoundingClientRect().top;
+
+        if(i === 0) {
+            startPos = top;
+        }
+        sectionPositions.push(top - startPos);
+    });
+
+    d3.select(window)
+            .on("scroll.scroller", position);
+
+    function position() {
+        var pos = window.pageYOffset - 10;
+        var sectionIndex = d3.bisect(sectionPositions, pos);
+        sectionIndex = Math.min(sections.size() - 1, sectionIndex);
+
+        console.log(sectionIndex);
+    }
+
+
+
+
+</script>
+<script src="js/footPrintStep.js"></script>
+<script src="js/footprints_test.js"></script>
+</body>
+
+
+</html>

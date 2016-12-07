@@ -1,10 +1,11 @@
 
 // SVG drawing area
+var dataType = $('input[name="dataS"]:checked').val();
 
 var margin = {top: 50, right: 50, bottom: 50, left: 50};
 
-var width = 800 - margin.left - margin.right,
-    height = 14600 - margin.top - margin.bottom;
+var width = ((dataType == "total") ? 20000 : 25000) - margin.left - margin.right,
+    height = 420 - margin.top - margin.bottom;
 
 var svg = d3.select("#footprint-vis").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -84,11 +85,11 @@ function updateVisualization() {
         .attr("fill", function(d) {
             return "black";
         })
-        .attr("cx", function(d) {
-            return width - 200;
-        })
         .attr("cy", function(d) {
-            d.yVal = height - yPlaceholder - 20 - r(getData(d)) - extra;
+            return height - 100;
+        })
+        .attr("cx", function(d) {
+            d.yVal = width - yPlaceholder - 20 - r(getData(d)) - extra;
             yPlaceholder = yPlaceholder + 20 + 2*r(getData(d));
             return d.yVal;
         })
@@ -155,11 +156,9 @@ function updateVisualization() {
 }
 
 function getData(country){
-    var input = $('input[name="dataS"]:checked').val();
-    return (input == "total") ? country.TotalRadius : country.PCRadius;
+    return (dataType == "total") ? country.TotalRadius : country.PCRadius;
 }
 
 function getLabelData(country){
-    var input = $('input[name="dataS"]:checked').val();
-    return (input == "total") ? country.Total : country.PC;
+    return (dataType == "total") ? country.Total : country.PC;
 }
