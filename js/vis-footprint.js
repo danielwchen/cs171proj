@@ -1,23 +1,22 @@
 
 // SVG drawing area
+var dataType = $('input[name="dataS"]:checked').val();
 
 var margin = {top: 50, right: 50, bottom: 50, left: 50};
 
-var width = 900 - margin.left - margin.right,
-    height = 14600 - margin.top - margin.bottom;
+var width = ((dataType == "total") ? 20000 : 25000) - margin.left - margin.right,
+    height = 420 - margin.top - margin.bottom;
 
 var svg = d3.select("#footprint-vis").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("height", height + margin.top + margin.bottom);
 
-// var svgSide = d3.select("#avg-footprint").append("svg")
-//     .attr("width", 200)
-//     .attr("height", 200);
+var svgSide = d3.select("#avg-footprint").append("svg")
+    .attr("width", 300)
+    .attr("height", 370);
 
 var r = d3.scale.linear()
-    .range([1,200]);
+    .range([3,200]);
 
 var yPlaceholder = 0;
 
@@ -33,6 +32,8 @@ function loadData() {
         csv.forEach(function(d){
             d.Total = +d.Total;
             d.PC = +d.PC;
+            d.TotalRadius = Math.sqrt(d.Total)/3.14;
+            d.PCRadius = Math.sqrt(d.PC)/3.14;
         });
 
         data = csv;
@@ -51,7 +52,9 @@ function updateVisualization() {
 
     var extra = ($('input[name="dataS"]:checked').val() == "total") ? 8700 : 0;
 
-    // var avg = data.reduce(function(a, b) { return getData(a) + getData(b); }) / data.length;
+    var sum = data.map(function(d){return getData(d);}).reduce(function(a, b){return a + b;},0);
+    var avg = sum / data.length;
+    var median = getData(data[Math.floor(data.length / 2)]);
 
     yPlaceholder = 0;
 
@@ -72,7 +75,7 @@ function updateVisualization() {
         .append("path");
 
     var tip = d3.tip().attr('class', 'd3-tip').offset([-10,0]).html(function(d) {
-        return d.Country + " " + getData(d);
+        return d.Country + " " + getLabelData(d);
     });
 
     svg.call(tip);
@@ -80,13 +83,13 @@ function updateVisualization() {
     circs
         .attr("class", "country-circ")
         .attr("fill", function(d) {
-            return "blue";
-        })
-        .attr("cx", function(d) {
-            return width - 200;
+            return "black";
         })
         .attr("cy", function(d) {
-            d.yVal = height - yPlaceholder - 20 - r(getData(d)) - extra;
+            return height - 100;
+        })
+        .attr("cx", function(d) {
+            d.yVal = width - yPlaceholder - 20 - r(getData(d)) - extra;
             yPlaceholder = yPlaceholder + 20 + 2*r(getData(d));
             return d.yVal;
         })
@@ -95,7 +98,7 @@ function updateVisualization() {
         .on('mouseout', tip.hide);
 
     markers
-        .attr("d", function(d, index){
+        .attr("d", function(d){
             var x = width - 250 - r(getData(d));
             var y = d.yVal - 20;
 
@@ -118,22 +121,44 @@ function updateVisualization() {
                 default:
                     return "none";
             }
-
         });
-
 
     // Exit
     circs.exit().remove();
     markers.exit().remove();
 
-    // svgSide
-    //     .append("circle")
-    //     .attr("x", 0)
-    //     .attr("y", 0)
-    //     .attr("r", r(avg));
+    svgSide.selectAll("*").remove();
+
+    svgSide
+        .append("circle")
+            .attr("cx", 75)
+            .attr("cy", 300)
+            .attr("r", r(avg))
+            .attr("fill", "black");
+    svgSide
+        .append("text")
+            .text("mean value (" + Math.round(r(avg), -3) + ")")
+            .attr("x", 75)
+            .attr("y", 280 - r(avg))
+            .attr("text-anchor", "middle");
+    svgSide
+        .append("circle")
+            .attr("cx", 200)
+            .attr("cy", 300)
+            .attr("r", r(median))
+            .attr("fill", "black");
+    svgSide
+        .append("text")
+            .text("median value (" + Math.round(r(median),-3) + ")")
+            .attr("x", 200)
+            .attr("y", 280 - r(avg))
+            .attr("text-anchor", "middle");
 }
 
 function getData(country){
-    var input = $('input[name="dataS"]:checked').val();
-    return (input == "total") ? country.Total : country.PC;
+    return (dataType == "total") ? country.TotalRadius : country.PCRadius;
+}
+
+function getLabelData(country){
+    return (dataType == "total") ? country.Total : country.PC;
 }
