@@ -71,7 +71,7 @@ body {
     margin-bottom: 300px;
     height: 530px;
     overflow:auto;
-    width:400px;
+    width:390px;
 }
 
 #vis {
@@ -85,6 +85,23 @@ body {
     width: 800px;
     background-color: #ddd;
 }
+
+.country-label {
+    text-anchor: middle;
+    font-weight: bold;
+    text-shadow:
+            -1px -1px 0 white,
+            1px -1px 0 white,
+            -1px 1px 0 white,
+            1px 1px 0 white;
+}
+
+.Africa {fill: #fffb00;}
+.Asia {fill: #70df00;}
+.Europe {fill: #00b669;}
+.North-America {fill: #00ccd0;}
+.Oceania {fill: #0084c4;}
+.South-America {fill: #3b00d8;}
 
 
 /*********************/

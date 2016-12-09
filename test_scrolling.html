@@ -12,52 +12,54 @@
 </head>
 <body>
 
-<div id='graphic'>
-    <div id='sections'>
-        <section class="step" style="">
-            <div id="footprint-vis1"></div>
-        </section>
-        <section class="step">
-            <div id="footprint-vis2" ></div>
-        </section>
-        <section class="step">
-            <div id="footprint-vis3" ></div>
-        </section>
-        <section class="step">
-            <div id="footprint-vis4" ></div>
-        </section>
-        <section class="step">
-            <div id="footprint-vis5" ></div>
-        </section>
-        <section class="step">
-            <div id="footprint-vis6" ></div>
-        </section>
-        <section class="step">
-            <div id="footprint-vis7" ></div>
-        </section>
-        <section class="step">
-            <div id="footprint-vis8" ></div>
-        </section>
-        <section class="step">
-            <div id="footprint-vis9" ></div>
-        </section>
-        <section class="step">
-            <div id="footprint-vis10" ></div>
-        </section>
+    <div id='graphic'>
+        <div id='sections'>
+            <section class="step" style="">
+                <div id="footprint-vis1"></div>
+            </section>
+            <section class="step">
+                <div id="footprint-vis2" ></div>
+            </section>
+            <section class="step">
+                <div id="footprint-vis3" ></div>
+            </section>
+            <section class="step">
+                <div id="footprint-vis4" ></div>
+            </section>
+            <section class="step">
+                <div id="footprint-vis5" ></div>
+            </section>
+            <section class="step">
+                <div id="footprint-vis6" ></div>
+            </section>
+            <section class="step">
+                <div id="footprint-vis7" ></div>
+            </section>
+            <section class="step">
+                <div id="footprint-vis8" ></div>
+            </section>
+            <section class="step">
+                <div id="footprint-vis9" ></div>
+            </section>
+            <section class="step">
+                <div id="footprint-vis10" ></div>
+            </section>
+        </div>
+        <div id='vis'>
+            <form id="dataSelect" action="" onchange="updateVisualization()">
+                <input type="radio" name="dataS" value="total" checked="checked"> Total CO2 Output<br>
+                <input type="radio" name="dataS" value="pc"> Per Capita CO2 Output<br>
+            </form>
+            <div id="fixed-footprints"></div>
+        </div>
     </div>
-    <div id='vis'>
-        <form id="dataSelect" action="" onchange="updateVisualization()">
-            <input type="radio" name="dataS" value="total" checked="checked"> Total CO2 Output<br>
-            <input type="radio" name="dataS" value="pc"> Per Capita CO2 Output<br>
-        </form>
-    </div>
-</div>
 
 <script src="js/d3.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/d3.tip.js"></script>
 
 <script src="js/footPrintStep.js"></script>
+<script src="js/footprintFixed.js"></script>
 <script src="js/footprints_test.js"></script>
 </body>
 

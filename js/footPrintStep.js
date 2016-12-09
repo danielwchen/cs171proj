@@ -20,7 +20,6 @@ FootStep.prototype.initVis = function(){
     vis.svg = d3.select(vis.parentElement).append("svg");
 
     vis.updateVis([])
-
 };
 
 FootStep.prototype.updateVis = function(newData, radiusScale){
@@ -52,17 +51,8 @@ FootStep.prototype.updateVis = function(newData, radiusScale){
     vis.xPlaceholder = 0;
     vis.circs
         .transition().duration(1000)
-        .attr("class", "country-circ")
-        .attr("fill", function(d) {
-            switch(d.Continent){
-                case "Africa": return "orange";
-                case "Asia": return "green";
-                case "Europe": return "blue";
-                case "North America": return "Red";
-                case "Oceania": return "purple";
-                case "South America": return "yellow";
-                default: console.warn("unrecognized continent"); return "black";
-            }
+        .attr("class", function(d) {
+            return d.Continent;
         })
         .attr("cy", function(d) {
             return vis.height/2 + 50;
