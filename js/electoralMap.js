@@ -9,6 +9,7 @@ ElectoralMap = function(_parentElement, _data, _eventHandler) {
     this.parentElement = _parentElement;
     this.data = _data;
     this.eventHandler = _eventHandler;
+    this.pinned = false;
 
     this.initVis();
 };
@@ -73,10 +74,27 @@ ElectoralMap.prototype.updateVis = function() {
             else {return "blue"}
         })
         .on("mouseover",function(d) {
-            $(vis.eventHandler).trigger("stateOver", d.properties.name);
+            if (vis.pinned == true) {
+
+            } else {
+                $(vis.eventHandler).trigger("stateOver", d.properties.name);
+            }
         })
         .on("mouseout",function(d) {
-            $(vis.eventHandler).trigger("stateOff");
+            if (vis.pinned == true) {
+
+            } else {
+                $(vis.eventHandler).trigger("stateOff");
+            }
+        })
+        .on("click",function(d) {
+            if (vis.pinned == true) {
+                $(vis.eventHandler).trigger("unpress");
+                vis.pinned = false;
+            } else {
+                $(vis.eventHandler).trigger("press", d.properties.name);
+                vis.pinned = true;
+            }
         });
 
 
@@ -100,6 +118,34 @@ ElectoralMap.prototype.onStateOver = function(state) {
                 else {return "#6464FF"}
             }
         })
+    } else {
+        vis.svg.selectAll("path")
+            .data(vis.json.features).transition().duration(80)
+            .attr("fill",function(d) {
+                if (d.properties.senDeniers == 2) {return "red"}
+                else if (d.properties.senDeniers == 1) {return "purple"}
+                else {return "blue"}
+            })
+    }
+};
+
+ElectoralMap.prototype.pinState = function(state) {
+    var vis = this;
+
+    if (state) {
+        vis.svg.selectAll("path")
+            .data(vis.json.features).transition().duration(80)
+            .attr("fill",function(d) {
+                if(d.properties.name == state) {
+                    if (d.properties.senDeniers == 2) {return "red"}
+                    else if (d.properties.senDeniers == 1) {return "purple"}
+                    else {return "blue"}
+                } else {
+                    if (d.properties.senDeniers == 2) {return "#FF6464"}
+                    else if (d.properties.senDeniers == 1) {return "#BB88B2"}
+                    else {return "#6464FF"}
+                }
+            })
     } else {
         vis.svg.selectAll("path")
             .data(vis.json.features).transition().duration(80)
