@@ -124,3 +124,10 @@ body {
     top: 100%;
     left: 0;
 }
+
+
+.state-border {
+    stroke: #fff;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
