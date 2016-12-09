@@ -53,6 +53,7 @@ function createVis() {
     var EventHandler = {};
     electoralMap = new ElectoralMap("#electoral-map",stateTotalData,EventHandler);
     congressVis = new CongressVis("#congress-vis",senData,EventHandler);
+
     $(EventHandler).bind("stateOver", function(event, stateHover){
         electoralMap.onStateOver(stateHover);
         congressVis.onStateOver(stateHover);
@@ -61,11 +62,41 @@ function createVis() {
         electoralMap.onStateOver(null);
         congressVis.onStateOver(null);
     });
+    $(EventHandler).bind("press", function(event, statePinned){
+        electoralMap.pinState(statePinned);
+        congressVis.pinState(statePinned);
+    });
+    $(EventHandler).bind("unpress", function(event){
+        electoralMap.pinState(null);
+        congressVis.pinState(null);
+    });
 
 }
 
 
-// Birthdate 1930-1939, 1940-1949, 1950-1959, 1960-1969, 1970-1979
-// Age when taking office 30-39, 40-49, 50-59, 60-69
-// Years in office 0-9, 10-19, 20-29, 30-39, 40-49
-// Year of next election 2018, 2020, 2022
+// Current Age (6)
+// 30-39 (1)
+// 40-49 (13)
+// 50-59 (25)
+// 60-69 (38)
+// 70-79 (15)
+// 80-89 (7)
+// Age when taking office (4)
+// 30-39 (5)
+// 40-49 (33)
+// 50-59 (40)
+// 60-69 (21)
+// Years in office (5)
+// 0-9 (59)
+// 10-19 (23)
+// 20-29 (10)
+// 30-39 (5)
+// 40-49 (2)
+// Year of next election
+// 2018 (33)
+// 2020 (33)
+// 2022 (33)
+// Party
+// Dem (46)
+// Independent (2)
+// Rep (51)
