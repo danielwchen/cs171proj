@@ -13,22 +13,24 @@ RecordMap = function(_parentElement, _data) {
 RecordMap.prototype.initVis = function() {
 
     var vis = this;
-    vis.width = 900;
-	vis.height = 600;
+    vis.width = 800;
+    vis.height = 500;
     vis.filteredData = vis.data;
 
-	vis.svg = d3.select(vis.parentElement).append("svg")
-		.attr("width", vis.width)
-		.attr("height", vis.height);
+    vis.svg = d3.select(vis.parentElement).append("svg")
+        .attr("width", vis.width)
+        .attr("height", vis.height);
 
 
-    vis.projection = d3.geo.albersUsa();
+    vis.projection = d3.geo.albersUsa()
+        .translate([400, 250])
+        .scale(1000);
 
     vis.path = d3.geo.path()
         .projection(vis.projection);
 
 
-    vis.year = 2001;
+    vis.year = 1860;
 
     d3.json("data/us-states.json", function(json) {
         vis.json = json;
@@ -48,6 +50,7 @@ RecordMap.prototype.initVis = function() {
 
 RecordMap.prototype.wrangleData = function(){
     var vis = this;
+    console.log(vis.year);
     vis.filteredData = vis.data.filter(function(d, index){
         return d.Year == vis.year;
     });
@@ -58,13 +61,20 @@ RecordMap.prototype.wrangleData = function(){
 
 RecordMap.prototype.updateVis = function(){
     var vis = this;
-    vis.svg.selectAll(".records")
-        .data(vis.filteredData)
+
+
+    vis.records = vis.svg.selectAll(".records")
+        .data(vis.filteredData);
+
+    vis.records
         .enter().append("circle")
         .attr("class", "records")
         .attr("r", 3)
-        .attr("fill", "navy")
+        .attr("fill", "darkred")
         .attr("transform", function(d){
             return "translate(" + vis.projection([-1 * (+d.Longitude.substring(0, 5)), +(d.Latitude.substring(0, 4))]) + ")";
-        });
+        })
+        .transition();
+
+    vis.records.exit().remove();
 }
