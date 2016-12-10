@@ -41,11 +41,7 @@ function initVisualization() {
         return getData(b) - getData(a);
     });
 
-    chosen = [data[0], data[1], data[17], data[41], data[68], data[88], data[150], data[201], data[106], data[97] ];
-
-    chosen = chosen.sort(function (a, b) {
-        return getData(a) - getData(b);
-    });
+    chosen = [data[201], data[150], data[106], data[97], data[88], data[68], data[41], data[17], data[1], data[0]];
 
     radiusScale = d3.scale.linear()
         .range([3,200])
@@ -74,6 +70,10 @@ function updateVisualization(){
 
     data = data.sort(function (a, b) {
         return getData(b) - getData(a);
+    });
+
+    chosen = chosen.sort(function (a, b) {
+        return getData(a) - getData(b);
     });
 
     radiusScale = d3.scale.linear()

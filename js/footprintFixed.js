@@ -26,9 +26,10 @@ FootFixed.prototype.initVis = function(){
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom);
 
-    vis.xPositions = [50, 130, 350, 250, 400, 90, 300, 250, 140, 550];
-    vis.yPositions = [50, 400, 350, 70, 60, 200, 120, 400, 30, 250];
-
+    vis.xPositions = [50, 360, 350, 440, 600, 100, 140, 270, 160, 580];
+    vis.yPositions = [30, 150, 350, 50, 40, 320, 400, 410, 150, 280];
+    vis.xPCPositions = [40, 270, 700, 460, 300, 350, 320, 140, 140, 590];
+    vis.yPCPositions = [40, 50, 50, 50, 250, 120, 400, 380, 140, 270];
 
     vis.updateVis(false, vis.r, 0);
 };
@@ -40,8 +41,10 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
         vis.r = radiusScale;
     }
 
+    var total = ( $('input[name="dataS"]:checked').val() == "total");
+
     vis.circs = vis.svg.selectAll("circle")
-        .data(vis.data);
+        .data(vis.data, function(d){return d.Country;});
 
     vis.circs.enter()
         .append("circle");
@@ -52,15 +55,10 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
             return d.Continent;
         })
         .attr("cx", function(d, index) {
-            return vis.xPositions[index];
-            // if (index <= 3) {return index%4 * 150 + 100;}
-            // else if(index <=7) {return index%4 * 150 + 150;}
-            // else{return index%4 * 300 + 300;}
+            return total ? vis.xPositions[index] : vis.xPCPositions[index];
         })
         .attr("cy", function(d, index) {
-            return vis.yPositions[index];
-            // if(index <=7){return Math.floor(index/4) * 100 + 50;}
-            // else{return Math.floor(index/4) * 100 + 200;}
+            return total ? vis.yPositions[index] : vis.yPCPositions[index];
         })
         .attr("r", function(d) {return vis.r(getData(d))})
         .attr("opacity", function(d, index){
@@ -71,7 +69,7 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
     vis.circs.exit().remove();
 
     vis.circLabels = vis.svg.selectAll("text")
-        .data(vis.data);
+        .data(vis.data, function(d){return d.Country;});
 
     vis.circLabels.enter()
         .append("text")
@@ -79,17 +77,12 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
 
     vis.circLabels
         .transition().duration(2000)
-        .text(function(d){return d.Country + ": " + Math.round(getData(d), -3);})
+        .text(function(d){return d.Country + ": " + getLabelData(d).toFixed(2);})
         .attr("x", function(d, index) {
-            return vis.xPositions[index];
-            // if (index <= 3) {return index%4 * 150 + 100;}
-            // else if(index <=7) {return index%4 * 150 + 150;}
-            // else{return index%4 * 300 + 300;}
+            return total ? vis.xPositions[index] : vis.xPCPositions[index];
         })
         .attr("y", function(d, index) {
-            return vis.yPositions[index] - 10;
-            // if(index <=7){return Math.floor(index/4) * 100 + 50 - 10;}
-            // else{return Math.floor(index/4) * 100 + 200 -10;}
+            return total ? vis.yPositions[index] - 10 : vis.yPCPositions[index] - 10;
         })
         .attr("opacity", function(d, index){
             return (index > stepNum) ? 0 : 100;
@@ -99,31 +92,6 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
     // Exit
     vis.circLabels.exit().remove();
 
-    // var force = d3.layout.force().alpha(0)
-    //     .size([vis.width, vis.height]);
-    //
-    // force
-    //     .nodes(vis.data)
-    //     .charge(-50);
-    //
-    // // 2b) START RUNNING THE SIMULATION
-    // force.start();
-    //
-    // // 4) DRAW THE NODES (SVG CIRCLE)
-    // var node = vis.svg.selectAll(".node")
-    //     .data(vis.data)
-    //     .enter().append("circle")
-    //     .attr("class", function(d){return "node " + d.Continent;})
-    //     .attr("r", function(d) {return vis.r(getData(d))});
-    //
-    // // 5) LISTEN TO THE 'TICK' EVENT AND UPDATE THE X/Y COORDINATES FOR ALL ELEMENTS
-    // force.on("tick", function() {
-    //     // Update node coordinates
-    //     node
-    //         .attr("cx", function(d) { return d.x; })
-    //         .attr("cy", function(d) { return d.y; })
-    //         .call(force.drag);
-    // });
 };
 
 function getData(country){
