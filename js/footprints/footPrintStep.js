@@ -76,6 +76,7 @@ FootStep.prototype.getPhysSize = function(countryList){
     var vis = this;
 
     var physSize = 0;
+    //console.log(countryList);
     countryList.forEach(function(country){
         physSize += (2*vis.r(getData(country)) + 20);
     });

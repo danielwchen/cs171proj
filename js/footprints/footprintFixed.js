@@ -43,6 +43,8 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
 
     var total = ( $('input[name="dataS"]:checked').val() == "total");
 
+    document.getElementById("fixed-footprints-container").style.opacity = (stepNum > 1) ? 100 : 0;
+
     vis.circs = vis.svg.selectAll("circle")
         .data(vis.data, function(d){return d.Country;});
 
@@ -50,7 +52,7 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
         .append("circle");
 
     vis.circs
-        .transition().duration(2000)
+        .transition().duration(1000)
         .attr("class", function(d) {
             return d.Continent;
         })
@@ -62,7 +64,7 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
         })
         .attr("r", function(d) {return vis.r(getData(d))})
         .attr("opacity", function(d, index){
-            return (index > stepNum) ? 0 : 50;
+            return (index > stepNum -1) ? 0 : 50;
         });
 
     // Exit
@@ -76,7 +78,7 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
         .attr("class", "country-label");
 
     vis.circLabels
-        .transition().duration(2000)
+        .transition().duration(1000)
         .text(function(d){return d.Country + ": " + getLabelData(d).toFixed(2);})
         .attr("x", function(d, index) {
             return total ? vis.xPositions[index] : vis.xPCPositions[index];
@@ -85,13 +87,12 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
             return total ? vis.yPositions[index] - 10 : vis.yPCPositions[index] - 10;
         })
         .attr("opacity", function(d, index){
-            return (index > stepNum) ? 0 : 100;
+            return (index > stepNum -1) ? 0 : 100;
         })
         .attr("text-anchor", "middle");
 
     // Exit
     vis.circLabels.exit().remove();
-
 };
 
 function getData(country){

@@ -47,6 +47,8 @@ function initVisualization() {
         .range([3,200])
         .domain(d3.extent(data, function(d){return getData(d);}));
 
+    allData = [];
+
     allData.push(data.slice(0, 4));
     for (i = 4; i < 164;) {
         allData.push(data.slice(i, i + 20));
@@ -58,7 +60,8 @@ function initVisualization() {
     allData = allData.reverse();
 
     var visNumber = 1;
-    allData.forEach(function(d){
+
+    allData.forEach(function(d,index){
         footSteps.push(new FootStep("#footprint-vis" + visNumber, d, radiusScale));
         visNumber += 1;
     });
@@ -127,5 +130,5 @@ function position() {
     sectionIndex = Math.min(sections.size() - 1, sectionIndex);
 
     stepNum = sectionIndex;
-        fixedObj.updateVis(chosen, radiusScale, stepNum);
+    fixedObj.updateVis(chosen, radiusScale, stepNum);
 }
