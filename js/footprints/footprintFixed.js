@@ -15,6 +15,8 @@ FootFixed = function(_parentElement, _data, _radiusScale, _meanTotal, _meanPC){
 FootFixed.prototype.initVis = function(){
     var vis = this;
 
+    vis.initLegend();
+
     vis.margin = {top: 50, right: 50, bottom: 50, left: 50};
 
     vis.spacing = 50;
@@ -91,6 +93,20 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
 
     // Exit
     vis.circLabels.exit().remove();
+};
+
+FootFixed.prototype.initLegend = function(){
+    var continents = ["Africa", "Asia", "Europe", "North-America", "Oceania", "South-America"];
+
+    var legendsvg = d3.select("#fixed-footprints-legend").append(svg)
+      .attr("height", 40)
+      .attr("width", 300);
+
+    legendsvg.selectAll("rect").data(continents).enter()
+        .append("rect")
+        .attr("height", 5)
+        .attr("width", 5)
+        .attr("x", function(d, index){return 50*(index+1)});
 };
 
 function getData(country){
