@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fe79b0e-37a0-4079-abe9-be1ee1428af7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extremetemperatures.html" afterPath="$PROJECT_DIR$/extremetemperatures.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/co2emis_main.js" afterPath="$PROJECT_DIR$/js/co2emis_main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/stackedAreaChart.js" afterPath="$PROJECT_DIR$/js/stackedAreaChart.js" />
     </list>
     <ignored path="cs171proj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,14 +89,6 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -177,12 +170,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Zac\Documents\Harvard\Senior Fall\CS171\Final Project\cs171proj\junk" />
-      <recent name="C:\Users\Zac\Documents\Harvard\Senior Fall\CS171\Final Project\cs171proj\js\footprints" />
-    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.extremetemperatures.html">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs171proj/index.html">
@@ -273,9 +260,6 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3fe79b0e-37a0-4079-abe9-be1ee1428af7" name="Default" comment="" />
@@ -298,12 +282,12 @@
       <workItem from="1481356558815" duration="17087000" />
       <workItem from="1481412570026" duration="1037000" />
       <workItem from="1481472743213" duration="187000" />
-      <workItem from="1481485839403" duration="11842000" />
+      <workItem from="1481485839403" duration="11955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122467000" />
+    <option name="totallyTimeSpent" value="122580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="194" y="34" width="1462" height="1014" extended-state="0" />

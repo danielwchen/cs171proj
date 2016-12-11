@@ -6,13 +6,15 @@
  * @param _data						-- the  
  */
 
-StackedAreaChart = function(_parentElement, _data, _extraData){
+StackedAreaChart = function(_parentElement, _data, _extraData, _data2017){
 	this.parentElement = _parentElement;
   this.data = _data;
 	this.extraData = _extraData;
   this.displayData = []; // see data wrangling
 	this.percentage = 0.0;
 	this.previous = 0.0;
+    this.data2017 = _data2017;
+    this.barDisplayData = [];
   // DEBUG RAW DATA
   //console.log(this.data);
 
@@ -30,7 +32,7 @@ StackedAreaChart.prototype.initVis = function(){
 	console.log(vis.data);
 
 	vis.margin = { top: 40, right: 500, bottom: 60, left: 90 };
-	vis.width = 1300 - vis.margin.left - vis.margin.right,
+	vis.width = 1000 - vis.margin.left - vis.margin.right,
   	vis.height = 400 - vis.margin.top - vis.margin.bottom;
 
 
@@ -182,6 +184,17 @@ StackedAreaChart.prototype.wrangleData = function(){
 		};
 	});
 
+    var barTransData = dataCategories.map(function(name) {
+        return {
+            name: name,
+            values: vis.data2017.map(function(d) {
+                return {Year: d.Year, y: d[name]};
+            })
+        };
+    });
+
+    vis.barDisplayData = vis.stack(barTransData);
+
 	// In the first step no data wrangling/filtering needed
 	vis.displayData = vis.stack(transposedData);
 
@@ -221,22 +234,32 @@ StackedAreaChart.prototype.updateVis = function(){
 		return formatValue(p);
 	}
 
+	console.log(vis.previous);
+    console.log(vis.percentage);
 	vis.svg.selectAll(".percent").remove();
-	var percentChange = vis.svg.append("text").attr("class", "percent")
-		.attr("x", 850)
-		.attr("y", 175)
-		.text(formatPercent(vis.percentage) + "%")
-		/*.ease('linear')
-		.tween("text", function() {
-			var i = d3.interpolate(this.textContent, vis.percentage),
-				prec = (vis.percentage + "").split("."),
-				round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
 
-			return function (t) {
-				this.textContent = Math.round(i(t) * round) / round;
-			};
-		});*/
 
+    var start_val = (vis.previous*100).toFixed(2);
+        var end_val = (vis.percentage*100).toFixed(2);
+        var duration = 1000;
+
+   var percentChange = vis.svg.append("text").attr("class", "percent")
+       .attr("x", 850)
+       .attr("y", 175)
+       .text(start_val)
+       .transition()
+       .duration(duration)
+       .ease('linear')
+       .tween("text", function() {
+           var i = d3.interpolate(this.textContent, end_val),
+               prec = (end_val + "").split("."),
+               round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+           return function(t) {
+               this.textContent = Math.round(i(t) * round) / round;
+           };
+       });
+
+    console.log(vis.displayData);
 
 	// Draw the layers
 	var categories = vis.svg.selectAll(".area")
@@ -377,6 +400,22 @@ StackedAreaChart.prototype.updateVis = function(){
 			});
 
 	categories.exit().remove();
+
+    var layer = vis.svg.selectAll(".layer")
+        .data(vis.barDisplayData);
+
+    layer
+        .enter().append("rect").attr("class", "layer")
+        .style("fill", function(d) {
+            return colorScale(d.name);
+        })
+        .attr("opacity", .5);
+
+    layer
+        .attr("x", vis.width)
+        .attr("y", function(d) { console.log(d.values[0].y); return vis.y(d.values[0].y + d.values[0].y0); })
+        .attr("height", function(d) { return vis.y(d.values[0].y0) - vis.y(d.values[0].y + d.values[0].y0); })
+        .attr("width", 20);
 
 	var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
 
