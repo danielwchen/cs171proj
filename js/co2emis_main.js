@@ -127,8 +127,8 @@ function createVis() {
 
 	// TO-DO: Instantiate visualization objects here
 	// areachart = new ...
-	areachart = new StackedAreaChart("stacked-area-chart", allData, totalData);
-	//interactivechart = new BarChart("bar-chart", interactiveData);
+	areachart = new StackedAreaChart("stacked-area-chart", allData, totalData, interactiveData);
+	interactivechart = new BarChart("bar-chart", interactiveData);
 
 
 }
