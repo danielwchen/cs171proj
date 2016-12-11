@@ -38,6 +38,7 @@ function loadData() {
                 d.DateInOffice = dateFormatter.parse(d.DateInOffice);
                 d.YearNextElection = +d.YearNextElection;
                 d.YearsInOffice = +d.YearsInOffice;
+                d.CurrentAge = +d.CurrentAge;
             });
 
             stateTotalData = totalCSV;
