@@ -121,8 +121,6 @@ CongressVis.prototype.getY = function(d) {
 
     var vis = this;
 
-    vis.ySpacing = 100;
-
     return Math.floor(d.ranking[2] / vis.senNumPerRow) * (vis.senHeight + vis.senPadding) + vis.ySpacing * d.ranking[1];
 
     // Current Age (6) 30-39 (1) 40-49 (13) 50-59 (25) 60-69 (38) 70-79 (15) 80-89 (7)
@@ -157,9 +155,8 @@ CongressVis.prototype.wrangleData = function() {
     vis.data.forEach(function(d) {
         vis.assignRanking(d);
     });
-
-    console.log(vis.data);
-    
+    vis.ySpacing = vis.allCounters.bCounters[vis.sortParam].rowsPerSection * (vis.senHeight + vis.senPadding) + 30;
+    // vis.ySpacing = 10
     // vis.believe = vis.data.filter(function(d) { return d.BelieveClimateChange == "Yes" });
     // vis.data = vis.data.filter(function(d) { return d.BelieveClimateChange == "No" });
 
