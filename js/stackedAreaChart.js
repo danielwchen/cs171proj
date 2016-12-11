@@ -15,6 +15,7 @@ StackedAreaChart = function(_parentElement, _data, _extraData, _data2017){
 	this.previous = 0.0;
     this.data2017 = _data2017;
     this.barDisplayData = [];
+    this.barEditedData = [];
   // DEBUG RAW DATA
   //console.log(this.data);
 
@@ -31,7 +32,7 @@ StackedAreaChart.prototype.initVis = function(){
 	var vis = this;
 	console.log(vis.data);
 
-	vis.margin = { top: 40, right: 500, bottom: 60, left: 90 };
+	vis.margin = { top: 40, right: 500, bottom: 60, left: 100 };
 	vis.width = 1000 - vis.margin.left - vis.margin.right,
   	vis.height = 400 - vis.margin.top - vis.margin.bottom;
 
@@ -94,7 +95,7 @@ StackedAreaChart.prototype.initVis = function(){
 		.attr("x", 10)
 		.attr("y", 10);
 
-	vis.svg.append("line")
+	/*vis.svg.append("line")
 		.attr("x1", 639)
 		.attr("x2", 639)
 		.attr("y1", 90)
@@ -108,7 +109,7 @@ StackedAreaChart.prototype.initVis = function(){
 		.attr("y1", 90)
 		.attr("y2", 90)
 		.attr("stroke", "black")
-		.attr("opacity", 1)
+		.attr("opacity", 1)*/
 
 
 	// TO-DO: (Filter, aggregate, modify data)
@@ -145,25 +146,20 @@ StackedAreaChart.prototype.wrangleData = function(){
 	var pounds = 2204.62;
 	var newTotal = 0;
 
-	if (beef.checked) { editedData[(end-3)]["Agriculture"] -= .544*population*initpop/100; editedData[(end-2)]["Agriculture"] -= .544*population*initpop/100;
-		editedData[(end-1)]["Agriculture"] -= .544*population*initpop/100; editedData[(end)]["Agriculture"] -= .544*population*initpop/100;}
+    var edited2017 = jQuery.extend(true, [], vis.data2017);
+    var end2017 = edited2017.length-1;
 
-	if (shower.checked) { editedData[end-3]["Residential"] -= .509*population*initpop/100; editedData[end-2]["Residential"] -= .509*population*initpop/100;
-		editedData[end-1]["Residential"] -= .509*population*initpop/100; editedData[end]["Residential"] -= .509*population*initpop/100;}
-	if (carpool.checked) { editedData[end-3]["Transportation"] -= .5*3.5*population*initpop/100; editedData[end-2]["Transportation"] -= .5*3.5*population*initpop/100;
-		editedData[end-1]["Transportation"] -= .5*3.5*population*initpop/100; editedData[end]["Transportation"] -= .5*3.5*population*initpop/100; }
-	if (lights.checked) { editedData[end-3]["Electricity"] -= editedData[end-3]["Electricity"]*.05*population/100; editedData[end-2]["Electricity"] -= editedData[end-2]["Electricity"]*.05*population/100;
-		editedData[end-1]["Electricity"] -= editedData[end-1]["Electricity"]*.05*population/100; editedData[end]["Electricity"] -= editedData[end]["Electricity"]*.05*population/100; }
-	if (ac.checked) { editedData[end-3]["Electricity"] -= 2000/pounds*households*population/100; editedData[end-2]["Electricity"] -= 2000/pounds*households*population/100;
-		editedData[end-1]["Electricity"] -= 2000/pounds*households*population/100; editedData[end]["Electricity"] -= 2000/pounds*households*population/100; }
-	if (bulb.checked) { editedData[end-3]["Electricity"] -= 90e9/pounds*population/100; editedData[end-2]["Electricity"] -= 90e9/pounds*population/100;
-		editedData[end-1]["Electricity"] -= 90e9/pounds*population/100; editedData[end]["Electricity"] -= 90e9/pounds*population/100; }
-	if (insulate.checked) { editedData[end-3]["Residential"] -= 3700/pounds*households*.9*population/100; editedData[end-2]["Residential"] -= 3700/pounds*households*.9*population/100;
-		editedData[end-1]["Residential"] -= 3700/pounds*households*.9*population/100; editedData[end]["Residential"] -= 3700/pounds*households*.9*population/100;}
-	if (recycle.checked) { editedData[end-3]["Industry"] -= 2400/pounds*households*population/100; editedData[end-2]["Industry"] -= 2400/pounds*households*population/100;
-		editedData[end-1]["Industry"] -= 2400/pounds*households*population/100; editedData[end]["Industry"] -= 2400/pounds*households*population/100;}
-	if (package.checked) {editedData[end-3]["Industry"] -= 1200/pounds*households*population/100; editedData[end-2]["Industry"] -= 1200/pounds*households*population/100;
-		editedData[end-1]["Industry"] -= 1200/pounds*households*population/100; editedData[end]["Industry"] -= 1200/pounds*households*population/100;}
+	if (beef.checked) { editedData[(end-3)]["Agriculture"] -= .544*population*initpop/100; editedData[(end-2)]["Agriculture"] -= .544*population*initpop/100;
+		editedData[(end-1)]["Agriculture"] -= .544*population*initpop/100; editedData[(end)]["Agriculture"] -= .544*population*initpop/100; edited2017[end2017]["Agriculture"] -= .544*population*initpop/100;}
+
+	if (shower.checked) { editedData[end]["Residential"] -= .509*population*initpop/100; edited2017[end2017]["Residential"] -= .509*population*initpop/100;}
+	if (carpool.checked) { editedData[end]["Transportation"] -= .5*3.5*population*initpop/100; edited2017[end2017]["Transportation"] -= .5*3.5*population*initpop/100;}
+	if (lights.checked) { editedData[end]["Electricity"] -= editedData[end]["Electricity"]*.05*population/100; edited2017[end2017]["Electricity"] -= edited2017[end2017]["Electricity"]*.05*population/100;}
+	if (ac.checked) { editedData[end]["Electricity"] -= 2000/pounds*households*population/100; edited2017[end2017]["Electricity"] -= 2000/pounds*households*population/100;}
+	if (bulb.checked) { editedData[end]["Electricity"] -= 90e9/pounds*population/100; edited2017[end2017]["Electricity"] -= 90e9/pounds*population/100;}
+	if (insulate.checked) { editedData[end]["Residential"] -= 3700/pounds*households*.9*population/100; edited2017[end2017]["Residential"] -= 3700/pounds*households*.9*population/100;}
+	if (recycle.checked) { editedData[end]["Industry"] -= 2400/pounds*households*population/100; edited2017[end2017]["Industry"] -= 2400/pounds*households*population/100;}
+	if (package.checked) {editedData[end]["Industry"] -= 1200/pounds*households*population/100; edited2017[end2017]["Industry"] -= 1200/pounds*households*population/100;}
 
 	newTotal = editedData[end]["Territories"] + editedData[end]["Residential"] + editedData[end]["Commercial"] + editedData[end]["Agriculture"] + editedData[end]["Industry"] + editedData[end]["Electricity"]
 	+ editedData[end]["Transportation"];
@@ -184,6 +180,15 @@ StackedAreaChart.prototype.wrangleData = function(){
 		};
 	});
 
+    var barEditedData = dataCategories.map(function(name) {
+        return {
+            name: name,
+            values: edited2017.map(function(d) {
+                return {Year: d.Year, y: d[name]};
+            })
+        };
+    });
+
     var barTransData = dataCategories.map(function(name) {
         return {
             name: name,
@@ -192,6 +197,8 @@ StackedAreaChart.prototype.wrangleData = function(){
             })
         };
     });
+
+    vis.barEditedData = vis.stack(barEditedData);
 
     vis.barDisplayData = vis.stack(barTransData);
 
@@ -402,20 +409,40 @@ StackedAreaChart.prototype.updateVis = function(){
 	categories.exit().remove();
 
     var layer = vis.svg.selectAll(".layer")
-        .data(vis.barDisplayData);
+        .data(vis.barEditedData);
 
     layer
         .enter().append("rect").attr("class", "layer")
         .style("fill", function(d) {
             return colorScale(d.name);
         })
-        .attr("opacity", .5);
+        .attr("opacity", 1);
 
     layer
         .attr("x", vis.width)
         .attr("y", function(d) { console.log(d.values[0].y); return vis.y(d.values[0].y + d.values[0].y0); })
         .attr("height", function(d) { return vis.y(d.values[0].y0) - vis.y(d.values[0].y + d.values[0].y0); })
-        .attr("width", 20);
+        .attr("width", 200);
+
+    layer.exit().remove();
+
+    var layer2 = vis.svg.selectAll(".layer2")
+        .data(vis.barDisplayData);
+
+    layer2
+        .enter().append("rect").attr("class", "layer")
+        .style("fill", function(d) {
+            return colorScale(d.name);
+        })
+        .attr("opacity", .5);
+
+    layer2
+        .attr("x", vis.width+200)
+        .attr("y", function(d) { console.log(d.values[0].y); return vis.y(d.values[0].y + d.values[0].y0); })
+        .attr("height", function(d) { return vis.y(d.values[0].y0) - vis.y(d.values[0].y + d.values[0].y0); })
+        .attr("width", 200);
+
+    layer2.exit().remove();
 
 	var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
 
