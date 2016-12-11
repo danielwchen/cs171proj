@@ -26,9 +26,9 @@ FootFixed.prototype.initVis = function(){
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom);
 
-    vis.xPositions = [50, 360, 350, 440, 600, 100, 140, 270, 160, 580];
-    vis.yPositions = [30, 150, 350, 50, 40, 320, 400, 410, 150, 280];
-    vis.xPCPositions = [40, 270, 700, 460, 300, 350, 320, 140, 140, 590];
+    vis.xPositions = [50, 350, 310, 440, 600, 100, 140, 270, 160, 545   ];
+    vis.yPositions = [30, 120, 330, 50, 40, 320, 400, 410, 150, 280];
+    vis.xPCPositions = [40, 270, 600, 460, 300, 350, 320, 140, 140, 550];
     vis.yPCPositions = [40, 50, 50, 50, 250, 120, 400, 380, 140, 270];
 
     vis.updateVis(false, vis.r, 0);
@@ -42,8 +42,6 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
     }
 
     var total = ( $('input[name="dataS"]:checked').val() == "total");
-
-    // document.getElementById("fixed-footprints-container").style.opacity = (stepNum > 1) ? 100 : 0;
 
     vis.circs = vis.svg.selectAll("circle")
         .data(vis.data, function(d){return d.Country;});

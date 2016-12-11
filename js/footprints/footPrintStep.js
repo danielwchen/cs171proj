@@ -43,7 +43,7 @@ FootStep.prototype.updateVis = function(newData, radiusScale){
         .append("circle");
 
     vis.tip = d3.tip().attr('class', 'd3-tip').offset([-10,0]).html(function(d) {
-        return d.Country + " " + getLabelData(d);
+        return d.Country + " " + getLabelData(d) + " metric tons";
     });
 
     vis.svg.call(vis.tip);

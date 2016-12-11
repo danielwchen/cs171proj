@@ -80,7 +80,7 @@ function updateVisualization(){
     });
 
     radiusScale = d3.scale.linear()
-        .range([3,200])
+        .range([3,180])
         .domain(d3.extent(data, function(d){return getData(d);}));
 
     allData.push(data.slice(0, 4));
