@@ -61,6 +61,7 @@ body {
     color:black;
 }
 
+<<<<<<< Updated upstream
 #sections {
     position: relative;
     display: inline-block;
@@ -131,6 +132,12 @@ body {
 .Oceania {fill: #0084c4;}
 .South-America {fill: #3b00d8;}
 
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
 
 /*********************/
 /*  TOOLTIP OVERLAY  */

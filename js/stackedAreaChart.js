@@ -6,10 +6,13 @@
  * @param _data						-- the  
  */
 
-StackedAreaChart = function(_parentElement, _data){
+StackedAreaChart = function(_parentElement, _data, _extraData){
 	this.parentElement = _parentElement;
   this.data = _data;
+	this.extraData = _extraData;
   this.displayData = []; // see data wrangling
+	this.percentage = 0.0;
+	this.previous = 0.0;
   // DEBUG RAW DATA
   //console.log(this.data);
 
@@ -24,9 +27,10 @@ StackedAreaChart = function(_parentElement, _data){
 
 StackedAreaChart.prototype.initVis = function(){
 	var vis = this;
+	console.log(vis.data);
 
-	vis.margin = { top: 40, right: 0, bottom: 60, left: 60 };
-	vis.width = 800 - vis.margin.left - vis.margin.right,
+	vis.margin = { top: 40, right: 500, bottom: 60, left: 90 };
+	vis.width = 1300 - vis.margin.left - vis.margin.right,
   	vis.height = 400 - vis.margin.top - vis.margin.bottom;
 
 
@@ -57,9 +61,12 @@ StackedAreaChart.prototype.initVis = function(){
 		  .scale(vis.x)
 		  .orient("bottom");
 
+	var formatValue = d3.format(".2s");
+
 	vis.yAxis = d3.svg.axis()
 	    .scale(vis.y)
-	    .orient("left");
+	    .orient("left")
+		.tickFormat(function(d) { return formatValue(d).replace('G', ' Billion'); });
 
 	vis.svg.append("g")
 	    .attr("class", "x-axis axis")
@@ -85,6 +92,22 @@ StackedAreaChart.prototype.initVis = function(){
 		.attr("x", 10)
 		.attr("y", 10);
 
+	vis.svg.append("line")
+		.attr("x1", 639)
+		.attr("x2", 639)
+		.attr("y1", 90)
+		.attr("y2", vis.height)
+		.attr("stroke", "black")
+		.attr("opacity", 1)
+
+	vis.svg.append("line")
+		.attr("x1", vis.width)
+		.attr("x2", 639)
+		.attr("y1", 90)
+		.attr("y2", 90)
+		.attr("stroke", "black")
+		.attr("opacity", 1)
+
 
 	// TO-DO: (Filter, aggregate, modify data)
 	vis.wrangleData();
@@ -98,13 +121,53 @@ StackedAreaChart.prototype.initVis = function(){
 
 StackedAreaChart.prototype.wrangleData = function(){
 	var vis = this;
+
+	vis.previous = vis.percentage;
+
 	var population = document.getElementById("population").value;
-	var activity = d3.select("#activity").property("value");
+	var initpop = 325000000;
+	//var activity = d3.select("#activity").property("value");
+	var beef = document.getElementById("beef");
+	var shower = document.getElementById("shower");
+	var carpool = document.getElementById("carpool");
+	var lights = document.getElementById("lights");
+	var ac = document.getElementById("ac");
+	var bulb = document.getElementById("bulb");
+	var insulate = document.getElementById("insulate");
+	var recycle = document.getElementById("recycle");
+	var package = document.getElementById("package");
 
 	var editedData = jQuery.extend(true, [], vis.data);
 	var end = editedData.length - 1;
+	var households = 124600000;
+	var pounds = 2204.62;
+	var newTotal = 0;
 
-	editedData[end][activity] = 0;
+	if (beef.checked) { editedData[(end-3)]["Agriculture"] -= .544*population*initpop/100; editedData[(end-2)]["Agriculture"] -= .544*population*initpop/100;
+		editedData[(end-1)]["Agriculture"] -= .544*population*initpop/100; editedData[(end)]["Agriculture"] -= .544*population*initpop/100;}
+
+	if (shower.checked) { editedData[end-3]["Residential"] -= .509*population*initpop/100; editedData[end-2]["Residential"] -= .509*population*initpop/100;
+		editedData[end-1]["Residential"] -= .509*population*initpop/100; editedData[end]["Residential"] -= .509*population*initpop/100;}
+	if (carpool.checked) { editedData[end-3]["Transportation"] -= .5*3.5*population*initpop/100; editedData[end-2]["Transportation"] -= .5*3.5*population*initpop/100;
+		editedData[end-1]["Transportation"] -= .5*3.5*population*initpop/100; editedData[end]["Transportation"] -= .5*3.5*population*initpop/100; }
+	if (lights.checked) { editedData[end-3]["Electricity"] -= editedData[end-3]["Electricity"]*.05*population/100; editedData[end-2]["Electricity"] -= editedData[end-2]["Electricity"]*.05*population/100;
+		editedData[end-1]["Electricity"] -= editedData[end-1]["Electricity"]*.05*population/100; editedData[end]["Electricity"] -= editedData[end]["Electricity"]*.05*population/100; }
+	if (ac.checked) { editedData[end-3]["Electricity"] -= 2000/pounds*households*population/100; editedData[end-2]["Electricity"] -= 2000/pounds*households*population/100;
+		editedData[end-1]["Electricity"] -= 2000/pounds*households*population/100; editedData[end]["Electricity"] -= 2000/pounds*households*population/100; }
+	if (bulb.checked) { editedData[end-3]["Electricity"] -= 90e9/pounds*population/100; editedData[end-2]["Electricity"] -= 90e9/pounds*population/100;
+		editedData[end-1]["Electricity"] -= 90e9/pounds*population/100; editedData[end]["Electricity"] -= 90e9/pounds*population/100; }
+	if (insulate.checked) { editedData[end-3]["Residential"] -= 3700/pounds*households*.9*population/100; editedData[end-2]["Residential"] -= 3700/pounds*households*.9*population/100;
+		editedData[end-1]["Residential"] -= 3700/pounds*households*.9*population/100; editedData[end]["Residential"] -= 3700/pounds*households*.9*population/100;}
+	if (recycle.checked) { editedData[end-3]["Industry"] -= 2400/pounds*households*population/100; editedData[end-2]["Industry"] -= 2400/pounds*households*population/100;
+		editedData[end-1]["Industry"] -= 2400/pounds*households*population/100; editedData[end]["Industry"] -= 2400/pounds*households*population/100;}
+	if (package.checked) {editedData[end-3]["Industry"] -= 1200/pounds*households*population/100; editedData[end-2]["Industry"] -= 1200/pounds*households*population/100;
+		editedData[end-1]["Industry"] -= 1200/pounds*households*population/100; editedData[end]["Industry"] -= 1200/pounds*households*population/100;}
+
+	newTotal = editedData[end]["Territories"] + editedData[end]["Residential"] + editedData[end]["Commercial"] + editedData[end]["Agriculture"] + editedData[end]["Industry"] + editedData[end]["Electricity"]
+	+ editedData[end]["Transportation"];
+
+	vis.percentage = (vis.extraData[end].Total - newTotal)/vis.extraData[end].Total;
+	console.log("HELLO!!!" +vis.percentage);
 
 	// TO-DO: Initialize stack layout
 	var dataCategories = colorScale.domain();
@@ -121,15 +184,8 @@ StackedAreaChart.prototype.wrangleData = function(){
 
 	// In the first step no data wrangling/filtering needed
 	vis.displayData = vis.stack(transposedData);
-	// console.log("displayData: ");
-	// console.log(vis.displayData);
-	// console.log("After display data has been set");
-	// console.log(vis.data[end]);
 
-	// Update the visualization
   vis.updateVis();
-	// console.log("After updateVis");
-	// console.log(vis.data[end]);
 }
 
 
@@ -142,6 +198,8 @@ StackedAreaChart.prototype.wrangleData = function(){
 StackedAreaChart.prototype.updateVis = function(){
 	var vis = this;
 
+	var formatValue = d3.format(".3s");
+
 	// Update domain
 	// Get the maximum of the multi-dimensional array or in other words, get the highest peak of the uppermost layer
 	vis.y.domain([0, d3.max(vis.displayData, function(d) {
@@ -150,6 +208,35 @@ StackedAreaChart.prototype.updateVis = function(){
 			});
 		})
 	]);
+
+	var maximum = d3.max(vis.displayData, function(d) {
+		return d3.max(d.values, function(e) {
+			return e.y0 + e.y;
+		});
+	});
+
+	function formatPercent(p) {
+		if (p < 0) p=0;
+		p *= 100;
+		return formatValue(p);
+	}
+
+	vis.svg.selectAll(".percent").remove();
+	var percentChange = vis.svg.append("text").attr("class", "percent")
+		.attr("x", 850)
+		.attr("y", 175)
+		.text(formatPercent(vis.percentage) + "%")
+		/*.ease('linear')
+		.tween("text", function() {
+			var i = d3.interpolate(this.textContent, vis.percentage),
+				prec = (vis.percentage + "").split("."),
+				round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+			return function (t) {
+				this.textContent = Math.round(i(t) * round) / round;
+			};
+		});*/
+
 
 	// Draw the layers
 	var categories = vis.svg.selectAll(".area")
@@ -165,13 +252,238 @@ StackedAreaChart.prototype.updateVis = function(){
       .attr("d", function(d) {
 				return vis.area(d.values);
       })
+	  .attr("opacity", 1);
 
   // TO-DO: Update tooltip text
 	categories
-		.on("mouseover", function(d){return vis.tooltip.text(d.name);})
-		.on("mouseout", function(){return vis.tooltip.text("");});
+		.on("mouseover", function(d,i){vis.svg.selectAll(".area").transition()
+			.duration(250)
+			.attr("opacity", function(d, j) {
+				return j != i ? 0.7 : 1;
+			}); return vis.tooltip.text(d.name);})
+		.on("mouseout", function(d,i){return vis.tooltip.text("");})
+		.on("mousemove", function(section) {
+			var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
+
+
+			// **********
+			var x0 = vis.x.invert(d3.mouse(this)[0]),              // **********
+				i = bisectDate(vis.extraData, x0, 1),
+				d0 = vis.extraData[i - 1],                              // **********
+				d1 = vis.extraData[i],                                  // **********
+				d = x0 - d0.Year > d1.Year - x0 ? d1 : d0;
+
+			var formatDate = d3.time.format("%Y");
+			// append the x line
+			vis.svg.append("line")
+				.attr("class", "x")
+				.style("stroke", "black")
+				.style("opacity", 0.8)
+				.attr("y1", 0)
+				.attr("y2", vis.height);
+
+			// append the y line
+			/*vis.svg.append("line")
+			 .attr("class", "y")
+			 .style("stroke", "blue")
+			 .style("stroke-dasharray", "3,3")
+			 .style("opacity", 0.5)
+			 .attr("x1", vis.width)
+			 .attr("x2", vis.width);*/
+
+			// append the circle at the intersection
+			/*vis.svg.append("circle")
+			 .attr("class", "y")
+			 .style("fill", "none")
+			 .style("stroke", "blue")
+			 .attr("r", 4);*/
+
+			// place the value at the intersection
+			vis.svg.append("text")
+				.attr("class", "y1")
+				.style("stroke", "white")
+				.style("stroke-width", "3.5px")
+				.style("opacity", 0.8)
+				.attr("dx", 8)
+				.attr("dy", "1.3em");
+			vis.svg.append("text")
+				.attr("class", "y2")
+				.attr("dx", 8)
+				.attr("dy", "1.3em");
+
+			// place the date at the intersection
+			vis.svg.append("text")
+				.attr("class", "y3")
+				.style("stroke", "white")
+				.style("stroke-width", "3.5px")
+				.style("opacity", 0.8)
+				.attr("dx", 8)
+				.attr("dy", "2.6em");
+			vis.svg.append("text")
+				.attr("class", "y4")
+				.attr("dx", 8)
+				.attr("dy", "2.6em");
+			vis.svg.select("circle.y")
+				.attr("transform",
+					"translate(" + vis.x(d.Year) + "," +
+					vis.y(d.Total) + ")");
+
+			var test = section.values[i].y0+ section.values[i].y;
+
+			vis.svg.select("text.y1")
+				.attr("transform",
+					"translate(" + vis.x(d.Year) + "," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text(section.name + " "+formatValue(d[section.name]).replace('G', 'B'));
+
+			vis.svg.select("text.y2")
+				.attr("transform",
+					"translate(" + vis.x(d.Year) + "," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text(section.name + " "+ formatValue(d[section.name]).replace('G', 'B'));
+
+			vis.svg.select("text.y3")
+				.attr("transform",
+					"translate(" + vis.x(d.Year) + "," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text(formatDate(d.Year).replace("2018", "2017").replace("2019", "2017").replace("2020", "2017"));
+
+			vis.svg.select("text.y4")
+				.attr("transform",
+					"translate(" + vis.x(d.Year) + "," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text(formatDate(d.Year).replace("2018", "2017").replace("2019", "2017").replace("2020", "2017"));
+
+			/*vis.svg.select(".x")
+				.attr("transform",
+					"translate(" + vis.x(d.Year) + "," +
+					-(vis.y(d[section.name])- vis.height) + ")")
+				.attr("y2", vis.y(d[section.name]));*/
+
+			vis.svg.select(".x")
+				.attr("transform",
+					"translate(" + vis.x(d.Year) + "," +
+					vis.height + ")")
+				.attr("y2", -vis.height + vis.y(test));
+
+
+
+			vis.svg.select(".y")
+				.attr("transform",
+					"translate(" + vis.width * -1 + "," +
+					vis.y(d.Total) + ")")
+				.attr("x2", vis.width + vis.width);
+
+			});
 
 	categories.exit().remove();
+
+	var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
+
+	// append the rectangle to capture mouse               // **********
+	// **********
+
+	function mousemove(section) {
+
+		var formatValue = d3.format(".3s");
+		// **********
+		var x0 = vis.x.invert(d3.mouse(this)[0]),              // **********
+			i = bisectDate(vis.extraData, x0, 1),                   // **********
+			d0 = vis.extraData[i - 1],                              // **********
+			d1 = vis.extraData[i],                                  // **********
+			d = x0 - d0.Year > d1.Year - x0 ? d1 : d0;
+
+		var formatDate = d3.time.format("%Y");
+		// append the x line
+		vis.svg.append("line")
+			.attr("class", "x")
+			.style("stroke", "black")
+			.style("opacity", 0.8)
+			.attr("y1", 0)
+			.attr("y2", vis.height);
+
+		// append the y line
+		/*vis.svg.append("line")
+			.attr("class", "y")
+			.style("stroke", "blue")
+			.style("stroke-dasharray", "3,3")
+			.style("opacity", 0.5)
+			.attr("x1", vis.width)
+			.attr("x2", vis.width);*/
+
+		// append the circle at the intersection
+		/*vis.svg.append("circle")
+			.attr("class", "y")
+			.style("fill", "none")
+			.style("stroke", "blue")
+			.attr("r", 4);*/
+
+		// place the value at the intersection
+		vis.svg.append("text")
+			.attr("class", "y1")
+			.style("stroke", "white")
+			.style("stroke-width", "3.5px")
+			.style("opacity", 0.8)
+			.attr("dx", 8)
+			.attr("dy", "-.3em");
+		vis.svg.append("text")
+			.attr("class", "y2")
+			.attr("dx", 8)
+			.attr("dy", "-.3em");
+
+		// place the date at the intersection
+		vis.svg.append("text")
+			.attr("class", "y3")
+			.style("stroke", "white")
+			.style("stroke-width", "3.5px")
+			.style("opacity", 0.8)
+			.attr("dx", 8)
+			.attr("dy", "1em");
+		vis.svg.append("text")
+			.attr("class", "y4")
+			.attr("dx", 8)
+			.attr("dy", "1em");
+		vis.svg.select("circle.y")
+			.attr("transform",
+				"translate(" + vis.x(d.Year) + "," +
+				vis.y(d.Total) + ")");
+
+		vis.svg.select("text.y1")
+			.attr("transform",
+				"translate(" + vis.x(d.Year) + "," +
+				/*vis.y(d.Total)*/ -8 + ")")
+			.text(formatValue(d.Total).replace('G', 'B tons'));
+
+		vis.svg.select("text.y2")
+			.attr("transform",
+				"translate(" + vis.x(d.Year) + "," +
+				/*vis.y(d.Total)*/ -8 + ")")
+			.text(formatValue(d.Total).replace('G', 'B tons'));
+
+		vis.svg.select("text.y3")
+			.attr("transform",
+				"translate(" + vis.x(d.Year) + "," +
+				/*vis.y(d.Total)*/ -8 + ")")
+			.text(formatDate(d.Year));
+
+		vis.svg.select("text.y4")
+			.attr("transform",
+				"translate(" + vis.x(d.Year) + "," +
+				/*vis.y(d.Total)*/ -8 + ")")
+			.text(formatDate(d.Year));
+
+		vis.svg.select(".x")
+			.attr("transform",
+				"translate(" + vis.x(d.Year) + "," +
+				vis.y(d.Total) + ")")
+			.attr("y2", vis.height - vis.y(d.Year));
+
+		vis.svg.select(".y")
+			.attr("transform",
+				"translate(" + vis.width * -1 + "," +
+				vis.y(d.Total) + ")")
+			.attr("x2", vis.width + vis.width);
+	}
 
 
 	// Call axis functions with the new domain 
