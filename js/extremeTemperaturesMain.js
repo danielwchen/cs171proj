@@ -29,3 +29,4 @@ function loadData(){
 function createVis() {
         recordMap = new RecordMap("#extremeTempVis", recordsData);
 }
+

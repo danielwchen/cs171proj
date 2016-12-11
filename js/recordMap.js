@@ -13,8 +13,8 @@ RecordMap = function(_parentElement, _data) {
 RecordMap.prototype.initVis = function() {
 
     var vis = this;
-    vis.width = 800;
-    vis.height = 500;
+    vis.width = 1200;
+    vis.height = 900;
     vis.filteredData = vis.data;
 
     vis.svg = d3.select(vis.parentElement).append("svg")
@@ -23,14 +23,14 @@ RecordMap.prototype.initVis = function() {
 
 
     vis.projection = d3.geo.albersUsa()
-        .translate([400, 250])
-        .scale(1000);
+        .translate([600, 450])
+        .scale(1500);
 
     vis.path = d3.geo.path()
         .projection(vis.projection);
 
 
-    vis.year = 1860;
+    vis.year = 1820;
 
     d3.json("data/us-states.json", function(json) {
         vis.json = json;
@@ -65,6 +65,8 @@ RecordMap.prototype.updateVis = function(){
 
     vis.records = vis.svg.selectAll(".records")
         .data(vis.filteredData);
+
+    console.log(vis.records);
 
     vis.records
         .enter().append("circle")
