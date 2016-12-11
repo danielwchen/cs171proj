@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3fe79b0e-37a0-4079-abe9-be1ee1428af7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/footprints/footprintFixed.js" afterPath="$PROJECT_DIR$/js/footprints/footprintFixed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_scrolling.html" afterPath="$PROJECT_DIR$/test_scrolling.html" />
     </list>
     <ignored path="cs171proj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +31,8 @@
       <file leaf-file-name="test_scrolling.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_scrolling.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="62" selection-end-column="56" />
+            <state relative-caret-position="255">
+              <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -39,7 +41,7 @@
       <file leaf-file-name="footPrint.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/footPrint.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="1156">
               <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
               <folding />
             </state>
@@ -49,8 +51,8 @@
       <file leaf-file-name="footPrintStep.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/footprints/footPrintStep.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="338">
+              <caret line="64" column="58" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -59,8 +61,8 @@
       <file leaf-file-name="footprints_main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/footprints/footprints_main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -69,8 +71,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+            <state relative-caret-position="297">
+              <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -79,8 +81,8 @@
       <file leaf-file-name="footprintFixed.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/footprints/footprintFixed.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+            <state relative-caret-position="375">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,12 +125,12 @@
         <option value="$PROJECT_DIR$/js/footPrintStep.js" />
         <option value="$PROJECT_DIR$/js/footprints_test.js" />
         <option value="$PROJECT_DIR$/js/footprintFixed.js" />
-        <option value="$PROJECT_DIR$/test_scrolling.html" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/footPrint.html" />
-        <option value="$PROJECT_DIR$/js/footprints/footPrintStep.js" />
         <option value="$PROJECT_DIR$/js/footprints/footprints_main.js" />
         <option value="$PROJECT_DIR$/js/footprints/footprintFixed.js" />
+        <option value="$PROJECT_DIR$/test_scrolling.html" />
+        <option value="$PROJECT_DIR$/js/footprints/footPrintStep.js" />
+        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
@@ -183,7 +185,7 @@
       <recent name="C:\Users\Zac\Documents\Harvard\Senior Fall\CS171\Final Project\cs171proj\js\footprints" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.footPrint.html">
+  <component name="RunManager" selected="JavaScript Debug.test_scrolling.html (1)">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs171proj/index.html">
       <method />
     </configuration>
@@ -261,10 +263,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.footPrint.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.vis-footprint.js" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.test_scrolling.html (1)" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.test_scrolling.html (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.footPrint.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.vis-footprint.js" />
         <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.carbonemissions.html" />
       </list>
     </recent_temporary>
@@ -297,12 +299,12 @@
       <workItem from="1481356558815" duration="17087000" />
       <workItem from="1481412570026" duration="1037000" />
       <workItem from="1481472743213" duration="187000" />
-      <workItem from="1481485839403" duration="1254000" />
+      <workItem from="1481485839403" duration="4254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111879000" />
+    <option name="totallyTimeSpent" value="114879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="194" y="34" width="1462" height="1014" extended-state="0" />
@@ -342,14 +344,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/vis-footprint.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/footPrint.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -562,50 +556,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/footprints/footPrintStep.js">
+    <entry file="file://$PROJECT_DIR$/js/footprints/footprintFixed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="375">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/shanghai_smog.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/footprints/footprints_main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/footPrint.html">
+    <entry file="file://$PROJECT_DIR$/js/footprints/footPrintStep.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/footprints/footprintFixed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+        <state relative-caret-position="338">
+          <caret line="64" column="58" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+        <state relative-caret-position="297">
+          <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footPrint.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_scrolling.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="62" selection-end-column="56" />
+        <state relative-caret-position="255">
+          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
           <folding />
         </state>
       </provider>

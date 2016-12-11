@@ -43,7 +43,7 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
 
     var total = ( $('input[name="dataS"]:checked').val() == "total");
 
-    document.getElementById("fixed-footprints-container").style.opacity = (stepNum > 1) ? 100 : 0;
+    // document.getElementById("fixed-footprints-container").style.opacity = (stepNum > 1) ? 100 : 0;
 
     vis.circs = vis.svg.selectAll("circle")
         .data(vis.data, function(d){return d.Country;});

@@ -13,7 +13,9 @@ body {
 }
 
 #footprint-BG {
-    background-image: url("../img/shanghai_smog.jpg");
+    background-image: url("../img/v2-smog.jpg");
+    background-repeat: initial;
+    background-attachment: fixed;
 }
 
 #extreme-Temps-BG {
@@ -65,13 +67,33 @@ body {
     width: 400px;
     top: 0px;
     z-index: 90;
+    scroll-snap-type: mandatory;
+    scroll-snap-destination: 0 100%;
+    scroll-snap-points-y: repeat(100%);
 }
 
 .step {
-    margin-bottom: 300px;
+    margin-top: 200px;
+    margin-bottom: 100px;
     height: 530px;
     overflow:auto;
     width:390px;
+    background-color: lightgrey;
+    opacity: .7;
+    border-radius: 25px;
+}
+
+#titleFootprints{
+    text-anchor: middle;
+    font-weight: bold;
+    text-shadow:
+            -1px -1px 0 white,
+            1px -1px 0 white,
+            -1px 1px 0 white,
+            1px 1px 0 white;
+    position: fixed;
+    z-index: 91;
+
 }
 
 #fixed-footprints-container {
@@ -80,11 +102,10 @@ body {
     top: 60px;
     z-index: 1;
     margin-left: 0;
-
+    opacity: .7;
     height: 800px;
-    width: 800px;
+    width: 750px;
     background-color: #ddd;
-    opacity: 100;
     border-radius: 25px;
 }
 
