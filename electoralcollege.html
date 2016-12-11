@@ -18,22 +18,30 @@
 </ul>
 
 <h1 id="title">Electoral College Vis</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="l-arrow"><a href="carbonemissions.html">«</a></div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+            <select class="form-control" id="selector">
+                <option value="State">Default</option>
+                <option value="CurrentAge">Current Age</option>
+                <option value="AgeAtTakingOfficeYear">Age when first taking office</option>
+                <option value="YearsInOffice">Years in office</option>
+                <option value="YearNextElection">Year up for election</option>
+                <option value="Party">Party</option>
+            </select>
 
-<select class="form-control" id="selector">
-    <option value="State">Default</option>
-    <option value="CurrentAge">Current Age</option>
-    <option value="AgeAtTakingOfficeYear">Age when first taking office</option>
-    <option value="YearsInOffice">Years in office</option>
-    <option value="YearNextElection">Year up for election</option>
-    <option value="Party">Party</option>
-</select>
+            <div class="col-md-3" id="electoral-map">
 
-<div class="col-md-3" id="electoral-map">
+            </div>
 
-</div>
+            <div class="col-md-9" id="congress-vis">
 
-<div class="col-md-9" id="congress-vis">
-
+            </div>
+        </div>
+        <div class="col-xs-1 r-arrow"><a href="index.html"> »</a></div>
+    </div>
 </div>
 
 <!-- Load JS libraries -->
