@@ -21,8 +21,9 @@ CongressVis.prototype.initVis = function() {
     vis.width = 900 - vis.margin.left - vis.margin.right;
     vis.height = 700 - vis.margin.top - vis.margin.bottom;
 
+    vis.z = d3.scale
     vis.x = d3.scale.linear()
-        .range([0,vis.width])
+        .range([vis.margin.left,vis.width+vis.margin.left])
         .domain([0,vis.width]);
 
     vis.y = d3.scale.linear()
@@ -60,9 +61,50 @@ CongressVis.prototype.initVis = function() {
         .attr("stroke","black")
         .attr("stroke-weight",2);
 
-
+    vis.resetCounters();
     vis.wrangleData();
 };
+
+
+CongressVis.prototype.resetCounters = function() {
+
+    var vis = this;
+
+    vis.spaceBetween = 30;
+    vis.numPerRow = 20;
+
+    vis.bCounters = {};
+    vis.dCounters = {};
+
+    vis.allCounters = {"bCounters":vis.bCounters, "dCounters":vis.dCounters};
+    vis.allCounters.bCounters['ageNow'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0, range8089:0, rowsPerSection:Math.ceil(38/vis.numPerRow)};
+    vis.allCounters.bCounters['ageInOffice'] = {range3039:0, range4049:0, range5059:0, range6069:0, rowsPerSection:Math.ceil(40/vis.numPerRow)};
+    vis.allCounters.bCounters['yearsInOffice'] = {range09:0, range1019:0, range2029:0, range3039:0, range4049:0, rowsPerSection:Math.ceil(23/vis.numPerRow)};;
+    vis.allCounters.bCounters['yearNextElection'] = {"2018":0, "2020":0, "2022":0, rowsPerSection:Math.ceil(33/vis.numPerRow)};
+    vis.allCounters.bCounters['party'] = {democratic:0, republican:0, independent:0, rowsPerSection:Math.ceil(51/vis.numPerRow)};
+
+    vis.allCounters.dCounters['ageNow'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0, range8089:0, rowsPerSection:Math.ceil(38/vis.numPerRow)};
+    vis.allCounters.dCounters['ageInOffice'] = {range3039:0, range4049:0, range5059:0, range6069:0, rowsPerSection:Math.ceil(40/vis.numPerRow)};
+    vis.allCounters.dCounters['yearsInOffice'] = {range09:0, range1019:0, range2029:0, range3039:0, range4049:0, rowsPerSection:Math.ceil(23/vis.numPerRow)};;
+    vis.allCounters.dCounters['yearNextElection'] = {"2018":0, "2020":0, "2022":0, rowsPerSection:Math.ceil(33/vis.numPerRow)};
+    vis.allCounters.dCounters['party'] = {democratic:0, republican:0, independent:0, rowsPerSection:Math.ceil(51/vis.numPerRow)};
+
+    console.log(vis.allCounters);
+    // vis.counters.yearNextElection['2020'] += 5;
+    // console.log(vis.counters.yearNextElection['2020']);
+
+    // Current Age (6) 30-39 (1) 40-49 (13) 50-59 (25) 60-69 (38) 70-79 (15) 80-89 (7)
+    // Age when taking office (4) 30-39 (5) 40-49 (33) 50-59 (40) 60-69 (21)
+    // Years in office (5) 0-9 (59) 10-19 (23) 20-29 (10) 30-39 (5) 40-49 (2)
+    // Year of next election (3) 2018 (33) 2020 (33) 2022 (33)
+    // Party Dem (46) Independent (2) Rep (51)
+
+
+
+
+};
+
+
 
 CongressVis.prototype.wrangleData = function() {
     var vis = this;
