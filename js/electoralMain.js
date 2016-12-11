@@ -38,6 +38,7 @@ function loadData() {
                 d.DateInOffice = dateFormatter.parse(d.DateInOffice);
                 d.YearNextElection = +d.YearNextElection;
                 d.YearsInOffice = +d.YearsInOffice;
+                d.CurrentAge = +d.CurrentAge;
             });
 
             stateTotalData = totalCSV;
@@ -92,7 +93,7 @@ function createVis() {
 // 20-29 (10)
 // 30-39 (5)
 // 40-49 (2)
-// Year of next election
+// Year of next election (3)
 // 2018 (33)
 // 2020 (33)
 // 2022 (33)

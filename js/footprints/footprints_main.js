@@ -1,7 +1,13 @@
 
 var allData = [],
     footSteps = [],
-    data;
+    chosen = [],
+    data,
+    fixedObj,
+    meanTotal,
+    meanPC,
+    radiusScale,
+    stepNum = 0;
 
 loadData();
 
@@ -15,9 +21,13 @@ function loadData() {
             d.PC = +d.PC;
             d.TotalRadius = Math.sqrt(d.Total)/3.14;
             d.PCRadius = Math.sqrt(d.PC)/3.14;
+            d.Continent = d.Continent.replace(/\s/g, '-');
         });
 
         data = csv;
+
+        meanTotal = data.map(function(d){return d.Total;}).reduce(function(a, b){return a + b;},0) / data.length;
+        meanPC = data.map(function(d){return d.PC;}).reduce(function(a, b){return a + b;},0) / data.length;
 
         // Draw the visualization for the first time
         initVisualization();
@@ -31,9 +41,13 @@ function initVisualization() {
         return getData(b) - getData(a);
     });
 
-    var radiusScale = d3.scale.linear()
+    chosen = [data[201], data[150], data[106], data[97], data[88], data[68], data[41], data[17], data[1], data[0]];
+
+    radiusScale = d3.scale.linear()
         .range([3,200])
         .domain(d3.extent(data, function(d){return getData(d);}));
+
+    allData = [];
 
     allData.push(data.slice(0, 4));
     for (i = 4; i < 164;) {
@@ -46,10 +60,13 @@ function initVisualization() {
     allData = allData.reverse();
 
     var visNumber = 1;
-    allData.forEach(function(d){
+
+    allData.forEach(function(d,index){
         footSteps.push(new FootStep("#footprint-vis" + visNumber, d, radiusScale));
         visNumber += 1;
     });
+
+    fixedObj = new FootFixed("#fixed-footprints", chosen, radiusScale, meanTotal, meanPC);
 }
 
 function updateVisualization(){
@@ -58,7 +75,11 @@ function updateVisualization(){
         return getData(b) - getData(a);
     });
 
-    var radiusScale = d3.scale.linear()
+    chosen = chosen.sort(function (a, b) {
+        return getData(a) - getData(b);
+    });
+
+    radiusScale = d3.scale.linear()
         .range([3,200])
         .domain(d3.extent(data, function(d){return getData(d);}));
 
@@ -75,6 +96,8 @@ function updateVisualization(){
     for(i=0;i<footSteps.length;i++){
         footSteps[i].updateVis(allData[i], radiusScale);
     }
+
+    fixedObj.updateVis(chosen, radiusScale, stepNum);
 }
 
 function getData(country){
@@ -83,7 +106,7 @@ function getData(country){
 }
 
 
-// Scrolling Functionality!
+// Scrolling Functionality to determine position
 
 var sections = d3.selectAll('.step');
 
@@ -106,5 +129,6 @@ function position() {
     var sectionIndex = d3.bisect(sectionPositions, pos);
     sectionIndex = Math.min(sections.size() - 1, sectionIndex);
 
-    console.log(sectionIndex);
+    stepNum = sectionIndex;
+    fixedObj.updateVis(chosen, radiusScale, stepNum);
 }
