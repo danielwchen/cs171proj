@@ -16,48 +16,56 @@
 	<!-- Custom CSS code -->
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="carbonemissions-BG">
+<div class="container-fluid">
+	<div class="row">
+		<div class="l-arrow"><a href="electoralcollege.html">«</a></div>
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
 
-	<div class="container-fluid">
+						<h1>U.S. Carbon Emissions</h1>
+						<h2>Tons of carbon per capita</h2>
+						<br>
+						<h3>See how your actions can change carbon emissions for 2017.</h3>
+						<div>
+							Look at the graph to see what would happen if you and a selected percentage of American citizens
+							did the following activities for all of 2017.
+						</div>
+						You and
+						<input type="number" min="0" max="100" step="10" value="50" id="population" onchange="updateBar()">
+						% of people will:
 
-		<div class="row">
-			<div class="col-md-12">
-				
-				<h1>U.S. Carbon Emissions</h1>
-				<h2>Tons of carbon per capita</h2>
-				<br>
-				<h3>See how your actions can change carbon emissions for 2017.</h3>
-				<div>
-					Look at the graph to see what would happen if you and a selected percentage of American citizens
-					did the following activities for all of 2017.
-				</div>
-				You and
-					<input type="number" min="0" max="100" step="10" value="50" id="population" onchange="updateBar()">
-				% of people will:
+						<form class="form-inline">
+							<div class="form-group">
+								<input type="checkbox" id="beef" value="beef" onchange = "updateBar()">Cut beef out of your diet<br>
+								<input type="checkbox" id="shower" value="shower" onchange = "updateBar()">Take 5-minute showers<br>
+								<input type="checkbox" id="carpool" value="carpool" onchange = "updateBar()">Carpool with 1 other person<br>
+								<input type="checkbox" id="ac" value="ac" onchange = "updateBar()">Turn the thermostat up 2 degrees in summer and down 2 degrees in winter<br>
+								<input type="checkbox" id="lights" value="lights" onchange = "updateBar()">Turn off the lights whenever you're not using them<br>
+								<input type="checkbox" id="bulb" value="bulb" onchange = "updateBar()">Replace old incandescent bulbs with compact fluorescent bulbs<br>
+								<input type="checkbox" id="insulate" value="insulate" onchange = "updateBar()">Properly insulate walls, ceilings, and windows<br>
+								<input type="checkbox" id="recycle" value="recycle" onchange = "updateBar()">Recycle half of your household's waste<br>
+								<input type="checkbox" id="package" value="package" onchange = "updateBar()">Don't buy heavily packaged foods (cut down garbage by 10%)<br>
+							</div>
+						</form>
 
-				<form class="form-inline">
-					<div class="form-group">
-						<input type="checkbox" id="beef" value="beef" onchange = "updateBar()">Cut beef out of your diet<br>
-						<input type="checkbox" id="shower" value="shower" onchange = "updateBar()">Take 5-minute showers<br>
-						<input type="checkbox" id="carpool" value="carpool" onchange = "updateBar()">Carpool with 1 other person<br>
-						<input type="checkbox" id="ac" value="ac" onchange = "updateBar()">Turn the thermostat up 2 degrees in summer and down 2 degrees in winter<br>
-						<input type="checkbox" id="lights" value="lights" onchange = "updateBar()">Turn off the lights whenever you're not using them<br>
-						<input type="checkbox" id="bulb" value="bulb" onchange = "updateBar()">Replace old incandescent bulbs with compact fluorescent bulbs<br>
-						<input type="checkbox" id="insulate" value="insulate" onchange = "updateBar()">Properly insulate walls, ceilings, and windows<br>
-						<input type="checkbox" id="recycle" value="recycle" onchange = "updateBar()">Recycle half of your household's waste<br>
-						<input type="checkbox" id="package" value="package" onchange = "updateBar()">Don't buy heavily packaged foods (cut down garbage by 10%)<br>
+						<!-- Visualization placeholders -->
+						<div id="stacked-area-chart" style="float:left"></div>
+						<div id="bar-chart" style="float:left"></div>
+						<div class="percent"></div>
+
 					</div>
-				</form>
+				</div>
 
-				<!-- Visualization placeholders -->
-				<div id="stacked-area-chart" style="float:left"></div>
-				<div id="bar-chart" style="float:left"></div>
-				<div class="percent"></div>
-			
 			</div>
-		</div>
 
+		</div>
+		<div class="col-xs-1 r-arrow"><a href="extremetemperatures.html"> »</a></div>
 	</div>
+</div>
 
 	<!-- Load JS libraries -->
 	<script src="js/jquery.min.js"></script>

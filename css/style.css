@@ -25,15 +25,21 @@ body {
     background-image: url("../img/dramatic_tree.jpg");
 }
 
+#extreme-Temps-BG {
+    background-image: url("../img/clay-ground-seamless.jpg");
+    opacity: 50;
+}
+
 #footprint-BG {
     background-image: url("../img/v2-smog.jpg");
     background-repeat: initial;
     background-attachment: fixed;
 }
 
-#extreme-Temps-BG {
-    background-image: url("../img/clay-ground-seamless.jpg");
-    opacity: 50;
+#carbonemissions-BG {
+    background-image: url("../img/traffic.jpg");
+    background-repeat: initial;
+    background-attachment: fixed;
 }
 
 #electoral-college-BG {
