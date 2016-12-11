@@ -64,7 +64,7 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
         })
         .attr("r", function(d) {return vis.r(getData(d))})
         .attr("opacity", function(d, index){
-            return (index > stepNum -1) ? 0 : 50;
+            return (index > stepNum) ? 0 : 50;
         });
 
     // Exit
@@ -87,7 +87,7 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
             return total ? vis.yPositions[index] - 10 : vis.yPCPositions[index] - 10;
         })
         .attr("opacity", function(d, index){
-            return (index > stepNum -1) ? 0 : 100;
+            return (index > stepNum) ? 0 : 100;
         })
         .attr("text-anchor", "middle");
 
