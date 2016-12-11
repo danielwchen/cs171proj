@@ -4,62 +4,69 @@
     <meta charset="UTF-8">
     <title>tester</title>
 
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body id="footprint-BG">
 
+<div class="container-fluid">
     <div class="row">
-        <h1 id="titleFootprints">Carbon Inequality</h1>
-    </div>
-    <div class="row spacer"></div>
-    <div class="row">
-        <div id='graphic'>
-            <div id='sections'>
-                <section class="step" style="">
-                    <div id="footprint-vis1"></div>
-                </section>
-                <section class="step">
-                    <div id="footprint-vis2" ></div>
-                </section>
-                <section class="step">
-                    <div id="footprint-vis3" ></div>
-                </section>
-                <section class="step">
-                    <div id="footprint-vis4" ></div>
-                </section>
-                <section class="step">
-                    <div id="footprint-vis5" ></div>
-                </section>
-                <section class="step">
-                    <div id="footprint-vis6" ></div>
-                </section>
-                <section class="step">
-                    <div id="footprint-vis7" ></div>
-                </section>
-                <section class="step">
-                    <div id="footprint-vis8" ></div>
-                </section>
-                <section class="step">
-                    <div id="footprint-vis9" ></div>
-                </section>
-                <section class="step">
-                    <div id="footprint-vis10" ></div>
-                </section>
+        <div class="col-xs-1">
+        hello
+        </div>
+        <div class="col-xs-10">
+            <div class="row">
+                <h1 id="titleFootprints">Carbon Inequality</h1>
             </div>
-            <div id='fixed-footprints-container'>
-                <form id="dataSelectFootprint" action="" onchange="updateVisualization()">
-                    <input type="radio" name="dataS" value="total" checked="checked"> Total CO2 Output (metric tons)<br>
-                    <input type="radio" name="dataS" value="pc"> Per Capita CO2 Output (metric tons)<br>
-                </form>
-                <div id="fixed-footprints"></div>
+            <div class="row spacer"></div>
+            <div class="row">
+                <div id='graphic'>
+                    <div id='sections'>
+                        <section class="step" style="">
+                            <div id="footprint-vis1"></div>
+                        </section>
+                        <section class="step">
+                            <div id="footprint-vis2" ></div>
+                        </section>
+                        <section class="step">
+                            <div id="footprint-vis3" ></div>
+                        </section>
+                        <section class="step">
+                            <div id="footprint-vis4" ></div>
+                        </section>
+                        <section class="step">
+                            <div id="footprint-vis5" ></div>
+                        </section>
+                        <section class="step">
+                            <div id="footprint-vis6" ></div>
+                        </section>
+                        <section class="step">
+                            <div id="footprint-vis7" ></div>
+                        </section>
+                        <section class="step">
+                            <div id="footprint-vis8" ></div>
+                        </section>
+                        <section class="step">
+                            <div id="footprint-vis9" ></div>
+                        </section>
+                        <section class="step">
+                            <div id="footprint-vis10" ></div>
+                        </section>
+                    </div>
+                    <div id='fixed-footprints-container'>
+                        <form id="dataSelectFootprint" action="" onchange="updateVisualization()">
+                            <input type="radio" name="dataS" value="total" checked="checked"> Total CO2 Output (metric tons)<br>
+                            <input type="radio" name="dataS" value="pc"> Per Capita CO2 Output (metric tons)<br>
+                        </form>
+                        <div id="fixed-footprints"></div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="col-xs-1">goodbye</div>
     </div>
-
+</div>
 
 <script src="js/d3.min.js"></script>
 <script src="js/jquery.min.js"></script>
