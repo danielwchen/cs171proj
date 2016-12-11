@@ -8,6 +8,19 @@ body {
     background-size: cover;
 }
 
+.r-arrow {
+    font-size: 10em;
+    color: orange;
+    position: fixed;
+    display: inline-block;
+}
+.l-arrow {
+    font-size: 10em;
+    color: orange;
+    position: fixed;
+}
+
+
 #home-BG {
     background-image: url("../img/dramatic_tree.jpg");
 }
@@ -61,11 +74,10 @@ body {
     color:black;
 }
 
-<<<<<<< Updated upstream
 #sections {
     position: relative;
     display: inline-block;
-    width: 400px;
+    width: 338px;
     top: 0px;
     z-index: 90;
     scroll-snap-type: mandatory;
@@ -78,10 +90,11 @@ body {
     margin-bottom: 100px;
     height: 530px;
     overflow:auto;
-    width:390px;
+    width:338px;
     background-color: lightgrey;
     opacity: .7;
     border-radius: 25px;
+
 }
 
 #titleFootprints{
@@ -102,12 +115,13 @@ body {
     position: fixed;
     top: 60px;
     z-index: 1;
-    margin-left: 0;
+    padding-left: 10px;
     opacity: .7;
     height: 800px;
-    width: 750px;
+    width: 710px;
     background-color: #ddd;
     border-radius: 25px;
+    margin-left: 20px;
 }
 
 #dataSelectFootprint {
