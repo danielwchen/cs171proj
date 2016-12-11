@@ -40,6 +40,12 @@ CongressVis.prototype.initVis = function() {
     vis.senWidth = 25;
     vis.senPadding = 3;
     vis.senNumPerRow = 15;
+
+    vis.repHeight = 9;
+    vis.repWidth = 9;
+    vis.repPadding = 3;
+    vis.repNumPerRow = 35;
+
     vis.spaceBetweenSections = 30;
 
     vis.svg.append("text")
@@ -155,7 +161,7 @@ CongressVis.prototype.wrangleData = function() {
     vis.data.forEach(function(d) {
         vis.assignRanking(d);
     });
-    vis.ySpacing = vis.allCounters.bCounters[vis.sortParam].rowsPerSection * (vis.senHeight + vis.senPadding) + 30;
+    vis.ySpacing = vis.allCounters.bCounters[vis.sortParam].rowsPerSection * (vis.senHeight + vis.senPadding) + vis.spaceBetweenSections;
     // vis.ySpacing = 10
     // vis.believe = vis.data.filter(function(d) { return d.BelieveClimateChange == "Yes" });
     // vis.data = vis.data.filter(function(d) { return d.BelieveClimateChange == "No" });
