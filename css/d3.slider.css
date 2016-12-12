@@ -86,8 +86,8 @@
 }
 
 .wrapper {
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding:30px;
+    width: 600px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding:20px;
 }
