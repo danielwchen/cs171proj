@@ -31,7 +31,6 @@ StackedAreaChart = function(_parentElement, _data, _extraData, _data2017){
 
 StackedAreaChart.prototype.initVis = function(){
 	var vis = this;
-	console.log(vis.data);
 
 	vis.margin = { top: 40, right: 700, bottom: 40, left: 100 };
 	vis.width = 1200 - vis.margin.left - vis.margin.right,
@@ -125,6 +124,12 @@ StackedAreaChart.prototype.initVis = function(){
 		.attr("x", vis.width+220)
 		.attr("y", 20)
 
+	vis.svg.append("text")
+		.attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
+		.attr("transform", "translate("+ (-vis.margin.left+15) +","+(vis.height/2)+")rotate(-90)")
+		.attr("id", "label1")
+		.text("Metric Tons of Carbon Emissions Per Year");
+
 	// TO-DO: (Filter, aggregate, modify data)
 	vis.wrangleData();
 };
@@ -138,9 +143,11 @@ StackedAreaChart.prototype.initVis = function(){
 StackedAreaChart.prototype.wrangleData = function(){
 	var vis = this;
 
+	var population = slider.value();
+	document.getElementById("demo").innerHTML = population + "% of people will:";
 	vis.previous = vis.percentage;
 
-	var population = document.getElementById("population").value;
+	//var population = document.getElementById("population").value;
 	var initpop = 325000000;
 	//var activity = d3.select("#activity").property("value");
 	var beef = document.getElementById("beef");
@@ -251,8 +258,6 @@ StackedAreaChart.prototype.updateVis = function(){
 		return formatValue(p);
 	}
 
-	console.log(vis.previous);
-    console.log(vis.percentage);
 	vis.svg.selectAll(".percent").remove();
 
 
@@ -288,16 +293,16 @@ StackedAreaChart.prototype.updateVis = function(){
 		.attr("font-size", 15)
 		.text("emissions")
 
-    console.log(vis.displayData);
-
 	// Draw the layers
 	var categories = vis.svg.selectAll(".area")
-      .data(vis.displayData);
-  
+      .data(vis.displayData)
+  ;
   categories.enter().append("path")
       .attr("class", "area");
 
   categories
+	  .transition()
+	  .duration(1000)
   		.style("fill", function(d) { 
   			return colorScale(d.name);
   		})
@@ -306,13 +311,12 @@ StackedAreaChart.prototype.updateVis = function(){
       })
 	  .attr("opacity", 0.7);
 
+
   // TO-DO: Update tooltip text
 	categories
-		.on("mouseover", function(d,i){vis.svg.selectAll(".area").transition()
+		.on("mouseover", function(d){vis.svg.selectAll("rect").transition()
 			.duration(250)
-			.attr("opacity", function(d, j) {
-				return j != i ? 0.7 : 1;
-			}); return vis.tooltip.text(d.name);})
+			.attr("opacity", 1); return vis.tooltip.text(d.name);})
 		.on("mouseout", function(d,i){return vis.tooltip.text("");})
 		.on("mousemove", function(section) {
 			var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
@@ -396,32 +400,124 @@ StackedAreaChart.prototype.updateVis = function(){
 
 	categories.exit().remove();
 
-    var layer = vis.svg.selectAll(".layer")
-        .data(vis.barEditedData);
-	console.log(vis.edited2017);
-	console.log(vis.barDisplayData);
+	var layer = vis.svg.selectAll(".layer")
+		.data(vis.barEditedData);
+
+	layer
+		.enter().append("rect").attr("class", "layer")
+		.style("fill", function(d) {
+			return colorScale(d.name);
+		})
+		.attr("opacity", 0.7);
+
+	layer
+		.transition()
+		.duration(1000)
+		.attr("x", vis.width)
+		.attr("y", function(d) {return vis.y(d.values[0].y + d.values[0].y0); })
+		.attr("height", function(d) { return vis.y(d.values[0].y0) - vis.y(d.values[0].y + d.values[0].y0); })
+		.attr("width", 200);
+
+	layer
+		.on("mouseover", function(d,i){vis.svg.selectAll(".layer").transition()
+					.duration(250)
+					.attr("opacity", function(d, j) {
+						return j != i ? 0.7 : 1;
+			}); return vis.tooltip.text(d.name);})
+		.on("mouseout", function(d,i){return vis.tooltip.text("");})
+		.on("mousemove", function(section) {
+			var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
+
+			// place the value at the intersection
+			vis.svg.append("text")
+				.attr("class", "y1")
+				.style("stroke", "white")
+				.style("stroke-width", "3.5px")
+				.style("opacity", 0.8)
+				.attr("dx", 0)
+				.attr("dy", "1.3em");
+			vis.svg.append("text")
+				.attr("class", "y2")
+				.attr("dx", 0)
+				.attr("dy", "1.3em");
+
+			// place the date at the intersection
+			vis.svg.append("text")
+				.attr("class", "y3")
+				.style("stroke", "white")
+				.style("stroke-width", "3.5px")
+				.style("opacity", 0.8)
+				.attr("dx", 0)
+				.attr("dy", "2.6em");
+			vis.svg.append("text")
+				.attr("class", "y4")
+				.attr("dx", 0)
+				.attr("dy", "2.6em");
+			vis.svg.select("circle.y")
+				.attr("transform",
+					"translate(500," +
+					vis.y(vis.data2017.Total) + ")");
+
+			var test = section.values[0].y0+ section.values[0].y;
+
+			vis.svg.select("text.y1")
+				.attr("transform",
+					"translate(450," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text(section.name + " "+formatValue(vis.edited2017[0][section.name]).replace('G', 'B'));
+
+			vis.svg.select("text.y2")
+				.attr("transform",
+					"translate(450," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text(section.name + " "+ formatValue(vis.edited2017[0][section.name]).replace('G', 'B'));
+
+			vis.svg.select("text.y3")
+				.attr("transform",
+					"translate(450," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text("2017");
+
+			vis.svg.select("text.y4")
+				.attr("transform",
+					"translate(450," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text("2017");
+
+			vis.svg.select(".y")
+				.attr("transform",
+					"translate(" + vis.width * -1 + "," +
+					vis.y(vis.data2017.Total) + ")")
+				.attr("x2", vis.width + vis.width);
+
+		});
+
+	layer.exit().remove();
 
 	var layer2 = vis.svg.selectAll(".layer2")
 		.data(vis.barDisplayData);
 
 	layer2
-		.enter().append("rect").attr("class", "layer")
+		.enter().append("rect").attr("class", "layer2")
 		.style("fill", function(d) {
 			return colorScale(d.name);
 		})
-		.attr("opacity", 1);
+		.attr("opacity", .7);
 
 	layer2
+		.transition()
+		.duration(1000)
 		.attr("x", vis.width+200)
-		.attr("y", function(d) { console.log(d.values[0].y); return vis.y(d.values[0].y + d.values[0].y0); })
+		.attr("y", function(d) { return vis.y(d.values[0].y + d.values[0].y0); })
 		.attr("height", function(d) { return vis.y(d.values[0].y0) - vis.y(d.values[0].y + d.values[0].y0); })
 		.attr("width", 200)
 
-	.on("mouseover", function(d,i){vis.svg.selectAll("rect").transition()
-		.duration(250)
-		.attr("opacity", function(d, j) {
-			return j != i ? 0.7 : 1;
-		}); return vis.tooltip.text(d.name);})
+	layer2
+		.on("mouseover", function(d,i){vis.svg.selectAll(".layer2").transition()
+			.duration(250)
+			.attr("opacity", function(d, j) {
+				return j != i ? 0.7 : 1;
+			}); return vis.tooltip.text(d.name);})
 		.on("mouseout", function(d,i){return vis.tooltip.text("");})
 		.on("mousemove", function(section) {
 			var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
@@ -511,96 +607,6 @@ StackedAreaChart.prototype.updateVis = function(){
 		.attr("stroke-width", 3)
 		.attr("stroke-dasharray", "5")
 		.attr("opacity", 1)
-
-
-	layer
-        .enter().append("rect").attr("class", "layer")
-        .style("fill", function(d) {
-            return colorScale(d.name);
-        })
-        .attr("opacity", 0.7);
-
-    layer
-        .attr("x", vis.width)
-        .attr("y", function(d) { console.log(d.values[0].y); return vis.y(d.values[0].y + d.values[0].y0); })
-        .attr("height", function(d) { return vis.y(d.values[0].y0) - vis.y(d.values[0].y + d.values[0].y0); })
-        .attr("width", 200);
-
-	layer
-		.on("mouseover", function(d,i){vis.svg.selectAll(".rect").transition()
-			.duration(250)
-			.attr("opacity", function(d, j) {
-				return j != i ? 0.7 : 1;
-			}); return vis.tooltip.text(d.name);})
-		.on("mouseout", function(d,i){return vis.tooltip.text("");})
-		.on("mousemove", function(section) {
-			var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
-
-			// place the value at the intersection
-			vis.svg.append("text")
-				.attr("class", "y1")
-				.style("stroke", "white")
-				.style("stroke-width", "3.5px")
-				.style("opacity", 0.8)
-				.attr("dx", 0)
-				.attr("dy", "1.3em");
-			vis.svg.append("text")
-				.attr("class", "y2")
-				.attr("dx", 0)
-				.attr("dy", "1.3em");
-
-			// place the date at the intersection
-			vis.svg.append("text")
-				.attr("class", "y3")
-				.style("stroke", "white")
-				.style("stroke-width", "3.5px")
-				.style("opacity", 0.8)
-				.attr("dx", 0)
-				.attr("dy", "2.6em");
-			vis.svg.append("text")
-				.attr("class", "y4")
-				.attr("dx", 0)
-				.attr("dy", "2.6em");
-			vis.svg.select("circle.y")
-				.attr("transform",
-					"translate(500," +
-					vis.y(vis.data2017.Total) + ")");
-
-			var test = section.values[0].y0+ section.values[0].y;
-
-			vis.svg.select("text.y1")
-				.attr("transform",
-					"translate(450," +
-					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
-				.text(section.name + " "+formatValue(vis.edited2017[0][section.name]).replace('G', 'B'));
-
-			vis.svg.select("text.y2")
-				.attr("transform",
-					"translate(450," +
-					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
-				.text(section.name + " "+ formatValue(vis.edited2017[0][section.name]).replace('G', 'B'));
-
-			vis.svg.select("text.y3")
-				.attr("transform",
-					"translate(450," +
-					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
-				.text("2017");
-
-			vis.svg.select("text.y4")
-				.attr("transform",
-					"translate(450," +
-					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
-				.text("2017");
-
-			vis.svg.select(".y")
-				.attr("transform",
-					"translate(" + vis.width * -1 + "," +
-					vis.y(vis.data2017.Total) + ")")
-				.attr("x2", vis.width + vis.width);
-
-		});
-
-    layer.exit().remove();
 
 
 	var bisectDate = d3.bisector(function(d) { return d.Year; }).left;

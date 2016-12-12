@@ -398,3 +398,15 @@ body {
 #state-hover {
     text-align: center;
 }
+
+#percentslider .slider-selection {
+    background: #BABABA;
+}
+
+#percentslider {
+    width: 100px;
+}
+
+#quote, #label1 {
+    font-style: italic;
+}
