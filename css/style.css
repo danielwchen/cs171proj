@@ -410,3 +410,21 @@ body {
 #quote, #label1 {
     font-style: italic;
 }
+
+.pretty-box-1 {
+    margin-top: 10px;
+    height: auto;
+    width:670px;
+    background-color: lightgrey;
+    opacity: .7;
+    border-radius: 25px;
+}
+
+.pretty-box-2 {
+    margin-top:10px;
+    height: 700px;
+    width:350px;
+    background-color: lightgrey;
+    opacity: .7;
+    border-radius: 25px;
+}
