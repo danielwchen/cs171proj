@@ -334,22 +334,6 @@ StackedAreaChart.prototype.updateVis = function(){
 				.attr("y1", 0)
 				.attr("y2", vis.height);
 
-			// append the y line
-			/*vis.svg.append("line")
-			 .attr("class", "y")
-			 .style("stroke", "blue")
-			 .style("stroke-dasharray", "3,3")
-			 .style("opacity", 0.5)
-			 .attr("x1", vis.width)
-			 .attr("x2", vis.width);*/
-
-			// append the circle at the intersection
-			/*vis.svg.append("circle")
-			 .attr("class", "y")
-			 .style("fill", "none")
-			 .style("stroke", "blue")
-			 .attr("r", 4);*/
-
 			// place the value at the intersection
 			vis.svg.append("text")
 				.attr("class", "y1")
@@ -375,10 +359,6 @@ StackedAreaChart.prototype.updateVis = function(){
 				.attr("class", "y4")
 				.attr("dx", 4)
 				.attr("dy", "2.6em");
-			vis.svg.select("circle.y")
-				.attr("transform",
-					"translate(" + vis.x(d.Year) + "," +
-					vis.y(d.Total) + ")");
 
 			var test = section.values[i].y0+ section.values[i].y;
 
@@ -406,25 +386,11 @@ StackedAreaChart.prototype.updateVis = function(){
 					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
 				.text(formatDate(d.Year).replace("2018", "2017").replace("2019", "2017").replace("2020", "2017"));
 
-			/*vis.svg.select(".x")
-				.attr("transform",
-					"translate(" + vis.x(d.Year) + "," +
-					-(vis.y(d[section.name])- vis.height) + ")")
-				.attr("y2", vis.y(d[section.name]));*/
-
 			vis.svg.select(".x")
 				.attr("transform",
 					"translate(" + vis.x(d.Year) + "," +
 					vis.height + ")")
 				.attr("y2", -vis.height + vis.y(test));
-
-
-
-			vis.svg.select(".y")
-				.attr("transform",
-					"translate(" + vis.width * -1 + "," +
-					vis.y(d.Total) + ")")
-				.attr("x2", vis.width + vis.width);
 
 			});
 
@@ -451,7 +417,7 @@ StackedAreaChart.prototype.updateVis = function(){
 		.attr("height", function(d) { return vis.y(d.values[0].y0) - vis.y(d.values[0].y + d.values[0].y0); })
 		.attr("width", 200)
 
-	.on("mouseover", function(d,i){vis.svg.selectAll(".area").transition()
+	.on("mouseover", function(d,i){vis.svg.selectAll("rect").transition()
 		.duration(250)
 		.attr("opacity", function(d, j) {
 			return j != i ? 0.7 : 1;
@@ -561,7 +527,7 @@ StackedAreaChart.prototype.updateVis = function(){
         .attr("width", 200);
 
 	layer
-		.on("mouseover", function(d,i){vis.svg.selectAll(".area").transition()
+		.on("mouseover", function(d,i){vis.svg.selectAll(".rect").transition()
 			.duration(250)
 			.attr("opacity", function(d, j) {
 				return j != i ? 0.7 : 1;

@@ -6,6 +6,12 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
+    background-color: #e3eaec;
+}
+
+.ack {
+    font-style: italic;
 }
 
 .r-arrow {
@@ -50,7 +56,6 @@ body {
 /*MEG FONT*/
 #carbonemissions-BG {
     font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
-    background-color: #fffddf;
 }
 
 /*#electoral-college-BG {*/
@@ -60,7 +65,7 @@ body {
 #title {
     font-size: 4em;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 70px;
 }
 
 .top-bar {
@@ -80,6 +85,15 @@ body {
     border: solid;
     padding:10px;
 }
+.brightness {
+    background-color: #268ede;
+    display: inline-block;
+
+}
+.brightness img:hover {
+    opacity: .7;
+}
+
 
 #footprint-vis {
     border-bottom-left-radius: 25px;
@@ -93,7 +107,13 @@ body {
     border-bottom-right-radius: 25px;
 }
 
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+.nav {
+    background-color: #a4d1de;
+    padding-bottom: 0px !important;
+}
+
+.nav-pills > li.active > a
+.nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
     color: #ebebe6;
     background-color: #797979;
 }
