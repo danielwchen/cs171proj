@@ -53,41 +53,10 @@ body {
     /*background-image: url("../img/United_States_Capitol_-_west_front.jpg");*/
 /*}*/
 
-<<<<<<< HEAD
-#title{
+#title {
     font-size: 4em;
     text-align: center;
-=======
-/*#title{*/
-    /*padding-left: 30%;*/
-    /*font-size: 4em;*/
-/*}*/
-
-#carbonemissions-BG {
-    background-color: #fffaf4;
-    /*color: white;*/
-    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
-}
-
-/*#footprint-BG {*/
-    /*background-image: url("../img/v2-smog.jpg");*/
-    /*background-repeat: initial;*/
-    /*background-attachment: fixed;*/
-/*}*/
-
-/*#carbonemissions-BG {*/
-    /*background-image: url("../img/traffic.jpg");*/
-    /*background-repeat: initial;*/
-    /*background-attachment: fixed;*/
-/*}*/
-
-/*#electoral-college-BG {*/
-    /*background-image: url("../img/United_States_Capitol_-_west_front.jpg");*/
-/*}*/
-
-#quote {
-    font-style: italic;
->>>>>>> 219066cda84a42b9d7c3cf41826e2bd3238f6a22
+    padding-top: 40px;
 }
 
 .top-bar {
@@ -239,6 +208,7 @@ body {
     color: #fff;
     border-radius: 2px;
     pointer-events: none!important;
+    z-index: 100;
 }
 
 /* Creates a small triangle extender for the tooltip */
