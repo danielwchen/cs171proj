@@ -32,8 +32,8 @@ StackedAreaChart.prototype.initVis = function(){
 	var vis = this;
 	console.log(vis.data);
 
-	vis.margin = { top: 40, right: 500, bottom: 60, left: 100 };
-	vis.width = 1000 - vis.margin.left - vis.margin.right,
+	vis.margin = { top: 40, right: 700, bottom: 40, left: 100 };
+	vis.width = 1200 - vis.margin.left - vis.margin.right,
   	vis.height = 400 - vis.margin.top - vis.margin.bottom;
 
 
@@ -177,7 +177,6 @@ StackedAreaChart.prototype.wrangleData = function(){
 	+ editedData[end]["Transportation"];
 
 	vis.percentage = (vis.extraData[end].Total - newTotal)/vis.extraData[end].Total;
-	console.log("HELLO!!!" +vis.percentage);
 
 	// TO-DO: Initialize stack layout
 	var dataCategories = colorScale.domain();
@@ -263,8 +262,9 @@ StackedAreaChart.prototype.updateVis = function(){
         var duration = 1000;
 
    var percentChange = vis.svg.append("text").attr("class", "percent")
-       .attr("x", 850)
+       .attr("x", 865)
        .attr("y", 175)
+	   .attr("font-size", 30)
        .text(start_val)
        .transition()
        .duration(duration)
@@ -274,9 +274,20 @@ StackedAreaChart.prototype.updateVis = function(){
                prec = (end_val + "").split("."),
                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
            return function(t) {
-               this.textContent = Math.round(i(t) * round) / round;
+               this.textContent = Math.round(i(t) * round) / round + "%";
            };
        });
+
+	var percentLabel = vis.svg.append("text").attr("class", "percent-label")
+		.attr("x", 830)
+		.attr("y", 195)
+		.attr("font-size", 15)
+		.text("decrease in carbon")
+	var percentLabel2 = vis.svg.append("text").attr("class", "percent-label")
+		.attr("x", 850)
+		.attr("y", 213)
+		.attr("font-size", 15)
+		.text("emissions")
 
     console.log(vis.displayData);
 
@@ -422,6 +433,7 @@ StackedAreaChart.prototype.updateVis = function(){
 
     var layer = vis.svg.selectAll(".layer")
         .data(vis.barEditedData);
+	console.log(vis.barEditedData);
 
     layer
         .enter().append("rect").attr("class", "layer")
@@ -435,6 +447,80 @@ StackedAreaChart.prototype.updateVis = function(){
         .attr("y", function(d) { console.log(d.values[0].y); return vis.y(d.values[0].y + d.values[0].y0); })
         .attr("height", function(d) { return vis.y(d.values[0].y0) - vis.y(d.values[0].y + d.values[0].y0); })
         .attr("width", 200);
+
+	layer
+		.on("mouseover", function(d,i){vis.svg.selectAll(".area").transition()
+			.duration(250)
+			.attr("opacity", function(d, j) {
+				return j != i ? 0.7 : 1;
+			}); return vis.tooltip.text(d.name);})
+		.on("mouseout", function(d,i){return vis.tooltip.text("");})
+		.on("mousemove", function(section) {
+			var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
+
+			// place the value at the intersection
+			vis.svg.append("text")
+				.attr("class", "y1")
+				.style("stroke", "white")
+				.style("stroke-width", "3.5px")
+				.style("opacity", 0.8)
+				.attr("dx", 8)
+				.attr("dy", "1.3em");
+			vis.svg.append("text")
+				.attr("class", "y2")
+				.attr("dx", 8)
+				.attr("dy", "1.3em");
+
+			// place the date at the intersection
+			vis.svg.append("text")
+				.attr("class", "y3")
+				.style("stroke", "white")
+				.style("stroke-width", "3.5px")
+				.style("opacity", 0.8)
+				.attr("dx", 8)
+				.attr("dy", "2.6em");
+			vis.svg.append("text")
+				.attr("class", "y4")
+				.attr("dx", 8)
+				.attr("dy", "2.6em");
+			vis.svg.select("circle.y")
+				.attr("transform",
+					"translate(500," +
+					vis.y(vis.data2017.Total) + ")");
+
+			var test = section.values[0].y0+ section.values[0].y;
+
+			vis.svg.select("text.y1")
+				.attr("transform",
+					"translate(500," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text(section.name + " "+formatValue(vis.data2017[section.name]).replace('G', 'B'));
+
+			vis.svg.select("text.y2")
+				.attr("transform",
+					"translate(500," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text(section.name + " "+ formatValue(vis.data2017[section.name]).replace('G', 'B'));
+
+			vis.svg.select("text.y3")
+				.attr("transform",
+					"translate(500," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text("2017");
+
+			vis.svg.select("text.y4")
+				.attr("transform",
+					"translate(500," +
+					/*vis.y(d.Total)*/ (vis.y(test)) + ")")
+				.text("2017");
+
+			vis.svg.select(".y")
+				.attr("transform",
+					"translate(" + vis.width * -1 + "," +
+					vis.y(vis.data2017.Total) + ")")
+				.attr("x2", vis.width + vis.width);
+
+		});
 
     layer.exit().remove();
 
