@@ -1,8 +1,4 @@
 
-
-
-
-
 RecordMap = function(_parentElement, _data) {
     this.parentElement = _parentElement;
     this.data = _data;
@@ -14,7 +10,7 @@ RecordMap.prototype.initVis = function() {
 
     var vis = this;
     vis.width = 600;
-    vis.height = 450;
+    vis.height = 350;
     vis.filteredData = vis.data;
 
     vis.svg = d3.select(vis.parentElement).append("svg")
@@ -23,7 +19,7 @@ RecordMap.prototype.initVis = function() {
 
 
     vis.projection = d3.geo.albersUsa()
-        .translate([300, 225])
+        .translate([300, 175])
         .scale(750);
 
     vis.path = d3.geo.path()
@@ -45,8 +41,7 @@ RecordMap.prototype.initVis = function() {
 
         vis.wrangleData();
     });
-
-}
+};
 
 RecordMap.prototype.wrangleData = function(){
     var vis = this;
@@ -57,7 +52,7 @@ RecordMap.prototype.wrangleData = function(){
     // console.log(vis.filteredData);
 
     vis.updateVis();
-}
+};
 
 RecordMap.prototype.updateVis = function(){
     var vis = this;
@@ -105,13 +100,14 @@ RecordMap.prototype.updateVis = function(){
             document.getElementById("switch_3_center").checked = true;
         }
     }
-}
+};
 
 RecordMap.prototype.play = function(){
     var vis = this;
     // vis.year++;
     slider.value(vis.year);
+
     vis.wrangleData();
 
     d3.select('#slidertext').text(vis.year);
-}
+};
