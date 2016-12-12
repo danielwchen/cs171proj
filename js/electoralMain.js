@@ -3,6 +3,7 @@ document.getElementById("congress-hover").style.visibility = 'hidden';
 
 var stateTotalData = {
 };
+var offData = {};
 var senData;
 var repData;
 
@@ -53,6 +54,10 @@ function loadData() {
                 stateTotalData[d.State] = d;
             });
 
+            CSV.forEach(function(d,index) {
+                offData[d.Name] = d;
+            });
+
             console.log(stateTotalData);
             // stateTotalData = totalCSV;
             senData = senCSV;
@@ -70,7 +75,7 @@ function createVis() {
     congressVis = new CongressVis("#congress-vis",senData,repData,EventHandler);
 
     var statePinned = false;
-    var congressPersonPinned = false;
+    var repPinned = false;
 
     $(EventHandler).bind("stateOver", function(event, state){
         if (!statePinned) {
@@ -98,6 +103,32 @@ function createVis() {
         congressVis.pinState(null);
         statePinned = false;
     });
+
+    $(EventHandler).bind("repOver", function(event, rep){
+        if (!repPinned) {
+            electoralMap.onStateOver(offData[rep].State);
+            congressVis.onRepOver(rep);
+            updateCongressTable(offData[rep].State);
+        }
+    });
+    $(EventHandler).bind("repOff", function(event){
+        if (!repPinned) {
+            electoralMap.onStateOver(null);
+            congressVis.onRepOver(null);
+            document.getElementById("congress-hover").style.visibility = 'hidden';
+        }
+    });
+    $(EventHandler).bind("repPress", function(event, rep){
+        electoralMap.pinState(offData[rep].State);
+        congressVis.pinRep(rep);
+        repPinned = true;
+        updateCongressTable(rep)
+    });
+    $(EventHandler).bind("repUnpress", function(event){
+        electoralMap.pinState(null);
+        congressVis.pinRep(null);
+        repPinned = false;
+    });
 }
 
 function updateStateTable(state) {
@@ -111,6 +142,7 @@ function updateStateTable(state) {
 
 function updateCongressTable() {
 
+    document.getElementById("congress-hover").style.visibility = 'visible';
 }
 
 // THINGS TO DO:

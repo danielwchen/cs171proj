@@ -177,3 +177,31 @@ ElectoralMap.prototype.pinState = function(state) {
             })
     }
 };
+
+ElectoralMap.prototype.pinState = function(state) {
+    var vis = this;
+
+    if (state) {
+        vis.svg.selectAll("path")
+            .data(vis.json.features).transition().duration(80)
+            .attr("fill",function(d) {
+                if(d.properties.name == state) {
+                    if (d.properties.senDeniers == 2) {return "red"}
+                    else if (d.properties.senDeniers == 1) {return "purple"}
+                    else {return "blue"}
+                } else {
+                    if (d.properties.senDeniers == 2) {return "#FF6464"}
+                    else if (d.properties.senDeniers == 1) {return "#BB88B2"}
+                    else {return "#6464FF"}
+                }
+            })
+    } else {
+        vis.svg.selectAll("path")
+            .data(vis.json.features).transition().duration(80)
+            .attr("fill",function(d) {
+                if (d.properties.senDeniers == 2) {return "red"}
+                else if (d.properties.senDeniers == 1) {return "purple"}
+                else {return "blue"}
+            })
+    }
+};

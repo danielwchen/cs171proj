@@ -18,7 +18,7 @@ CongressVis.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = {top: 100, right: 10, bottom: 0, left: 30};
+    vis.margin = {top: 100, right: 30, bottom: 0, left: 10};
     vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right;
     vis.height = 1300 - vis.margin.top - vis.margin.bottom;
 
@@ -627,7 +627,7 @@ CongressVis.prototype.updateVis = function() {
         // .attr("rx", 3)
         // .attr("ry", 3)
         .attr("width", vis.senWidth)
-        .attr("height", vis.senHeight);
+        .attr("height", vis.senHeight)
 
     // Update
     vis.senIcons
@@ -643,8 +643,14 @@ CongressVis.prototype.updateVis = function() {
         });
 
     vis.senIcons
-        .on('mouseover', vis.senTip.show)
-        .on('mouseout', vis.senTip.hide);
+        .on("mouseover",function(d) {
+            $(vis.eventHandler).trigger("repOver", d.Name);
+        })
+        .on("mouseout",function(d) {
+            $(vis.eventHandler).trigger("repOff");
+        });
+        // .on('mouseover', vis.senTip.show)
+        // .on('mouseout', vis.senTip.hide);
 
     // Remove
     vis.senIcons.exit().remove();
@@ -688,8 +694,14 @@ CongressVis.prototype.updateVis = function() {
         });
 
     vis.repIcons
-        .on('mouseover', vis.repTip.show)
-        .on('mouseout', vis.repTip.hide);
+        .on("mouseover",function(d) {
+            $(vis.eventHandler).trigger("repOver", d.Name);
+        })
+        .on("mouseout",function(d) {
+            $(vis.eventHandler).trigger("repOff");
+        });
+        // .on('mouseover', vis.repTip.show)
+        // .on('mouseout', vis.repTip.hide);
 
     // Remove
     vis.repIcons.exit().remove();
@@ -789,6 +801,54 @@ CongressVis.prototype.pinState = function(state) {
         vis.repIcons.transition().duration(80)
             .attr("fill",function(d) {
                 if(d.State == state) {
+                    if (d.Party == "Republican") {return "red"}
+                    else if (d.Party == "Democratic") {
+                        return "blue";
+                    } else { return "green" }
+                } else {
+                    if (d.Party == "Republican") {return "#ff9696"}
+                    else if (d.Party == "Democratic") {return "#9696ff"}
+                    else { return "#96ff96"}
+                }
+            });
+    } else {
+        vis.senIcons.transition().duration(80)
+            .attr("fill",function(d) {
+                if (d.Party == "Republican") {return "red"}
+                else if (d.Party == "Democratic") {
+                    return "blue";
+                } else { return "green" }
+            });
+        vis.repIcons.transition().duration(80)
+            .attr("fill",function(d) {
+                if (d.Party == "Republican") {return "red"}
+                else if (d.Party == "Democratic") {
+                    return "blue";
+                } else { return "green" }
+            });
+    }
+};
+
+CongressVis.prototype.onRepOver = function(rep) {
+    var vis = this
+
+    if (rep) {
+        vis.senIcons.transition().duration(120)
+            .attr("fill",function(d) {
+                if(d.Name == rep) {
+                    if (d.Party == "Republican") {return "red"}
+                    else if (d.Party == "Democratic") {
+                        return "blue";
+                    } else { return "green" }
+                } else {
+                    if (d.Party == "Republican") {return "#ff9696"}
+                    else if (d.Party == "Democratic") {return "#9696ff"}
+                    else { return "#96ff96"}
+                }
+            });
+        vis.repIcons.transition().duration(120)
+            .attr("fill",function(d) {
+                if(d.Name == rep) {
                     if (d.Party == "Republican") {return "red"}
                     else if (d.Party == "Democratic") {
                         return "blue";
