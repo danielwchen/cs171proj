@@ -98,7 +98,7 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
 FootFixed.prototype.initLegend = function(){
     var continents = ["Africa", "Asia", "Europe", "North-America", "Oceania", "South-America"];
 
-    var legendsvg = d3.select("#fixed-footprints-legend").append("svg")
+    var legendsvg = d3.select("#fixed-carbonInequality-legend").append("svg")
       .attr("height", 40)
       .attr("width", 500);
 
