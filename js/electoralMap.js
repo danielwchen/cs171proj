@@ -18,9 +18,10 @@ ElectoralMap.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.width = 300;
+    vis.margin = {top: 30, right: 10, bottom: 0, left: 10};
+    vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right;
+    vis.height = 300 - vis.margin.top - vis.margin.bottom;
 
-    vis.height = 300;
 
     vis.svg = d3.select(vis.parentElement).append("svg")
         .attr("width", vis.width)

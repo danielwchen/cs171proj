@@ -18,7 +18,7 @@ CongressVis.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = {top: 30, right: 10, bottom: 0, left: 30};
+    vis.margin = {top: 100, right: 10, bottom: 0, left: 30};
     vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right;
     vis.height = 2000 - vis.margin.top - vis.margin.bottom;
 
@@ -477,7 +477,7 @@ CongressVis.prototype.updateVis = function() {
 
     vis.senTip = d3.tip().attr('class', 'd3-tip').html(function(d) {
         return d.Party + " Sen " + d.Name + ", " + d.State + ", " + vis.sortParam + ": " + d[vis.sortParam];
-    });
+    }).offset([-5,0]);
     
     vis.senIcons = vis.svg.selectAll(".senIcons")
         .data(vis.senData, function(d) { return d.Name });
@@ -522,7 +522,7 @@ CongressVis.prototype.updateVis = function() {
 
     vis.repTip = d3.tip().attr('class', 'd3-tip').html(function(d) {
         return d.Party + " Rep " + d.Name + ", " + d.State + ", " + vis.sortParam + ": " + d[vis.sortParam];
-    });
+    }).offset([-5,0]);
 
     vis.repIcons = vis.svg.selectAll(".repIcons")
         .data(vis.repData, function(d) { return d.Name });
