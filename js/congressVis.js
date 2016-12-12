@@ -58,6 +58,21 @@ CongressVis.prototype.initVis = function() {
         .attr("x",vis.width * 3 / 4 - 50);
 
     vis.svg.append("text")
+        .attr("class","senate-label")
+        .text("SENATE")
+        .attr("text-anchor","middle")
+
+        .attr("y",15)
+        .attr("x",vis.width / 2);
+
+    vis.svg.append("text")
+        .attr("class","house-label")
+        .text("HOUSE OF REPRESENTATIVES")
+        .attr("text-anchor","middle")
+        .attr("y",-15)
+        .attr("x",vis.width / 2);
+
+    vis.svg.append("text")
         .text("Climate Champions")
         // .attr("text-anchor","middle")
         .attr("y",-15)

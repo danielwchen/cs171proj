@@ -1,3 +1,6 @@
+document.getElementById("state-hover").style.visibility = 'hidden';
+document.getElementById("congress-hover").style.visibility = 'hidden';
+
 var stateTotalData;
 var senData;
 var repData;
