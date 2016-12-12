@@ -62,7 +62,8 @@ StackedAreaChart.prototype.initVis = function(){
 
 	vis.xAxis = d3.svg.axis()
 		  .scale(vis.x)
-		  .orient("bottom");
+		  .orient("bottom")
+		.ticks(5);
 
 	var formatValue = d3.format(".2s");
 
@@ -95,22 +96,33 @@ StackedAreaChart.prototype.initVis = function(){
 		.attr("x", 10)
 		.attr("y", 10);
 
-	/*vis.svg.append("line")
-		.attr("x1", 639)
-		.attr("x2", 639)
-		.attr("y1", 90)
-		.attr("y2", vis.height)
-		.attr("stroke", "black")
-		.attr("opacity", 1)
+	vis.svg.append("text")
+		.attr("class", "2017")
+		.text("2017")
+		.attr("font-size", 30)
+		.attr("x", vis.width+65)
+		.attr("y", vis.height+30)
 
-	vis.svg.append("line")
-		.attr("x1", vis.width)
-		.attr("x2", 639)
-		.attr("y1", 90)
-		.attr("y2", 90)
-		.attr("stroke", "black")
-		.attr("opacity", 1)*/
+	vis.svg.append("text")
+		.attr("class", "2017")
+		.text("2017")
+		.attr("font-size", 30)
+		.attr("x", vis.width+265)
+		.attr("y", vis.height+30)
 
+	vis.svg.append("text")
+		.attr("class", "labels17")
+		.text("Including Changes")
+		.attr("font-size", 20)
+		.attr("x", vis.width+20)
+		.attr("y", 20)
+
+	vis.svg.append("text")
+		.attr("class", "labels17")
+		.text("Current Projection")
+		.attr("font-size", 20)
+		.attr("x", vis.width+220)
+		.attr("y", 20)
 
 	// TO-DO: (Filter, aggregate, modify data)
 	vis.wrangleData();
@@ -282,7 +294,7 @@ StackedAreaChart.prototype.updateVis = function(){
       .attr("d", function(d) {
 				return vis.area(d.values);
       })
-	  .attr("opacity", 1);
+	  .attr("opacity", 0.7);
 
   // TO-DO: Update tooltip text
 	categories
@@ -416,7 +428,7 @@ StackedAreaChart.prototype.updateVis = function(){
         .style("fill", function(d) {
             return colorScale(d.name);
         })
-        .attr("opacity", 1);
+        .attr("opacity", 0.7);
 
     layer
         .attr("x", vis.width)
@@ -434,7 +446,7 @@ StackedAreaChart.prototype.updateVis = function(){
         .style("fill", function(d) {
             return colorScale(d.name);
         })
-        .attr("opacity", .5);
+        .attr("opacity", 1);
 
     layer2
         .attr("x", vis.width+200)
@@ -444,113 +456,27 @@ StackedAreaChart.prototype.updateVis = function(){
 
     layer2.exit().remove();
 
+	vis.svg.append("line")
+		.attr("x1", vis.width)
+		.attr("x2", vis.width)
+		.attr("y1", 0)
+		.attr("y2", vis.height)
+		.attr("stroke", "black")
+		.attr("stroke-width", 3)
+		.attr("stroke-dasharray", "5")
+		.attr("opacity", 1)
+
+	vis.svg.append("line")
+		.attr("x1", vis.width+200)
+		.attr("x2", vis.width+200)
+		.attr("y1", 0)
+		.attr("y2", vis.height)
+		.attr("stroke", "black")
+		.attr("stroke-width", 3)
+		.attr("stroke-dasharray", "5")
+		.attr("opacity", 1)
+
 	var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
-
-	// append the rectangle to capture mouse               // **********
-	// **********
-
-	function mousemove(section) {
-
-		var formatValue = d3.format(".3s");
-		// **********
-		var x0 = vis.x.invert(d3.mouse(this)[0]),              // **********
-			i = bisectDate(vis.extraData, x0, 1),                   // **********
-			d0 = vis.extraData[i - 1],                              // **********
-			d1 = vis.extraData[i],                                  // **********
-			d = x0 - d0.Year > d1.Year - x0 ? d1 : d0;
-
-		var formatDate = d3.time.format("%Y");
-		// append the x line
-		vis.svg.append("line")
-			.attr("class", "x")
-			.style("stroke", "black")
-			.style("opacity", 0.8)
-			.attr("y1", 0)
-			.attr("y2", vis.height);
-
-		// append the y line
-		/*vis.svg.append("line")
-			.attr("class", "y")
-			.style("stroke", "blue")
-			.style("stroke-dasharray", "3,3")
-			.style("opacity", 0.5)
-			.attr("x1", vis.width)
-			.attr("x2", vis.width);*/
-
-		// append the circle at the intersection
-		/*vis.svg.append("circle")
-			.attr("class", "y")
-			.style("fill", "none")
-			.style("stroke", "blue")
-			.attr("r", 4);*/
-
-		// place the value at the intersection
-		vis.svg.append("text")
-			.attr("class", "y1")
-			.style("stroke", "white")
-			.style("stroke-width", "3.5px")
-			.style("opacity", 0.8)
-			.attr("dx", 8)
-			.attr("dy", "-.3em");
-		vis.svg.append("text")
-			.attr("class", "y2")
-			.attr("dx", 8)
-			.attr("dy", "-.3em");
-
-		// place the date at the intersection
-		vis.svg.append("text")
-			.attr("class", "y3")
-			.style("stroke", "white")
-			.style("stroke-width", "3.5px")
-			.style("opacity", 0.8)
-			.attr("dx", 8)
-			.attr("dy", "1em");
-		vis.svg.append("text")
-			.attr("class", "y4")
-			.attr("dx", 8)
-			.attr("dy", "1em");
-		vis.svg.select("circle.y")
-			.attr("transform",
-				"translate(" + vis.x(d.Year) + "," +
-				vis.y(d.Total) + ")");
-
-		vis.svg.select("text.y1")
-			.attr("transform",
-				"translate(" + vis.x(d.Year) + "," +
-				/*vis.y(d.Total)*/ -8 + ")")
-			.text(formatValue(d.Total).replace('G', 'B tons'));
-
-		vis.svg.select("text.y2")
-			.attr("transform",
-				"translate(" + vis.x(d.Year) + "," +
-				/*vis.y(d.Total)*/ -8 + ")")
-			.text(formatValue(d.Total).replace('G', 'B tons'));
-
-		vis.svg.select("text.y3")
-			.attr("transform",
-				"translate(" + vis.x(d.Year) + "," +
-				/*vis.y(d.Total)*/ -8 + ")")
-			.text(formatDate(d.Year));
-
-		vis.svg.select("text.y4")
-			.attr("transform",
-				"translate(" + vis.x(d.Year) + "," +
-				/*vis.y(d.Total)*/ -8 + ")")
-			.text(formatDate(d.Year));
-
-		vis.svg.select(".x")
-			.attr("transform",
-				"translate(" + vis.x(d.Year) + "," +
-				vis.y(d.Total) + ")")
-			.attr("y2", vis.height - vis.y(d.Year));
-
-		vis.svg.select(".y")
-			.attr("transform",
-				"translate(" + vis.width * -1 + "," +
-				vis.y(d.Total) + ")")
-			.attr("x2", vis.width + vis.width);
-	}
-
 
 	// Call axis functions with the new domain 
 	vis.svg.select(".x-axis").call(vis.xAxis);

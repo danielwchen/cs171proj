@@ -23,34 +23,44 @@ body {
 }
 
 
-#home-BG {
-    background-image: url("../img/dramatic_tree.jpg");
-}
+/*#home-BG {*/
+    /*background-image: url("../img/dramatic_tree.jpg");*/
+/*}*/
 
-#extreme-Temps-BG {
-    background-image: url("../img/clay-ground-seamless.jpg");
-    opacity: 50;
-}
+/*#extreme-Temps-BG {*/
+    /*background-image: url("../img/clay-ground-seamless.jpg");*/
+    /*opacity: 50;*/
+/*}*/
 
-#footprint-BG {
-    background-image: url("../img/v2-smog.jpg");
-    background-repeat: initial;
-    background-attachment: fixed;
-}
+/*#footprint-BG {*/
+    /*background-image: url("../img/v2-smog.jpg");*/
+    /*background-repeat: initial;*/
+    /*background-attachment: fixed;*/
+/*}*/
+
+/*#carbonemissions-BG {*/
+    /*background-image: url("../img/traffic.jpg");*/
+    /*background-repeat: initial;*/
+    /*background-attachment: fixed;*/
+/*}*/
+
+/*#electoral-college-BG {*/
+    /*background-image: url("../img/United_States_Capitol_-_west_front.jpg");*/
+/*}*/
+
+/*#title{*/
+    /*padding-left: 30%;*/
+    /*font-size: 4em;*/
+/*}*/
 
 #carbonemissions-BG {
-    background-image: url("../img/traffic.jpg");
-    background-repeat: initial;
-    background-attachment: fixed;
+    background-color: #fffaf4;
+    /*color: white;*/
+    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
 }
 
-#electoral-college-BG {
-    background-image: url("../img/United_States_Capitol_-_west_front.jpg");
-}
-
-#title{
-    padding-left: 30%;
-    font-size: 4em;
+#quote {
+    font-style: italic;
 }
 
 .spacer{
