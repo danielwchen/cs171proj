@@ -27,6 +27,12 @@ body {
     text-align: center;
 }
 
+.senate-label {
+    font-size: 100px;
+    font-weight: bolder;
+    fill-opacity: .5;
+}
+
 /*#home-BG {*/
     /*background-image: url("../img/dramatic_tree.jpg");*/
 /*}*/
@@ -343,4 +349,8 @@ body {
 /*Meg other stuff: */
 .spacing {
     padding: 10px;
+}
+
+table, th {
+    text-align: center;
 }
