@@ -13,11 +13,13 @@ body {
     color: orange;
     position: fixed;
     display: inline-block;
+    top:40%
 }
 .l-arrow {
     font-size: 10em;
     color: orange;
     position: fixed;
+    top:40%;
 }
 
 
@@ -98,7 +100,7 @@ body {
     overflow:auto;
     width:338px;
     background-color: lightgrey;
-    opacity: .7;
+    opacity: .75;
     border-radius: 25px;
 
 }
@@ -131,7 +133,7 @@ body {
 }
 
 #dataSelectFootprint {
-    padding-left: 20px;
+    padding-left: 10px;
     font-weight: bold;
 }
 
@@ -175,6 +177,7 @@ body {
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     border-radius: 2px;
+    z-index: 100;
 }
 
 /* Creates a small triangle extender for the tooltip */

@@ -35,7 +35,6 @@
             margin = 50,
             value,
             active = 1,
-            snap = false,
             scale;
 
         // Private variables
@@ -45,7 +44,6 @@
             tickFormat = d3.format(".0"),
             handle1,
             handle2 = null,
-            divRange,
             sliderLength;
 
         function slider(selection) {
@@ -69,9 +67,9 @@
 
                 // Slider handle
                 //if range slider, create two
-                // var divRange;
+                var divRange;
 
-                if (toType(value) == "array" && value.length == 2) {
+                if ( value.length == 2 ) {
                     handle1 = div.append("a")
                         .classed("d3-slider-handle", true)
                         .attr("xlink:href", "#")
@@ -98,7 +96,7 @@
 
                     div.on("click", onClickHorizontal);
 
-                    if (toType(value) == "array" && value.length == 2) {
+                    if ( value.length == 2 ) {
                         divRange = d3.select(this).append('div').classed("d3-slider-range", true);
 
                         handle1.style("left", formatPercent(scale(value[ 0 ])));
@@ -121,7 +119,7 @@
 
                     div.on("click", onClickVertical);
                     drag.on("drag", onDragVertical);
-                    if (toType(value) == "array" && value.length == 2) {
+                    if ( value.length == 2 ) {
                         divRange = d3.select(this).append('div').classed("d3-slider-range-vertical", true);
 
                         handle1.style("bottom", formatPercent(scale(value[ 0 ])));
@@ -160,7 +158,7 @@
                     }
 
                     // Copy slider scale to move from percentages to pixels
-                    axisScale = scale.ticks ? scale.copy().range([0, sliderLength]) : scale.copy().rangePoints([0, sliderLength], 0.5);
+                    axisScale = scale.copy().range([0, sliderLength]);
                     axis.scale(axisScale);
 
                     // Create SVG axis container
@@ -210,20 +208,16 @@
                 }
 
                 function onClickHorizontal() {
-                    if (toType(value) != "array") {
+                    if (!value.length) {
                         var pos = Math.max(0, Math.min(sliderLength, d3.event.offsetX || d3.event.layerX));
-                        moveHandle(scale.invert ?
-                            stepValue(scale.invert(pos / sliderLength))
-                            : nearestTick(pos / sliderLength));
+                        moveHandle(stepValue(scale.invert(pos / sliderLength)));
                     }
                 }
 
                 function onClickVertical() {
-                    if (toType(value) != "array") {
+                    if (!value.length) {
                         var pos = sliderLength - Math.max(0, Math.min(sliderLength, d3.event.offsetY || d3.event.layerY));
-                        moveHandle(scale.invert ?
-                            stepValue(scale.invert(pos / sliderLength))
-                            : nearestTick(pos / sliderLength));
+                        moveHandle(stepValue(scale.invert(pos / sliderLength)));
                     }
                 }
 
@@ -234,9 +228,7 @@
                         active = 2;
                     }
                     var pos = Math.max(0, Math.min(sliderLength, d3.event.x));
-                    moveHandle(scale.invert ?
-                        stepValue(scale.invert(pos / sliderLength))
-                        : nearestTick(pos / sliderLength));
+                    moveHandle(stepValue(scale.invert(pos / sliderLength)));
                 }
 
                 function onDragVertical() {
@@ -246,9 +238,7 @@
                         active = 2;
                     }
                     var pos = sliderLength - Math.max(0, Math.min(sliderLength, d3.event.y))
-                    moveHandle(scale.invert ?
-                        stepValue(scale.invert(pos / sliderLength))
-                        : nearestTick(pos / sliderLength));
+                    moveHandle(stepValue(scale.invert(pos / sliderLength)));
                 }
 
                 function stopPropagation() {
@@ -261,13 +251,14 @@
 
         // Move slider handle on click/drag
         function moveHandle(newValue) {
-            var currentValue = toType(value) == "array"  && value.length == 2 ? value[active - 1]: value,
-                oldPos = formatPercent(scale(stepValue(currentValue))),
-                newPos = formatPercent(scale(stepValue(newValue))),
-                position = (orientation === "horizontal") ? "left" : "bottom";
-            if (oldPos !== newPos) {
+            var currentValue = value.length ? value[active - 1]: value;
 
-                if (toType(value) == "array" && value.length == 2) {
+            if (currentValue !== newValue) {
+                var oldPos = formatPercent(scale(stepValue(currentValue))),
+                    newPos = formatPercent(scale(stepValue(newValue))),
+                    position = (orientation === "horizontal") ? "left" : "bottom";
+
+                if ( value.length === 2) {
                     value[ active - 1 ] = newValue;
                     if (d3.event) {
                         dispatch.slide(d3.event, value );
@@ -280,7 +271,8 @@
 
                 if ( value[ 0 ] >= value[ 1 ] ) return;
                 if ( active === 1 ) {
-                    if (toType(value) == "array" && value.length == 2) {
+
+                    if (value.length === 2) {
                         (position === "left") ? divRange.style("left", newPos) : divRange.style("bottom", newPos);
                     }
 
@@ -316,44 +308,16 @@
                 return val;
             }
 
-            var alignValue = val;
-            if (snap) {
-                alignValue = nearestTick(scale(val));
-            } else{
-                var valModStep = (val - scale.domain()[0]) % step;
+            var valModStep = (val - scale.domain()[0]) % step,
                 alignValue = val - valModStep;
 
-                if (Math.abs(valModStep) * 2 >= step) {
-                    alignValue += (valModStep > 0) ? step : -step;
-                }
-            };
+            if (Math.abs(valModStep) * 2 >= step) {
+                alignValue += (valModStep > 0) ? step : -step;
+            }
 
             return alignValue;
 
         }
-
-        // Find the nearest tick
-        function nearestTick(pos) {
-            var ticks = scale.ticks ? scale.ticks() : scale.domain();
-            var dist = ticks.map(function(d) {return pos - scale(d);});
-            var i = -1,
-                index = 0,
-                r = scale.ticks ? scale.range()[1] : scale.rangeExtent()[1];
-            do {
-                i++;
-                if (Math.abs(dist[i]) < r) {
-                    r = Math.abs(dist[i]);
-                    index = i;
-                };
-            } while (dist[i] > 0 && i < dist.length - 1);
-
-            return ticks[index];
-        };
-
-        // Return the type of an object
-        function toType(v) {
-            return ({}).toString.call(v).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
-        };
 
         // Getter/setter functions
         slider.min = function(_) {
@@ -401,15 +365,9 @@
         slider.value = function(_) {
             if (!arguments.length) return value;
             if (value) {
-                moveHandle(stepValue(_));
+                moveHandle(_);
             };
             value = _;
-            return slider;
-        };
-
-        slider.snap = function(_) {
-            if (!arguments.length) return snap;
-            snap = _;
             return slider;
         };
 
