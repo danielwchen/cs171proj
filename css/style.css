@@ -8,8 +8,26 @@ body {
     background-size: cover;
 }
 
+.r-arrow {
+    font-size: 10em;
+    color: orange;
+    position: fixed;
+    display: inline-block;
+}
+.l-arrow {
+    font-size: 10em;
+    color: orange;
+    position: fixed;
+}
+
+
 #home-BG {
     background-image: url("../img/dramatic_tree.jpg");
+}
+
+#extreme-Temps-BG {
+    background-image: url("../img/clay-ground-seamless.jpg");
+    opacity: 50;
 }
 
 #footprint-BG {
@@ -18,9 +36,10 @@ body {
     background-attachment: fixed;
 }
 
-#extreme-Temps-BG {
-    background-image: url("../img/clay-ground-seamless.jpg");
-    opacity: 50;
+#carbonemissions-BG {
+    background-image: url("../img/traffic.jpg");
+    background-repeat: initial;
+    background-attachment: fixed;
 }
 
 #electoral-college-BG {
@@ -64,7 +83,7 @@ body {
 #sections {
     position: relative;
     display: inline-block;
-    width: 400px;
+    width: 338px;
     top: 0px;
     z-index: 90;
     scroll-snap-type: mandatory;
@@ -77,10 +96,11 @@ body {
     margin-bottom: 100px;
     height: 530px;
     overflow:auto;
-    width:390px;
+    width:338px;
     background-color: lightgrey;
     opacity: .7;
     border-radius: 25px;
+
 }
 
 #titleFootprints{
@@ -101,12 +121,13 @@ body {
     position: fixed;
     top: 60px;
     z-index: 1;
-    margin-left: 0;
+    padding-left: 10px;
     opacity: .7;
     height: 800px;
-    width: 750px;
+    width: 710px;
     background-color: #ddd;
     border-radius: 25px;
+    margin-left: 20px;
 }
 
 #dataSelectFootprint {
@@ -131,6 +152,12 @@ body {
 .Oceania {fill: #0084c4;}
 .South-America {fill: #3b00d8;}
 
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
 
 /*********************/
 /*  TOOLTIP OVERLAY  */

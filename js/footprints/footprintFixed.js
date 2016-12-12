@@ -15,6 +15,8 @@ FootFixed = function(_parentElement, _data, _radiusScale, _meanTotal, _meanPC){
 FootFixed.prototype.initVis = function(){
     var vis = this;
 
+    vis.initLegend();
+
     vis.margin = {top: 50, right: 50, bottom: 50, left: 50};
 
     vis.spacing = 50;
@@ -26,9 +28,9 @@ FootFixed.prototype.initVis = function(){
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom);
 
-    vis.xPositions = [50, 350, 310, 440, 600, 100, 140, 270, 160, 545   ];
+    vis.xPositions = [45, 340, 300, 430, 590, 90, 130, 260, 150, 520];
     vis.yPositions = [30, 120, 330, 50, 40, 320, 400, 410, 150, 280];
-    vis.xPCPositions = [40, 270, 600, 460, 300, 350, 320, 140, 140, 550];
+    vis.xPCPositions = [40, 260, 590, 450, 290, 340, 310, 130, 130, 530];
     vis.yPCPositions = [40, 50, 50, 50, 250, 120, 400, 380, 140, 270];
 
     vis.updateVis(false, vis.r, 0);
@@ -91,6 +93,20 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
 
     // Exit
     vis.circLabels.exit().remove();
+};
+
+FootFixed.prototype.initLegend = function(){
+    var continents = ["Africa", "Asia", "Europe", "North-America", "Oceania", "South-America"];
+
+    var legendsvg = d3.select("#fixed-footprints-legend").append(svg)
+      .attr("height", 40)
+      .attr("width", 300);
+
+    legendsvg.selectAll("rect").data(continents).enter()
+        .append("rect")
+        .attr("height", 5)
+        .attr("width", 5)
+        .attr("x", function(d, index){return 50*(index+1)});
 };
 
 function getData(country){

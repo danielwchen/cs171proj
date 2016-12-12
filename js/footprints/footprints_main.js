@@ -44,7 +44,7 @@ function initVisualization() {
     chosen = [data[201], data[150], data[106], data[97], data[88], data[68], data[41], data[17], data[1], data[0]];
 
     radiusScale = d3.scale.linear()
-        .range([3,200])
+        .range([3,160])
         .domain(d3.extent(data, function(d){return getData(d);}));
 
     allData = [];
@@ -80,7 +80,7 @@ function updateVisualization(){
     });
 
     radiusScale = d3.scale.linear()
-        .range([3,180])
+        .range([3,160])
         .domain(d3.extent(data, function(d){return getData(d);}));
 
     allData.push(data.slice(0, 4));
