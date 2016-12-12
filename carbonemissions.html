@@ -27,35 +27,121 @@
 					<div class="col-md-12">
 
 						<h1>U.S. Carbon Emissions</h1>
-						<h2>Tons of carbon per capita</h2>
-						<br>
 						<h3>See how your actions can change carbon emissions for 2017.</h3>
 						<div>
-							Look at the graph to see what would happen if you and a selected percentage of American citizens
-							did the following activities for all of 2017.
+							The United States is the second biggest contributor of carbon emissions compared to all
+							other countries worldwide, producing 5.2 billion metric tons in 2015 alone, and that’s a
+							decrease from previous years.   If we continue at this rate, we’ll see increasing global
+							temperatures, rising sea levels, more extreme weather events such as hurricanes and
+							tornadoes, and ecosystem shifts, all of which are potentially destructive to our way of
+							life.  However, by making slight changes to our daily activities now, we can improve our
+							future lifestyles.  The actions of the United States' large population of 325 million people
+							difference to global carbon emissions.  Many people are under the impression that reducing carbon
+							emissions is a huge task that they cannot possibly help with. However, if all Americans made
+							small individual lifestyle changes, we could cut carbon emissions down by 30% by the end of
+							next year.  See what you can do to make a difference. Select the checkboxes below the graph
+							and change the percentage of Americans participating in these habit changes to discover how
+							much of a difference we can make.
 						</div>
+
+						<h4 id="quote">The biggest threat to our planet is the belief that someone else will save it.</h4>
+						<h5>-Robert Swan, explorer</h5>
+						<div id="stacked-area-chart"></div>
+						<div class="percent"></div>
 						You and
 						<input type="number" min="0" max="100" step="10" value="50" id="population" onchange="updateBar()">
 						% of people will:
+						<div class="spacing"></div>
 
-						<form class="form-inline">
-							<div class="form-group">
-								<input type="checkbox" id="beef" value="beef" onchange = "updateBar()">Cut beef out of your diet<br>
-								<input type="checkbox" id="shower" value="shower" onchange = "updateBar()">Take 5-minute showers<br>
-								<input type="checkbox" id="carpool" value="carpool" onchange = "updateBar()">Carpool with 1 other person<br>
-								<input type="checkbox" id="ac" value="ac" onchange = "updateBar()">Turn the thermostat up 2 degrees in summer and down 2 degrees in winter<br>
-								<input type="checkbox" id="lights" value="lights" onchange = "updateBar()">Turn off the lights whenever you're not using them<br>
-								<input type="checkbox" id="bulb" value="bulb" onchange = "updateBar()">Replace old incandescent bulbs with compact fluorescent bulbs<br>
-								<input type="checkbox" id="insulate" value="insulate" onchange = "updateBar()">Properly insulate walls, ceilings, and windows<br>
-								<input type="checkbox" id="recycle" value="recycle" onchange = "updateBar()">Recycle half of your household's waste<br>
-								<input type="checkbox" id="package" value="package" onchange = "updateBar()">Don't buy heavily packaged foods (cut down garbage by 10%)<br>
-							</div>
-						</form>
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-xs-6">
+													<ul class="list-group">
+														<li class="list-group-item">
+															Cut beef out of your diet
+															<div class="material-switch pull-right">
+																<input id="beef" name="someSwitchOption001" type="checkbox"
+																	   onchange = "updateBar()">
+																<label for="beef" class="label-success"></label>
+															</div>
+														</li>
+														<li class="list-group-item">
+															Take showers no longer than 5 minutes
+															<div class="material-switch pull-right">
+																<input id="shower" name="someSwitchOption001" type="checkbox"
+																	   onchange = "updateBar()">
+																<label for="shower" class="label-success"></label>
+															</div>
+														</li>
+														<li class="list-group-item">
+															Carpool with one other person
+															<div class="material-switch pull-right">
+																<input id="carpool" name="someSwitchOption001" type="checkbox"
+																	   onchange = "updateBar()">
+																<label for="carpool" class="label-success"></label>
+															</div>
+														</li>
+														<li class="list-group-item">
+															Don't buy heavily packaged foods (cut down garbage by 10%)
+															<div class="material-switch pull-right">
+																<input id="package" name="someSwitchOption001" type="checkbox"
+																	   onchange = "updateBar()">
+																<label for="package" class="label-success"></label>
+															</div>
+														</li>
+													</ul>
+												</div>
+												<div class="col-xs-6">
+													<ul class="list-group">
+														<li class="list-group-item">
+															Turn the thermostat up 2&deg; in summer and down 2&deg; in winter
+															<div class="material-switch pull-right">
+																<input id="ac" name="someSwitchOption001" type="checkbox"
+																	   onchange = "updateBar()">
+																<label for="ac" class="label-success"></label>
+															</div>
+														</li>
+														<li class="list-group-item">
+															Properly insulate walls, ceilings, and windows
+															<div class="material-switch pull-right">
+																<input id="insulate" name="someSwitchOption001" type="checkbox"
+																	   onchange = "updateBar()">
+																<label for="insulate" class="label-success"></label>
+															</div>
+														</li>
+														<li class="list-group-item">
+															Replace old incandescent bulbs with compact fluorescent bulbs
+															<div class="material-switch pull-right">
+																<input id="bulb" name="someSwitchOption001" type="checkbox"
+																	   onchange = "updateBar()">
+																<label for="bulb" class="label-success"></label>
+															</div>
+														</li>
+														<li class="list-group-item">
+															Turn off lights when you're not using them
+															<div class="material-switch pull-right">
+																<input id="lights" name="someSwitchOption001" type="checkbox"
+																	   onchange = "updateBar()">
+																<label for="lights" class="label-success"></label>
+															</div>
+														</li>
+														<li class="list-group-item">
+															Recycle half of your household's waste
+															<div class="material-switch pull-right">
+																<input id="recycle" name="someSwitchOption001" type="checkbox"
+																	   onchange = "updateBar()">
+																<label for="recycle" class="label-success"></label>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div><!-- List group -->
+
+									<!--</div>
+								</div>
 
 						<!-- Visualization placeholders -->
-						<div id="stacked-area-chart" style="float:left"></div>
-						<div id="bar-chart" style="float:left"></div>
-						<div class="percent"></div>
 
 					</div>
 				</div>
@@ -63,9 +149,6 @@
 			</div>
 
 		</div>
-		<div class="col-xs-1 r-arrow"><a href="electoralcollege.html"> »</a></div>
-	</div>
-</div>
 
 	<!-- Load JS libraries -->
 	<script src="js/jquery.min.js"></script>
