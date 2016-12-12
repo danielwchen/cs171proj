@@ -24,14 +24,6 @@
         <div class="l-arrow"><a href="carbonemissions.html">«</a></div>
         <div class="col-xs-1"></div>
         <div class="col-xs-10">
-            <select class="form-control" id="selector">
-                <option value="State">Default</option>
-                <option value="CurrentAge">Current Age</option>
-                <option value="AgeAtTakingOfficeYear">Age when first taking office</option>
-                <option value="YearsInOffice">Years in office</option>
-                <option value="YearNextElection">Year up for election</option>
-                <option value="Party">Party</option>
-            </select>
 
             <div class="col-md-4">
                 <div id="electoral-map"></div>
@@ -82,7 +74,16 @@
                 </table>
             </div>
 
-            <div class="col-md-8" id="congress-vis">
+            <div class="col-md-8">
+                <select class="form-control" id="selector">
+                    <option value="State">Default</option>
+                    <option value="CurrentAge">Current Age</option>
+                    <option value="AgeAtTakingOfficeYear">Age when first taking office</option>
+                    <option value="YearsInOffice">Years in office</option>
+                    <option value="YearNextElection">Year up for election</option>
+                    <option value="Party">Party</option>
+                </select>
+                <div id="congress-vis"></div>
 
             </div>
         </div>

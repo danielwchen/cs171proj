@@ -51,31 +51,53 @@ CongressVis.prototype.initVis = function() {
 
     vis.spaceBetweenSections = 20;
 
+    vis.sortParam = d3.select(".form-control").property("value");
+
+    vis.textLabels = {
+        CurrentAge: ["30-39","40-49","50-59","60-69","70-79","80-89"],
+        AgeAtTakingOfficeYear: ["30-39","40-49","50-59","60-69","70-79"],
+        YearsInOffice: ["0-9","10-19","20-29","30-39","40-49","50-59"],
+        YearNextElection: ["2018","2020","2022"],
+        Party: ["Democratic","Republican","Independent"],
+        State: ["All"]
+    };
+
+    vis.axisInfo = {
+        CurrentAge: {numSenSections:6, numRepSections:6, rowsPerSection:2, repRowsPerSection:4},
+        AgeAtTakingOfficeYear: {numSenSections:4, numRepSections:5, rowsPerSection:2, repRowsPerSection:4},
+        YearsInOffice: {numSenSections:5, numRepSections:6, rowsPerSection:3, repRowsPerSection:8},
+        YearNextElection: {numSenSections:3, numRepSections:1, rowsPerSection:3, repRowsPerSection:9},
+        Party: {numSenSections:3, numRepSections:2, rowsPerSection:4, repRowsPerSection:11},
+        State: {numSenSections:1, numRepSections:1, rowsPerSection:5, repRowsPerSection:11}
+    };
+
+    vis.ySenSpacing = vis.axisInfo[vis.sortParam].rowsPerSection * (vis.senHeight + vis.senPadding) + vis.spaceBetweenSections;
+    vis.yRepSpacing = vis.axisInfo[vis.sortParam].repRowsPerSection * (vis.repHeight + vis.repPadding) + vis.spaceBetweenSections;
+
     vis.svg.append("text")
         .text("Climate Deniers")
         // .attr("text-anchor","middle")
         .attr("y",-15)
         .attr("x",vis.width * 3 / 4 - 50);
 
-    vis.svg.append("text")
-        .attr("class","senate-label")
+    vis.senateLabel = vis.svg.append("text")
+        .attr("class","congress-label")
         .text("SENATE")
         .attr("text-anchor","middle")
-
-        .attr("y",15)
+        .attr("y",-10)
         .attr("x",vis.width / 2);
 
-    vis.svg.append("text")
-        .attr("class","house-label")
+    vis.houseLabel = vis.svg.append("text")
+        .attr("class","congress-label")
         .text("HOUSE OF REPRESENTATIVES")
         .attr("text-anchor","middle")
-        .attr("y",-15)
+        .attr("y",vis.ySenSpacing * vis.axisInfo[vis.sortParam].numSenSections + vis.spaceBetweenSections)
         .attr("x",vis.width / 2);
 
     vis.svg.append("text")
         .text("Climate Champions")
         // .attr("text-anchor","middle")
-        .attr("y",-15)
+        .attr("y",-25)
         .attr("x",vis.width / 4);
 
     vis.svg.append("line")
@@ -89,7 +111,6 @@ CongressVis.prototype.initVis = function() {
     vis.wrangleData();
 };
 
-
 CongressVis.prototype.resetCounters = function() {
 
     var vis = this;
@@ -98,19 +119,19 @@ CongressVis.prototype.resetCounters = function() {
     vis.dCounters = {};
 
     vis.allCounters = {"bCounters":vis.bCounters, "dCounters":vis.dCounters};
-    vis.allCounters.bCounters['CurrentAge'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0, range8089:0, numSenSections:6, rowsPerSection:2, repRowsPerSection:4};
-    vis.allCounters.bCounters['AgeAtTakingOfficeYear'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0, numSenSections:4, rowsPerSection:2, repRowsPerSection:4};
-    vis.allCounters.bCounters['YearsInOffice'] = {range09:0, range1019:0, range2029:0, range3039:0, range4049:0, range5059:0, numSenSections:5, rowsPerSection:3, repRowsPerSection:8};
-    vis.allCounters.bCounters['YearNextElection'] = {"2018":0, "2020":0, "2022":0, numSenSections:3, rowsPerSection:3, repRowsPerSection:9};
-    vis.allCounters.bCounters['Party'] = {Democratic:0, Republican:0, Independent:0, numSenSections:3, rowsPerSection:4, repRowsPerSection:9};
-    vis.allCounters.bCounters['State'] = {State:0, numSenSections:1, rowsPerSection:5, repRowsPerSection:9};
+    vis.allCounters.bCounters['CurrentAge'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0, range8089:0};
+    vis.allCounters.bCounters['AgeAtTakingOfficeYear'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0};
+    vis.allCounters.bCounters['YearsInOffice'] = {range09:0, range1019:0, range2029:0, range3039:0, range4049:0, range5059:0};
+    vis.allCounters.bCounters['YearNextElection'] = {"2018":0, "2020":0, "2022":0};
+    vis.allCounters.bCounters['Party'] = {Democratic:0, Republican:0, Independent:0};
+    vis.allCounters.bCounters['State'] = {State:0};
 
-    vis.allCounters.dCounters['CurrentAge'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0, range8089:0, numSenSections:6, rowsPerSection:2, repRowsPerSection:4};
-    vis.allCounters.dCounters['AgeAtTakingOfficeYear'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0, numSenSections:4, rowsPerSection:2, repRowsPerSection:4};
-    vis.allCounters.dCounters['YearsInOffice'] = {range09:0, range1019:0, range2029:0, range3039:0, range4049:0, range5059:0, numSenSections:5, rowsPerSection:3, repRowsPerSection:8};
-    vis.allCounters.dCounters['YearNextElection'] = {"2018":0, "2020":0, "2022":0, numSenSections:3, rowsPerSection:3, repRowsPerSection:9};
-    vis.allCounters.dCounters['Party'] = {Democratic:0, Republican:0, Independent:0, numSenSections:3, rowsPerSection:4, repRowsPerSection:9};
-    vis.allCounters.dCounters['State'] = {State:0, numSenSections:1, rowsPerSection:5, repRowsPerSection:9};
+    vis.allCounters.dCounters['CurrentAge'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0, range8089:0};
+    vis.allCounters.dCounters['AgeAtTakingOfficeYear'] = {range3039:0, range4049:0, range5059:0, range6069:0, range7079:0};
+    vis.allCounters.dCounters['YearsInOffice'] = {range09:0, range1019:0, range2029:0, range3039:0, range4049:0, range5059:0};
+    vis.allCounters.dCounters['YearNextElection'] = {"2018":0, "2020":0, "2022":0};
+    vis.allCounters.dCounters['Party'] = {Democratic:0, Republican:0, Independent:0};
+    vis.allCounters.dCounters['State'] = {State:0};
 
     // vis.counters.yearNextElection['2020'] += 5;
     // console.log(vis.counters.yearNextElection['2020']);
@@ -165,26 +186,13 @@ CongressVis.prototype.getRepX = function(d) {
         return vis.width / 2 + vis.aisle + (d.ranking[2] % vis.repNumPerRow) * (vis.repWidth + vis.repPadding);
     }
 
-    // Current Age (6) 30-39 (1) 40-49 (13) 50-59 (25) 60-69 (38) 70-79 (15) 80-89 (7)
-    // Age when taking office (4) 30-39 (5) 40-49 (33) 50-59 (40) 60-69 (21)
-    // Years in office (5) 0-9 (59) 10-19 (23) 20-29 (10) 30-39 (5) 40-49 (2)
-    // Year of next election (3) 2018 (33) 2020 (33) 2022 (33)
-    // Party Dem (46) Independent (2) Rep (51)
-
 };
 
 CongressVis.prototype.getRepY = function(d) {
 
     var vis = this;
 
-    return Math.floor(d.ranking[2] / vis.repNumPerRow) * (vis.repHeight + vis.repPadding) + vis.yRepSpacing * d.ranking[1] + vis.ySenSpacing * vis.allCounters.bCounters[vis.sortParam].numSenSections + 30;
-
-    // Current Age (6) 30-39 (1) 40-49 (13) 50-59 (25) 60-69 (38) 70-79 (15) 80-89 (7)
-    // Age when taking office (4) 30-39 (5) 40-49 (33) 50-59 (40) 60-69 (21)
-    // Years in office (5) 0-9 (59) 10-19 (23) 20-29 (10) 30-39 (5) 40-49 (2)
-    // Year of next election (3) 2018 (33) 2020 (33) 2022 (33)
-    // Party Dem (46) Independent (2) Rep (51)
-
+    return Math.floor(d.ranking[2] / vis.repNumPerRow) * (vis.repHeight + vis.repPadding) + vis.yRepSpacing * d.ranking[1] + vis.ySenSpacing * vis.axisInfo[vis.sortParam].numSenSections + 30;
 };
 
 CongressVis.prototype.wrangleData = function() {
@@ -211,7 +219,7 @@ CongressVis.prototype.wrangleData = function() {
     vis.senData.forEach(function(d) {
         vis.assignRanking(d);
     });
-    vis.ySenSpacing = vis.allCounters.bCounters[vis.sortParam].rowsPerSection * (vis.senHeight + vis.senPadding) + vis.spaceBetweenSections;
+    vis.ySenSpacing = vis.axisInfo[vis.sortParam].rowsPerSection * (vis.senHeight + vis.senPadding) + vis.spaceBetweenSections;
 
     vis.repData = vis.repData.sort(function(a, b) {
         return sortByVar(a.Name, b.Name);
@@ -232,7 +240,7 @@ CongressVis.prototype.wrangleData = function() {
     vis.repData.forEach(function(d) {
         vis.assignRanking(d);
     });
-    vis.yRepSpacing = vis.allCounters.bCounters[vis.sortParam].repRowsPerSection * (vis.repHeight + vis.repPadding) + vis.spaceBetweenSections;
+    vis.yRepSpacing = vis.axisInfo[vis.sortParam].repRowsPerSection * (vis.repHeight + vis.repPadding) + vis.spaceBetweenSections;
 
 
     vis.updateVis();
@@ -489,6 +497,10 @@ CongressVis.prototype.assignRanking = function(d) {
 
 CongressVis.prototype.updateVis = function() {
     var vis = this;
+
+    vis.houseLabel.transition().duration(800)
+        .attr("y",vis.ySenSpacing * vis.axisInfo[vis.sortParam].numSenSections + vis.spaceBetweenSections);
+
 
     vis.senTip = d3.tip().attr('class', 'd3-tip').html(function(d) {
         return d.Party + " Sen " + d.Name + ", " + d.State + ", " + vis.sortParam + ": " + d[vis.sortParam];

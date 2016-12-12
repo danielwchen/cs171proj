@@ -27,8 +27,8 @@ body {
     text-align: center;
 }
 
-.senate-label {
-    font-size: 100px;
+.congress-label {
+    font-size: 30px;
     font-weight: bolder;
     fill-opacity: .5;
 }
