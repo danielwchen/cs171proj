@@ -1,7 +1,9 @@
 document.getElementById("state-hover").style.visibility = 'hidden';
 document.getElementById("congress-hover").style.visibility = 'hidden';
 
-var stateTotalData;
+var stateTotalData = {
+};
+var offData = {};
 var senData;
 var repData;
 
@@ -15,7 +17,7 @@ loadData();
 function loadData() {
 
     queue()
-        .defer(d3.csv, "data/electoral/stateDeniersTotal.csv")
+        .defer(d3.csv, "data/electoral/stateDeniersTotalnew.csv")
         .defer(d3.csv, "data/electoral/congressFINAL.csv")
         .await(function(error, totalCSV, CSV) {
             totalCSV.forEach(function(d) {
@@ -47,7 +49,17 @@ function loadData() {
                 return d['Position'] == 'rep';
             });
 
-            stateTotalData = totalCSV;
+
+            totalCSV.forEach(function(d,index) {
+                stateTotalData[d.State] = d;
+            });
+
+            CSV.forEach(function(d,index) {
+                offData[d.Name] = d;
+            });
+
+            console.log(stateTotalData);
+            // stateTotalData = totalCSV;
             senData = senCSV;
             repData = repCSV;
             createVis();
@@ -62,49 +74,78 @@ function createVis() {
     electoralMap = new ElectoralMap("#electoral-map",stateTotalData,EventHandler);
     congressVis = new CongressVis("#congress-vis",senData,repData,EventHandler);
 
-    $(EventHandler).bind("stateOver", function(event, stateHover){
-        electoralMap.onStateOver(stateHover);
-        congressVis.onStateOver(stateHover);
+    var statePinned = false;
+    var repPinned = false;
+
+    $(EventHandler).bind("stateOver", function(event, state){
+        if (!statePinned) {
+            electoralMap.onStateOver(state);
+            congressVis.onStateOver(state);
+            updateStateTable(state);
+        }
     });
     $(EventHandler).bind("stateOff", function(event){
-        electoralMap.onStateOver(null);
-        congressVis.onStateOver(null);
+        if (!statePinned) {
+            electoralMap.onStateOver(null);
+            congressVis.onStateOver(null);
+            document.getElementById("state-hover").style.visibility = 'hidden';
+        }
+
     });
-    $(EventHandler).bind("press", function(event, statePinned){
-        electoralMap.pinState(statePinned);
-        congressVis.pinState(statePinned);
+    $(EventHandler).bind("press", function(event, state){
+        electoralMap.pinState(state);
+        congressVis.pinState(state);
+        statePinned = true;
+        updateStateTable(state)
     });
     $(EventHandler).bind("unpress", function(event){
         electoralMap.pinState(null);
         congressVis.pinState(null);
+        statePinned = false;
     });
+
+    $(EventHandler).bind("repOver", function(event, rep){
+        if (!repPinned) {
+            electoralMap.onStateOver(offData[rep].State);
+            congressVis.onRepOver(rep);
+            updateCongressTable(offData[rep].State);
+        }
+    });
+    $(EventHandler).bind("repOff", function(event){
+        if (!repPinned) {
+            electoralMap.onStateOver(null);
+            congressVis.onRepOver(null);
+            document.getElementById("congress-hover").style.visibility = 'hidden';
+        }
+    });
+    $(EventHandler).bind("repPress", function(event, rep){
+        electoralMap.pinState(offData[rep].State);
+        congressVis.pinRep(rep);
+        repPinned = true;
+        updateCongressTable(rep)
+    });
+    $(EventHandler).bind("repUnpress", function(event){
+        electoralMap.pinState(null);
+        congressVis.pinRep(null);
+        repPinned = false;
+    });
+}
+
+function updateStateTable(state) {
+    document.getElementById("state-name").innerHTML = state;
+    document.getElementById("state-1-1").innerHTML = stateTotalData[state].repTotal114;
+    document.getElementById("state-2-0").innerHTML = stateTotalData[state].proportion;
+    document.getElementById("state-hover").style.visibility = 'visible';
+
 
 }
 
+function updateCongressTable() {
 
-// Current Age (6)
-// 30-39 (1)
-// 40-49 (13)
-// 50-59 (25)
-// 60-69 (38)
-// 70-79 (15)
-// 80-89 (7)
-// Age when taking office (4)
-// 30-39 (5)
-// 40-49 (33)
-// 50-59 (40)
-// 60-69 (21)
-// Years in office (5)
-// 0-9 (59)
-// 10-19 (23)
-// 20-29 (10)
-// 30-39 (5)
-// 40-49 (2)
-// Year of next election (3)
-// 2018 (33)
-// 2020 (33)
-// 2022 (33)
-// Party
-// Dem (46)
-// Independent (2)
-// Rep (51)
+    document.getElementById("congress-hover").style.visibility = 'visible';
+}
+
+// THINGS TO DO:
+// Implement table updating
+// Style table
+// Fix map colors

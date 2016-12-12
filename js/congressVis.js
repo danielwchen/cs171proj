@@ -18,9 +18,9 @@ CongressVis.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = {top: 100, right: 10, bottom: 0, left: 30};
+    vis.margin = {top: 100, right: 30, bottom: 0, left: 10};
     vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right;
-    vis.height = 2000 - vis.margin.top - vis.margin.bottom;
+    vis.height = 1300 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
     vis.svg = d3.select(vis.parentElement).append("svg")
@@ -53,60 +53,65 @@ CongressVis.prototype.initVis = function() {
 
     vis.sortParam = d3.select(".form-control").property("value");
 
-    vis.textLabels = {
-        CurrentAge: ["30-39","40-49","50-59","60-69","70-79","80-89"],
-        AgeAtTakingOfficeYear: ["30-39","40-49","50-59","60-69","70-79"],
-        YearsInOffice: ["0-9","10-19","20-29","30-39","40-49","50-59"],
-        YearNextElection: ["2018","2020","2022"],
-        Party: ["Democratic","Republican","Independent"],
-        State: ["All"]
-    };
-
     vis.axisInfo = {
         CurrentAge: {numSenSections:6, numRepSections:6, rowsPerSection:2, repRowsPerSection:4},
         AgeAtTakingOfficeYear: {numSenSections:4, numRepSections:5, rowsPerSection:2, repRowsPerSection:4},
         YearsInOffice: {numSenSections:5, numRepSections:6, rowsPerSection:3, repRowsPerSection:8},
-        YearNextElection: {numSenSections:3, numRepSections:1, rowsPerSection:3, repRowsPerSection:9},
-        Party: {numSenSections:3, numRepSections:2, rowsPerSection:4, repRowsPerSection:11},
+        YearNextElection: {numSenSections:3, numRepSections:1, rowsPerSection:3, repRowsPerSection:11},
+        Party: {numSenSections:3, numRepSections:2, rowsPerSection:5, repRowsPerSection:11},
         State: {numSenSections:1, numRepSections:1, rowsPerSection:5, repRowsPerSection:11}
     };
+
+    vis.axisPlacement = {
+        sen: {
+            CurrentAge: {Places:[0,0,1,1,2,2,3,3,4,4,5,5], Labels:["30-39","40-49","50-59","60-69","70-79","80-89"]},
+            AgeAtTakingOfficeYear: {Places:[0,0,1,1,2,2,3,3], Labels:["30-39","40-49","50-59","60-69"]},
+            YearsInOffice: {Places:[0,0,1,1,2,2,3,3,4,4], Labels:["0-9","10-19","20-29","30-39","40-49"]},
+            YearNextElection: {Places:[0,0,1,1,2,2], Labels:["2018","2020","2022"]},
+            Party: {Places:[0,0,1,1,2,2], Labels:["Dem","Rep","Ind"]},
+            State: {Places:[0,0], Labels:["All"]}
+        },
+        rep: {
+            CurrentAge: {Places:[0,0,1,1,2,2,3,3,4,4,5,5], Labels:["30-39","40-49","50-59","60-69","70-79","80-89"]},
+            AgeAtTakingOfficeYear: {Places:[0,0,1,1,2,2,3,3,4,4], Labels:["30-39","40-49","50-59","60-69","70-79"]},
+            YearsInOffice: {Places:[0,0,1,1,2,2,3,3,4,4,5,5], Labels:["0-9","10-19","20-29","30-39","40-49","50-59"]},
+            YearNextElection: {Places:[0,0], Labels:["2018"]},
+            Party: {Places:[0,0,1,1], Labels:["Dem","Rep"]},
+            State: {Places:[0,0], Labels:["All"]}
+        }
+    }
 
     vis.ySenSpacing = vis.axisInfo[vis.sortParam].rowsPerSection * (vis.senHeight + vis.senPadding) + vis.spaceBetweenSections;
     vis.yRepSpacing = vis.axisInfo[vis.sortParam].repRowsPerSection * (vis.repHeight + vis.repPadding) + vis.spaceBetweenSections;
 
-    vis.svg.append("text")
-        .text("Climate Deniers")
-        // .attr("text-anchor","middle")
-        .attr("y",-15)
-        .attr("x",vis.width * 3 / 4 - 50);
 
     vis.senateLabel = vis.svg.append("text")
         .attr("class","congress-label")
-        .text("SENATE")
+        .text("Senate")
         .attr("text-anchor","middle")
         .attr("y",-10)
-        .attr("x",vis.width / 2);
+        .attr("x",vis.width / 2 + vis.senWidth/2);
 
     vis.houseLabel = vis.svg.append("text")
         .attr("class","congress-label")
-        .text("HOUSE OF REPRESENTATIVES")
+        .text("House of Representatives")
         .attr("text-anchor","middle")
         .attr("y",vis.ySenSpacing * vis.axisInfo[vis.sortParam].numSenSections + vis.spaceBetweenSections)
-        .attr("x",vis.width / 2);
+        .attr("x",vis.width / 2 + vis.senWidth/2);
 
     vis.svg.append("text")
-        .text("Climate Champions")
+        .attr("class","congress-title")
+        .text("CHAMPIONS")
         // .attr("text-anchor","middle")
-        .attr("y",-25)
-        .attr("x",vis.width / 4);
+        .attr("y",-45)
+        .attr("x",vis.width / 2 + vis.senWidth/2 - ((vis.senNumPerRow +1) * (vis.senWidth+vis.senPadding)));
 
-    vis.svg.append("line")
-        .attr("y1", vis.y(0))
-        .attr("y2", vis.y(8*vis.senHeight))
-        .attr("x1", vis.x(vis.width/2))
-        .attr("x2", vis.x(vis.width/2))
-        .attr("stroke","black")
-        .attr("stroke-weight",2);
+    vis.svg.append("text")
+        .attr("class","congress-title")
+        .text("DENIERS")
+        .attr("text-anchor","end")
+        .attr("y",-45)
+        .attr("x",vis.width / 2 + vis.senWidth/2 + ((vis.senNumPerRow +1) * (vis.senWidth+vis.senPadding)));
 
     vis.wrangleData();
 };
@@ -501,6 +506,106 @@ CongressVis.prototype.updateVis = function() {
     vis.houseLabel.transition().duration(800)
         .attr("y",vis.ySenSpacing * vis.axisInfo[vis.sortParam].numSenSections + vis.spaceBetweenSections);
 
+    vis.senLines = vis.svg.selectAll(".senLines")
+        .data(vis.axisPlacement.sen[vis.sortParam].Places);
+
+    vis.senLines.enter().append("line")
+        .attr("class","senLines")
+        .attr("x1", function(d,index) {
+            if (index % 2 == 1) {
+                return vis.width/2 + vis.senWidth/2 - vis.aisle/2 - 5
+            } else {
+                return vis.width/2 + vis.senWidth/2 + vis.aisle/2 + 5
+            }
+        })
+        .attr("x2", function(d,index) {
+            if (index % 2 == 1) {
+                return vis.width/2 + vis.senWidth/2 - vis.aisle/2 - 5
+            } else {
+                return vis.width/2 + vis.senWidth/2 + vis.aisle/2 + 5
+            }
+        })
+        .attr("stroke","black")
+        .attr("stroke-width",5);
+
+    vis.senLines.transition().duration(500)
+        .attr("y1", function(d) {
+            return vis.ySenSpacing * d;
+        })
+        .attr("y2", function (d) {
+            return vis.ySenSpacing * d + vis.axisInfo[vis.sortParam].rowsPerSection * (vis.senHeight + vis.senPadding) - vis.senPadding;
+        });
+
+    vis.senLines.exit().remove();
+
+    vis.repLines = vis.svg.selectAll(".repLines")
+        .data(vis.axisPlacement.rep[vis.sortParam].Places);
+
+    vis.repLines.enter().append("line")
+        .attr("class","repLines")
+        .attr("x1", function(d,index) {
+            if (index % 2 == 1) {
+                return vis.width/2 + vis.senWidth/2 - vis.aisle/2 - 5
+            } else {
+                return vis.width/2 + vis.senWidth/2 + vis.aisle/2 + 5
+            }
+        })
+        .attr("x2", function(d,index) {
+            if (index % 2 == 1) {
+                return vis.width/2 + vis.senWidth/2 - vis.aisle/2 - 5
+            } else {
+                return vis.width/2 + vis.senWidth/2 + vis.aisle/2 + 5
+            }
+        })
+        .attr("stroke","black")
+        .attr("stroke-width",5);
+
+    vis.repLines.transition().duration(500)
+        .attr("y1", function(d) {
+            return vis.yRepSpacing * d + vis.ySenSpacing * vis.axisInfo[vis.sortParam].numSenSections + 30;
+
+        })
+        .attr("y2", function (d) {
+            return vis.yRepSpacing * d + vis.axisInfo[vis.sortParam].repRowsPerSection * (vis.repHeight + vis.repPadding) - vis.repPadding + vis.ySenSpacing * vis.axisInfo[vis.sortParam].numSenSections + 30;
+        });
+
+    vis.repLines.exit().remove();
+
+    vis.senLabels = vis.svg.selectAll(".senLabels")
+        .data(vis.axisPlacement.sen[vis.sortParam].Labels);
+
+    vis.senLabels.enter().append("text")
+        .attr("class","senLabels")
+        .attr("text-anchor","middle")
+        .attr("x", vis.width/2 + vis.senWidth/2);
+
+    vis.senLabels.transition().duration(500)
+        .text(function(d){
+            return d;
+        })
+        .attr("y", function(d,index) {
+            return vis.ySenSpacing * index + (vis.axisInfo[vis.sortParam].rowsPerSection * (vis.senHeight + vis.senPadding) - vis.senPadding)/2;
+        });
+
+    vis.senLabels.exit().remove();
+
+    vis.repLabels = vis.svg.selectAll(".repLabels")
+        .data(vis.axisPlacement.rep[vis.sortParam].Labels);
+
+    vis.repLabels.enter().append("text")
+        .attr("class","repLabels")
+        .attr("text-anchor","middle")
+        .attr("x", vis.width/2 + vis.senWidth/2);
+
+    vis.repLabels.transition().duration(500)
+        .text(function(d){
+            return d;
+        })
+        .attr("y", function(d,index) {
+            return vis.yRepSpacing * index + (vis.axisInfo[vis.sortParam].repRowsPerSection * (vis.repHeight + vis.repPadding) - vis.repPadding)/2 + vis.ySenSpacing * vis.axisInfo[vis.sortParam].numSenSections + 30;
+        });
+
+    vis.repLabels.exit().remove();
 
     vis.senTip = d3.tip().attr('class', 'd3-tip').html(function(d) {
         return d.Party + " Sen " + d.Name + ", " + d.State + ", " + vis.sortParam + ": " + d[vis.sortParam];
@@ -522,7 +627,7 @@ CongressVis.prototype.updateVis = function() {
         // .attr("rx", 3)
         // .attr("ry", 3)
         .attr("width", vis.senWidth)
-        .attr("height", vis.senHeight);
+        .attr("height", vis.senHeight)
 
     // Update
     vis.senIcons
@@ -538,8 +643,14 @@ CongressVis.prototype.updateVis = function() {
         });
 
     vis.senIcons
-        .on('mouseover', vis.senTip.show)
-        .on('mouseout', vis.senTip.hide);
+        .on("mouseover",function(d) {
+            $(vis.eventHandler).trigger("repOver", d.Name);
+        })
+        .on("mouseout",function(d) {
+            $(vis.eventHandler).trigger("repOff");
+        });
+        // .on('mouseover', vis.senTip.show)
+        // .on('mouseout', vis.senTip.hide);
 
     // Remove
     vis.senIcons.exit().remove();
@@ -583,8 +694,14 @@ CongressVis.prototype.updateVis = function() {
         });
 
     vis.repIcons
-        .on('mouseover', vis.repTip.show)
-        .on('mouseout', vis.repTip.hide);
+        .on("mouseover",function(d) {
+            $(vis.eventHandler).trigger("repOver", d.Name);
+        })
+        .on("mouseout",function(d) {
+            $(vis.eventHandler).trigger("repOff");
+        });
+        // .on('mouseover', vis.repTip.show)
+        // .on('mouseout', vis.repTip.hide);
 
     // Remove
     vis.repIcons.exit().remove();
@@ -684,6 +801,54 @@ CongressVis.prototype.pinState = function(state) {
         vis.repIcons.transition().duration(80)
             .attr("fill",function(d) {
                 if(d.State == state) {
+                    if (d.Party == "Republican") {return "red"}
+                    else if (d.Party == "Democratic") {
+                        return "blue";
+                    } else { return "green" }
+                } else {
+                    if (d.Party == "Republican") {return "#ff9696"}
+                    else if (d.Party == "Democratic") {return "#9696ff"}
+                    else { return "#96ff96"}
+                }
+            });
+    } else {
+        vis.senIcons.transition().duration(80)
+            .attr("fill",function(d) {
+                if (d.Party == "Republican") {return "red"}
+                else if (d.Party == "Democratic") {
+                    return "blue";
+                } else { return "green" }
+            });
+        vis.repIcons.transition().duration(80)
+            .attr("fill",function(d) {
+                if (d.Party == "Republican") {return "red"}
+                else if (d.Party == "Democratic") {
+                    return "blue";
+                } else { return "green" }
+            });
+    }
+};
+
+CongressVis.prototype.onRepOver = function(rep) {
+    var vis = this
+
+    if (rep) {
+        vis.senIcons.transition().duration(120)
+            .attr("fill",function(d) {
+                if(d.Name == rep) {
+                    if (d.Party == "Republican") {return "red"}
+                    else if (d.Party == "Democratic") {
+                        return "blue";
+                    } else { return "green" }
+                } else {
+                    if (d.Party == "Republican") {return "#ff9696"}
+                    else if (d.Party == "Democratic") {return "#9696ff"}
+                    else { return "#96ff96"}
+                }
+            });
+        vis.repIcons.transition().duration(120)
+            .attr("fill",function(d) {
+                if(d.Name == rep) {
                     if (d.Party == "Republican") {return "red"}
                     else if (d.Party == "Democratic") {
                         return "blue";

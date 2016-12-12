@@ -18,14 +18,16 @@ ElectoralMap.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = {top: 30, right: 10, bottom: 0, left: 10};
+    vis.margin = {top: 80, right: 0, bottom: 0, left: 50};
     vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right;
-    vis.height = 300 - vis.margin.top - vis.margin.bottom;
+    vis.height = 280 - vis.margin.top - vis.margin.bottom;
 
 
     vis.svg = d3.select(vis.parentElement).append("svg")
-        .attr("width", vis.width)
-        .attr("height", vis.height);
+        .attr("width", vis.width + vis.margin.left + vis.margin.right)
+        .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");;
 
     d3.json("data/us-states.json", function(json) {
         vis.json = json;
@@ -36,26 +38,24 @@ ElectoralMap.prototype.initVis = function() {
         .text("Hover over your state")
         .attr("class","note")
         .attr("text-anchor","middle")
-        .attr("y",45)
+        .attr("y",0)
         .attr("x",200);
 
     vis.svg.append("text")
         .text("Click to pin")
         .attr("class","note")
         .attr("text-anchor","middle")
-        .attr("y",60)
+        .attr("y",20)
         .attr("x",200);
 };
 
 ElectoralMap.prototype.wrangleData = function() {
     var vis = this;
 
-    for (var i = 0; i < vis.data.length; i++) {
-        for (var j = 0; j < vis.json.features.length; j++) {
-            if (vis.json.features[j].properties.name == vis.data[i].State) {
-                vis.json.features[j].properties.senDeniers = vis.data[i].senDeniers;
-                break;
-            }
+
+    for (var j = 0; j < vis.json.features.length; j++) {
+        if (vis.data[vis.json.features[j].properties.name]){
+            vis.json.features[j].properties.senDeniers = vis.data[vis.json.features[j].properties.name].senDeniers;
         }
     }
 
@@ -88,6 +88,12 @@ ElectoralMap.prototype.updateVis = function() {
             else if (d.properties.senDeniers == 1) {return "purple"}
             else {return "blue"}
         })
+        // #feedde
+        // #fdbe85
+        // #fd8d3c
+        // #e6550d
+        // #a63603
+
         .on("mouseover",function(d) {
             if (vis.pinned == true) {
 
@@ -133,6 +139,34 @@ ElectoralMap.prototype.onStateOver = function(state) {
                 else {return "#6464FF"}
             }
         })
+    } else {
+        vis.svg.selectAll("path")
+            .data(vis.json.features).transition().duration(80)
+            .attr("fill",function(d) {
+                if (d.properties.senDeniers == 2) {return "red"}
+                else if (d.properties.senDeniers == 1) {return "purple"}
+                else {return "blue"}
+            })
+    }
+};
+
+ElectoralMap.prototype.pinState = function(state) {
+    var vis = this;
+
+    if (state) {
+        vis.svg.selectAll("path")
+            .data(vis.json.features).transition().duration(80)
+            .attr("fill",function(d) {
+                if(d.properties.name == state) {
+                    if (d.properties.senDeniers == 2) {return "red"}
+                    else if (d.properties.senDeniers == 1) {return "purple"}
+                    else {return "blue"}
+                } else {
+                    if (d.properties.senDeniers == 2) {return "#FF6464"}
+                    else if (d.properties.senDeniers == 1) {return "#BB88B2"}
+                    else {return "#6464FF"}
+                }
+            })
     } else {
         vis.svg.selectAll("path")
             .data(vis.json.features).transition().duration(80)
