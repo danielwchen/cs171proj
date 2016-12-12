@@ -26,21 +26,18 @@
         <div class="col-xs-10">
             <div class="container">
                 <div class="row spacer"></div>
-                <div class="row subtitle">
-                    <h2>It's Getting Hotter...and Colder</h2>
-                </div>
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="wrapper">
-                            <div class="switch-field">
-                                <input id="switch_3_left" name="view" type="radio">
-                                <label for="switch_3_left" onclick="recordMap.play()">Play</label>
-
-                                <input id="switch_3_center" name="view" type="radio" checked>
-                                <label for="switch_3_center">Pause</label>
-                                <a>*Double-click to change view</a>
-                            </div>
                             <div id="extremeTempVis"></div>
+                            <div class="switch-field">
+                                <input id="switch_3_left" name="view" type="radio" checked>
+                                <label for="switch_3_left" onclick="recordMap.play()" style="font-size: 2em">⧁</label>
+
+                                <input id="switch_3_center" name="view" type="radio">
+                                <label for="switch_3_center" style="font-size: 2em">⦷</label>
+                                <div>*Double-click to change view</div>
+                            </div>
                             <div> Year: <span id="slidertext">1820</span> </div>
                             <div id="slider"></div>
 
