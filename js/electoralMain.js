@@ -1,5 +1,6 @@
 var stateTotalData;
 var senData;
+var repData;
 
 var electoralMap;
 var congressVis;
@@ -12,9 +13,8 @@ function loadData() {
 
     queue()
         .defer(d3.csv, "data/electoral/stateDeniersTotal.csv")
-        .defer(d3.csv, "data/electoral/senators.csv")
-        .await(function(error, totalCSV, senCSV, JSON) {
-            console.log(JSON);
+        .defer(d3.csv, "data/electoral/congressFINAL.csv")
+        .await(function(error, totalCSV, CSV) {
             totalCSV.forEach(function(d) {
                 d.Population = +d.Population;
                 d.repDeniers114 = +d.repDeniers114;
@@ -23,26 +23,30 @@ function loadData() {
                 d.senTotal = +d.senTotal;
             });
 
-            senCSV = senCSV.filter(function(d) {
-                return d['115Member'] == 1;
-            });
-
-            senCSV = senCSV.filter(function(d) {
+            CSV = CSV.filter(function(d) {
                 return d['Senator'] != "TBD";
             });
 
-            senCSV.forEach(function(d) {
-                d.AgeAtTakingOfficeDay = +d.AgeAtTakingOfficeDay;
+            CSV.forEach(function(d) {
                 d.AgeAtTakingOfficeYear = +d.AgeAtTakingOfficeYear;
                 d.BirthDate = dateFormatter.parse(d.BirthDate);
                 d.DateInOffice = dateFormatter.parse(d.DateInOffice);
-                d.YearNextElection = +d.YearNextElection;
+                // d.YearNextElection = +d.YearNextElection;
                 d.YearsInOffice = +d.YearsInOffice;
                 d.CurrentAge = +d.CurrentAge;
             });
 
+            var senCSV = CSV.filter(function(d) {
+                return d['Position'] == 'sen';
+            });
+
+            var repCSV = CSV.filter(function(d) {
+                return d['Position'] == 'rep';
+            });
+
             stateTotalData = totalCSV;
             senData = senCSV;
+            repData = repCSV;
             createVis();
         });
 
@@ -53,7 +57,7 @@ function createVis() {
 
     var EventHandler = {};
     electoralMap = new ElectoralMap("#electoral-map",stateTotalData,EventHandler);
-    congressVis = new CongressVis("#congress-vis",senData,EventHandler);
+    congressVis = new CongressVis("#congress-vis",senData,repData,EventHandler);
 
     $(EventHandler).bind("stateOver", function(event, stateHover){
         electoralMap.onStateOver(stateHover);
