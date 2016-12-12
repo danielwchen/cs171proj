@@ -26,9 +26,6 @@ function loadData() {
 
         data = csv;
 
-        meanTotal = data.map(function(d){return d.Total;}).reduce(function(a, b){return a + b;},0) / data.length;
-        meanPC = data.map(function(d){return d.PC;}).reduce(function(a, b){return a + b;},0) / data.length;
-
         // Draw the visualization for the first time
         initVisualization();
     });
@@ -66,7 +63,7 @@ function initVisualization() {
         visNumber += 1;
     });
 
-    fixedObj = new FootFixed("#fixed-carbonInequality", chosen, radiusScale, meanTotal, meanPC);
+    fixedObj = new FootFixed("#fixed-footprints", chosen, radiusScale);
 }
 
 function updateVisualization(){
