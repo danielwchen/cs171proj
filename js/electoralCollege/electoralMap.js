@@ -18,9 +18,9 @@ ElectoralMap.prototype.initVis = function() {
 
     var vis = this;
 
-    vis.margin = {top: 80, right: 0, bottom: 0, left: 50};
+    vis.margin = {top: 20, right: 20, bottom: 20, left: 20};
     vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right;
-    vis.height = 280 - vis.margin.top - vis.margin.bottom;
+    vis.height = 240 - vis.margin.top - vis.margin.bottom;
 
 
     vis.svg = d3.select(vis.parentElement).append("svg")
@@ -55,14 +55,10 @@ ElectoralMap.prototype.wrangleData = function() {
 
     for (var j = 0; j < vis.json.features.length; j++) {
         if (vis.data[vis.json.features[j].properties.name]){
-            vis.json.features[j].properties.senDeniers = vis.data[vis.json.features[j].properties.name].senDeniers;
+            vis.json.features[j].properties.prop = vis.data[vis.json.features[j].properties.name].prop;
         }
     }
 
-
-    // vis.displayData = vis.data;
-
-    // Update the visualization
     vis.updateVis();
 
 };
@@ -84,15 +80,12 @@ ElectoralMap.prototype.updateVis = function() {
         .attr("d", vis.path)
         .attr("stroke","white")
         .attr("fill",function(d) {
-            if (d.properties.senDeniers == 2) {return "red"}
-            else if (d.properties.senDeniers == 1) {return "purple"}
-            else {return "blue"}
+            if (d.properties.prop < .2) {return "#feedde"}
+            else if (d.properties.prop < .4) {return "#fdbe85"}
+            else if (d.properties.prop < .6) {return "#fd8d3c"}
+            else if (d.properties.prop < .8) {return "#e6550d"}
+            else {return "#a63603"}
         })
-        // #feedde
-        // #fdbe85
-        // #fd8d3c
-        // #e6550d
-        // #a63603
 
         .on("mouseover",function(d) {
             $(vis.eventHandler).trigger("stateOver", d.properties.name);
@@ -114,16 +107,28 @@ ElectoralMap.prototype.highlightState = function(state) {
     if (state) {
         vis.svg.selectAll("path")
             .data(vis.json.features).transition().duration(80)
-            .attr("fill",function(d) {
-            if(d.properties.name == state) {
-                if (d.properties.senDeniers == 2) {return "red"}
-                else if (d.properties.senDeniers == 1) {return "purple"}
-                else {return "blue"}
-            } else {
-                if (d.properties.senDeniers == 2) {return "#FF6464"}
-                else if (d.properties.senDeniers == 1) {return "#BB88B2"}
-                else {return "#6464FF"}
-            }
+            .style("opacity",function(d) {
+                if(d.properties.name == state) {
+
+                } else {
+                    
+                }
+
+            })
+            // .attr("fill",function(d) {
+            // if(d.properties.name == state) {
+            //     if (d.properties.prop < .2) {return "#feedde"}
+            //     else if (d.properties.prop < .4) {return "#fdbe85"}
+            //     else if (d.properties.prop < .6) {return "#fd8d3c"}
+            //     else if (d.properties.prop < .8) {return "#e6550d"}
+            //     else {return "#a63603"}
+            // } else {
+            //     if (d.properties.prop < .2) {return "#feedde"}
+            //     else if (d.properties.prop < .4) {return "#fdbe85"}
+            //     else if (d.properties.prop < .6) {return "#fd8d3c"}
+            //     else if (d.properties.prop < .8) {return "#e6550d"}
+            //     else {return "#a63603"}
+            // }
         })
     } else {
         vis.svg.selectAll("path")
@@ -135,59 +140,3 @@ ElectoralMap.prototype.highlightState = function(state) {
             })
     }
 };
-
-// ElectoralMap.prototype.pinState = function(state) {
-//     var vis = this;
-//
-//     if (state) {
-//         vis.svg.selectAll("path")
-//             .data(vis.json.features).transition().duration(80)
-//             .attr("fill",function(d) {
-//                 if(d.properties.name == state) {
-//                     if (d.properties.senDeniers == 2) {return "red"}
-//                     else if (d.properties.senDeniers == 1) {return "purple"}
-//                     else {return "blue"}
-//                 } else {
-//                     if (d.properties.senDeniers == 2) {return "#FF6464"}
-//                     else if (d.properties.senDeniers == 1) {return "#BB88B2"}
-//                     else {return "#6464FF"}
-//                 }
-//             })
-//     } else {
-//         vis.svg.selectAll("path")
-//             .data(vis.json.features).transition().duration(80)
-//             .attr("fill",function(d) {
-//                 if (d.properties.senDeniers == 2) {return "red"}
-//                 else if (d.properties.senDeniers == 1) {return "purple"}
-//                 else {return "blue"}
-//             })
-//     }
-// };
-
-// ElectoralMap.prototype.pinState = function(state) {
-//     var vis = this;
-//
-//     if (state) {
-//         vis.svg.selectAll("path")
-//             .data(vis.json.features).transition().duration(80)
-//             .attr("fill",function(d) {
-//                 if(d.properties.name == state) {
-//                     if (d.properties.senDeniers == 2) {return "red"}
-//                     else if (d.properties.senDeniers == 1) {return "purple"}
-//                     else {return "blue"}
-//                 } else {
-//                     if (d.properties.senDeniers == 2) {return "#FF6464"}
-//                     else if (d.properties.senDeniers == 1) {return "#BB88B2"}
-//                     else {return "#6464FF"}
-//                 }
-//             })
-//     } else {
-//         vis.svg.selectAll("path")
-//             .data(vis.json.features).transition().duration(80)
-//             .attr("fill",function(d) {
-//                 if (d.properties.senDeniers == 2) {return "red"}
-//                 else if (d.properties.senDeniers == 1) {return "purple"}
-//                 else {return "blue"}
-//             })
-//     }
-// };
