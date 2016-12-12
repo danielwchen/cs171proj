@@ -3,6 +3,8 @@ RecordMap = function(_parentElement, _data) {
     this.parentElement = _parentElement;
     this.data = _data;
 
+    console.log(this.data)
+
     this.initVis();
 };
 
@@ -35,7 +37,7 @@ RecordMap.prototype.initVis = function() {
             .enter().append("path")
             .attr("class", "state-border")
             .attr("d", vis.path)
-            .attr("fill", "yellowgreen")
+            .attr("fill", "lightgray")
             .style("stroke-width", "2px");
 
 
@@ -65,7 +67,7 @@ RecordMap.prototype.updateVis = function(){
 
     vis.records
         .enter().append("circle")
-        .attr("fill", "darkred")
+        .attr("fill", "red")
         .transition()
         .duration(50)
         .attr("class", "records")

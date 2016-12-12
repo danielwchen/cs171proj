@@ -20,7 +20,7 @@ ElectoralMap.prototype.initVis = function() {
 
     vis.margin = {top: 20, right: 20, bottom: 20, left: 20};
     vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right;
-    vis.height = 240 - vis.margin.top - vis.margin.bottom;
+    vis.height = 220 - vis.margin.top - vis.margin.bottom;
 
 
     vis.svg = d3.select(vis.parentElement).append("svg")
@@ -35,17 +35,17 @@ ElectoralMap.prototype.initVis = function() {
     });
 
     vis.svg.append("text")
-        .text("Hover over your state")
+        .text("Hover to see connections")
         .attr("class","note")
         .attr("text-anchor","middle")
-        .attr("y",0)
+        .attr("y",180)
         .attr("x",200);
 
     vis.svg.append("text")
         .text("Click to pin")
         .attr("class","note")
         .attr("text-anchor","middle")
-        .attr("y",20)
+        .attr("y",195)
         .attr("x",200);
 };
 
@@ -109,12 +109,11 @@ ElectoralMap.prototype.highlightState = function(state) {
             .data(vis.json.features).transition().duration(80)
             .style("opacity",function(d) {
                 if(d.properties.name == state) {
-
+                    return 1;
                 } else {
-                    
+                    return .3
                 }
-
-            })
+            });
             // .attr("fill",function(d) {
             // if(d.properties.name == state) {
             //     if (d.properties.prop < .2) {return "#feedde"}
@@ -129,14 +128,15 @@ ElectoralMap.prototype.highlightState = function(state) {
             //     else if (d.properties.prop < .8) {return "#e6550d"}
             //     else {return "#a63603"}
             // }
-        })
+        // })
     } else {
         vis.svg.selectAll("path")
             .data(vis.json.features).transition().duration(80)
-            .attr("fill",function(d) {
-                if (d.properties.senDeniers == 2) {return "red"}
-                else if (d.properties.senDeniers == 1) {return "purple"}
-                else {return "blue"}
-            })
+            .style("opacity", 1);
+            // .attr("fill",function(d) {
+            //     if (d.properties.senDeniers == 2) {return "red"}
+            //     else if (d.properties.senDeniers == 1) {return "purple"}
+            //     else {return "blue"}
+            // })
     }
 };
