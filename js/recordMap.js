@@ -13,8 +13,8 @@ RecordMap = function(_parentElement, _data) {
 RecordMap.prototype.initVis = function() {
 
     var vis = this;
-    vis.width = 1200;
-    vis.height = 900;
+    vis.width = 600;
+    vis.height = 450;
     vis.filteredData = vis.data;
 
     vis.svg = d3.select(vis.parentElement).append("svg")
@@ -23,8 +23,8 @@ RecordMap.prototype.initVis = function() {
 
 
     vis.projection = d3.geo.albersUsa()
-        .translate([600, 450])
-        .scale(1500);
+        .translate([300, 225])
+        .scale(750);
 
     vis.path = d3.geo.path()
         .projection(vis.projection);
@@ -50,11 +50,11 @@ RecordMap.prototype.initVis = function() {
 
 RecordMap.prototype.wrangleData = function(){
     var vis = this;
-    console.log(vis.year);
+    // console.log(vis.year);
     vis.filteredData = vis.data.filter(function(d, index){
         return d.Year == vis.year;
     });
-    console.log(vis.filteredData);
+    // console.log(vis.filteredData);
 
     vis.updateVis();
 }
@@ -66,17 +66,52 @@ RecordMap.prototype.updateVis = function(){
     vis.records = vis.svg.selectAll(".records")
         .data(vis.filteredData);
 
-    console.log(vis.records);
+    // console.log(vis.records);
 
     vis.records
         .enter().append("circle")
+        .attr("fill", "darkred")
+        .transition()
+        .duration(50)
         .attr("class", "records")
         .attr("r", 3)
-        .attr("fill", "darkred")
-        .attr("transform", function(d){
-            return "translate(" + vis.projection([-1 * (+d.Longitude.substring(0, 5)), +(d.Latitude.substring(0, 4))]) + ")";
+        .attr("cx", function(d){
+            return vis.projection([-1 * (+d.Longitude.substring(0, 5)), +(d.Latitude.substring(0, 4))])[0];
         })
+        .attr("cy", function(d){
+            return vis.projection([-1 * (+d.Longitude.substring(0, 5)), +(d.Latitude.substring(0, 4))])[1];
+        })
+        // .attr("transform", function(d){
+        //     return "translate(" + vis.projection([-1 * (+d.Longitude.substring(0, 5)), +(d.Latitude.substring(0, 4))]) + ")";
+        // })
         .transition();
 
     vis.records.exit().remove();
+
+
+    var selValue = document.querySelector('input[name="view"]:checked').id;
+    if (selValue == "switch_3_left"){
+        if (vis.year < maxStep){
+            console.log(vis.year);
+            setTimeout(function(){
+                vis.year++;
+                slider.value(vis.year);
+                vis.wrangleData();
+                d3.select('#slidertext').text(vis.year);
+                updateYear();
+            }, 400);
+        } else {
+            document.getElementById("switch_3_left").checked = false;
+            document.getElementById("switch_3_center").checked = true;
+        }
+    }
+}
+
+RecordMap.prototype.play = function(){
+    var vis = this;
+    // vis.year++;
+    slider.value(vis.year);
+    vis.wrangleData();
+
+    d3.select('#slidertext').text(vis.year);
 }
