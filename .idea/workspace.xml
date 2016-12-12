@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fe79b0e-37a0-4079-abe9-be1ee1428af7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/carbonInequality/footprintFixed.js" afterPath="$PROJECT_DIR$/js/carbonInequality/footprintFixed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/carbonInequality/footprints_main.js" afterPath="$PROJECT_DIR$/js/carbonInequality/footprints_main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/carbonInequality.html" afterPath="$PROJECT_DIR$/carbonInequality.html" />
     </list>
     <ignored path="cs171proj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -66,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carbonInequality.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="carbonInequality.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/carbonInequality.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2392">
-              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="440">
+              <caret line="113" column="129" selection-start-line="113" selection-start-column="129" selection-end-line="113" selection-end-column="129" />
               <folding />
             </state>
           </provider>
@@ -98,7 +97,6 @@
         <option value="$PROJECT_DIR$/test_scrolling.html" />
         <option value="$PROJECT_DIR$/js/co2emis_main.js" />
         <option value="$PROJECT_DIR$/carbonemissions.html" />
-        <option value="$PROJECT_DIR$/carbonInequality.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/extremetemperatures.html" />
         <option value="$PROJECT_DIR$/electoralcollege.html" />
@@ -106,6 +104,7 @@
         <option value="$PROJECT_DIR$/js/carbonInequality/footprints_main.js" />
         <option value="$PROJECT_DIR$/js/carbonInequality/footprintFixed.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/carbonInequality.html" />
       </list>
     </option>
   </component>
@@ -282,12 +281,12 @@
       <workItem from="1481519340693" duration="65000" />
       <workItem from="1481519465975" duration="8694000" />
       <workItem from="1481562882751" duration="216000" />
-      <workItem from="1481577293927" duration="8166000" />
+      <workItem from="1481577293927" duration="8235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158917000" />
+    <option name="totallyTimeSpent" value="158986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="191" y="33" width="1466" height="1014" extended-state="0" />
@@ -595,14 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/carbonInequality.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2392">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/carbonInequality/footprints_main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -623,6 +614,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="163" column="22" selection-start-line="163" selection-start-column="22" selection-end-line="163" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/carbonInequality.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="113" column="129" selection-start-line="113" selection-start-column="129" selection-end-line="113" selection-end-column="129" />
           <folding />
         </state>
       </provider>
