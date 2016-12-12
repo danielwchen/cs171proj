@@ -180,6 +180,7 @@ function updateCongressTable(rep) {
         document.getElementById("congress-2-1").innerHTML = "Climate Denier!";
     }
 
+    
     document.getElementById("optional").innerHTML = "Climate Champion or Denier";
 
     if (temprep.Gender == "Male") {
