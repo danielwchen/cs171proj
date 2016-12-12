@@ -33,10 +33,16 @@ body {
     text-align: center;
 }
 
-.senate-label {
-    font-size: 100px;
+.congress-label {
+    font-size: 25px;
     font-weight: bolder;
-    fill-opacity: .5;
+    /*fill-opacity: .5;*/
+}
+
+.congress-title {
+    font-size: 35px;
+    font-weight: bolder;
+    /*fill-opacity: .5;*/
 }
 
 /*#home-BG {*/
