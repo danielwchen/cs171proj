@@ -425,6 +425,8 @@ CongressVis.prototype.updateVis = function() {
                 return "blue";
             } else { return "green" }
         })
+        .attr("rx", 3)
+        .attr("ry", 3)
         .attr("width", vis.senWidth)
         .attr("height", vis.senHeight);
 

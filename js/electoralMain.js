@@ -13,8 +13,9 @@ function loadData() {
     queue()
         .defer(d3.csv, "data/electoral/stateDeniersTotal.csv")
         .defer(d3.csv, "data/electoral/senators.csv")
-        .await(function(error, totalCSV, senCSV) {
-
+        .defer(d3.json, "data/electoral/reps.json")
+        .await(function(error, totalCSV, senCSV, JSON) {
+            console.log(JSON);
             totalCSV.forEach(function(d) {
                 d.Population = +d.Population;
                 d.repDeniers114 = +d.repDeniers114;

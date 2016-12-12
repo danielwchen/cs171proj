@@ -98,15 +98,23 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
 FootFixed.prototype.initLegend = function(){
     var continents = ["Africa", "Asia", "Europe", "North-America", "Oceania", "South-America"];
 
-    var legendsvg = d3.select("#fixed-footprints-legend").append(svg)
+    var legendsvg = d3.select("#fixed-footprints-legend").append("svg")
       .attr("height", 40)
-      .attr("width", 300);
+      .attr("width", 500);
 
     legendsvg.selectAll("rect").data(continents).enter()
         .append("rect")
-        .attr("height", 5)
-        .attr("width", 5)
-        .attr("x", function(d, index){return 50*(index+1)});
+        .attr("height", 15)
+        .attr("width", 15)
+        .attr("x", function(d, index){return 125*((index%3));})
+        .attr("y", function(d,index){return (index>2) ? 5 : 25;})
+        .attr("class", function(d){return d;});
+
+    legendsvg.selectAll("text").data(continents).enter()
+        .append("text")
+        .text(function(d){return d;})
+        .attr("x", function(d, index){return 125*((index%3)) + 20;})
+        .attr("y", function(d,index){return (index>2) ? 16 : 36;})
 };
 
 function getData(country){
