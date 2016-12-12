@@ -162,11 +162,6 @@ body {
 #titleFootprints{
     text-anchor: middle;
     font-weight: bold;
-    text-shadow:
-            -1px -1px 0 white,
-            1px -1px 0 white,
-            -1px 1px 0 white,
-            1px 1px 0 white;
     position: fixed;
     top:50px;
     z-index: 89;
@@ -413,4 +408,9 @@ body {
     border-radius: 25px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.para {
+   margin: 40px;
+    font-size: larger;
 }

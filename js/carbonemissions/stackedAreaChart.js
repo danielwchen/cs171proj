@@ -301,11 +301,11 @@ StackedAreaChart.prototype.updateVis = function(){
       .attr("class", "area");
 
   categories
-	  .transition()
-	  .duration(1000)
   		.style("fill", function(d) { 
   			return colorScale(d.name);
   		})
+	  .transition()
+	  .duration(1000)
       .attr("d", function(d) {
 				return vis.area(d.values);
       })
@@ -314,9 +314,11 @@ StackedAreaChart.prototype.updateVis = function(){
 
   // TO-DO: Update tooltip text
 	categories
-		.on("mouseover", function(d){vis.svg.selectAll("rect").transition()
+		.on("mouseover", function(d,i){vis.svg.selectAll(".area").transition()
 			.duration(250)
-			.attr("opacity", 1); return vis.tooltip.text(d.name);})
+			.attr("opacity", function(d, j) {
+				return j != i ? 0.7 : 1;
+			}); return vis.tooltip.text(d.name);})
 		.on("mouseout", function(d,i){return vis.tooltip.text("");})
 		.on("mousemove", function(section) {
 			var bisectDate = d3.bisector(function(d) { return d.Year; }).left;
