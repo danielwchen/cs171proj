@@ -6,6 +6,12 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
+    background-color: #e3eaec;
+}
+
+.ack {
+    font-style: italic;
 }
 
 .r-arrow {
@@ -47,12 +53,10 @@ body {
     /*background-repeat: initial;*/
     /*background-attachment: fixed;*/
 /*}*/
-
-/*#carbonemissions-BG {*/
-    /*background-image: url("../img/traffic.jpg");*/
-    /*background-repeat: initial;*/
-    /*background-attachment: fixed;*/
-/*}*/
+/*MEG FONT*/
+#carbonemissions-BG {
+    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
+}
 
 /*#electoral-college-BG {*/
     /*background-image: url("../img/United_States_Capitol_-_west_front.jpg");*/
@@ -61,7 +65,7 @@ body {
 #title {
     font-size: 4em;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 70px;
 }
 
 .top-bar {
@@ -76,11 +80,20 @@ body {
 }
 
 #boring-chart {
-    margin-left:135px;
+    margin-left:125px;
     margin-top:20px;
     border: solid;
-    padding:10px
+    padding:10px;
 }
+.brightness {
+    background-color: #268ede;
+    display: inline-block;
+
+}
+.brightness img:hover {
+    opacity: .7;
+}
+
 
 #footprint-vis {
     border-bottom-left-radius: 25px;
@@ -94,7 +107,13 @@ body {
     border-bottom-right-radius: 25px;
 }
 
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+.nav {
+    background-color: #a4d1de;
+    padding-bottom: 0px !important;
+}
+
+.nav-pills > li.active > a
+.nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
     color: #ebebe6;
     background-color: #797979;
 }
