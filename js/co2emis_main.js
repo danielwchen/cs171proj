@@ -9,6 +9,8 @@ var totalData = [];
 // Date parser to convert strings to date objects
 var parseDate = d3.time.format("%Y").parse;
 
+var slider = d3.slider();
+
 // Set ordinal color scale
 var colorScale = d3.scale.ordinal().range(["#8c510a", "#d8b365", "#ffde4f", "#72ea82", "#72e4ea", "#72acea", "#47709b"]); //d3.scale.category10();
 var colorScale2 = d3.scale.category10();
