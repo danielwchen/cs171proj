@@ -14,6 +14,7 @@ StackedAreaChart = function(_parentElement, _data, _extraData, _data2017){
 	this.percentage = 0.0;
 	this.previous = 0.0;
     this.data2017 = _data2017;
+	this.edited2017 = [];
     this.barDisplayData = [];
     this.barEditedData = [];
   // DEBUG RAW DATA
@@ -158,12 +159,10 @@ StackedAreaChart.prototype.wrangleData = function(){
 	var pounds = 2204.62;
 	var newTotal = 0;
 
-    var edited2017 = jQuery.extend(true, [], vis.data2017);
-    var end2017 = edited2017.length-1;
+    vis.edited2017 = jQuery.extend(true, [], vis.data2017);
+    var end2017 = vis.edited2017.length-1;
 
-	if (beef.checked) { editedData[(end-3)]["Agriculture"] -= .544*population*initpop/100; editedData[(end-2)]["Agriculture"] -= .544*population*initpop/100;
-		editedData[(end-1)]["Agriculture"] -= .544*population*initpop/100; editedData[(end)]["Agriculture"] -= .544*population*initpop/100; edited2017[end2017]["Agriculture"] -= .544*population*initpop/100;}
-
+	if (beef.checked) {editedData[(end)]["Agriculture"] -= .544*population*initpop/100; edited2017[end2017]["Agriculture"] -= .544*population*initpop/100;}
 	if (shower.checked) { editedData[end]["Residential"] -= .509*population*initpop/100; edited2017[end2017]["Residential"] -= .509*population*initpop/100;}
 	if (carpool.checked) { editedData[end]["Transportation"] -= .5*3.5*population*initpop/100; edited2017[end2017]["Transportation"] -= .5*3.5*population*initpop/100;}
 	if (lights.checked) { editedData[end]["Electricity"] -= editedData[end]["Electricity"]*.05*population/100; edited2017[end2017]["Electricity"] -= edited2017[end2017]["Electricity"]*.05*population/100;}
@@ -194,7 +193,7 @@ StackedAreaChart.prototype.wrangleData = function(){
     var barEditedData = dataCategories.map(function(name) {
         return {
             name: name,
-            values: edited2017.map(function(d) {
+            values: vis.edited2017.map(function(d) {
                 return {Year: d.Year, y: d[name]};
             })
         };
@@ -434,6 +433,7 @@ StackedAreaChart.prototype.updateVis = function(){
     var layer = vis.svg.selectAll(".layer")
         .data(vis.barEditedData);
 	console.log(vis.barEditedData);
+	console.log(vis.barDisplayData);
 
     layer
         .enter().append("rect").attr("class", "layer")
