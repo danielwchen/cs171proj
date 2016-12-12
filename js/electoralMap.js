@@ -31,6 +31,20 @@ ElectoralMap.prototype.initVis = function() {
         vis.json = json;
         vis.wrangleData();
     });
+
+    vis.svg.append("text")
+        .text("Hover over your state")
+        .attr("class","note")
+        .attr("text-anchor","middle")
+        .attr("y",45)
+        .attr("x",200);
+
+    vis.svg.append("text")
+        .text("Click to pin")
+        .attr("class","note")
+        .attr("text-anchor","middle")
+        .attr("y",60)
+        .attr("x",200);
 };
 
 ElectoralMap.prototype.wrangleData = function() {
