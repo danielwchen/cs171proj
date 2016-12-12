@@ -1,4 +1,4 @@
-
+=
 /* YOUR CSS STYLES */
 body {
     display: block;
@@ -13,13 +13,11 @@ body {
     color: orange;
     position: fixed;
     display: inline-block;
-    top:40%
 }
 .l-arrow {
     font-size: 10em;
     color: orange;
     position: fixed;
-    top:40%;
 }
 
 
@@ -100,7 +98,7 @@ body {
     overflow:auto;
     width:338px;
     background-color: lightgrey;
-    opacity: .75;
+    opacity: .7;
     border-radius: 25px;
 
 }
@@ -133,7 +131,7 @@ body {
 }
 
 #dataSelectFootprint {
-    padding-left: 10px;
+    padding-left: 20px;
     font-weight: bold;
 }
 
@@ -177,7 +175,6 @@ body {
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     border-radius: 2px;
-    z-index: 100;
 }
 
 /* Creates a small triangle extender for the tooltip */
@@ -205,4 +202,62 @@ body {
     stroke: #fff;
     stroke-linejoin: round;
     stroke-linecap: round;
+}
+
+
+/* switch css from http://thestizmedia.com/radio-buttons-as-toggle-buttons-with-css/*/
+.switch-field {
+    /*padding: 40px;*/
+    overflow: hidden;
+}
+
+.switch-title {
+    margin-bottom: 6px;
+}
+
+.switch-field input {
+    display: none;
+}
+
+.switch-field label {
+    float: left;
+}
+
+.switch-field label {
+    display: inline-block;
+    width: 70px;
+    background-color: #e4e4e4;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: none;
+    padding: 6px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition:    all 0.1s ease-in-out;
+    -ms-transition:     all 0.1s ease-in-out;
+    -o-transition:      all 0.1s ease-in-out;
+    transition:         all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+    cursor: pointer;
+}
+
+.switch-field input:checked + label {
+    background-color: darkslategrey;
+    color: white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+    border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+    border-radius: 0 4px 4px 0;
 }
