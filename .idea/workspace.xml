@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fe79b0e-37a0-4079-abe9-be1ee1428af7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/timeline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/vis-footprint.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/js/libs/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/congressVis.js" afterPath="$PROJECT_DIR$/js/electoralCollege/congressVis.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/d3.min.js" afterPath="$PROJECT_DIR$/js/libs/d3.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/d3.slider.js" afterPath="$PROJECT_DIR$/js/libs/d3.slider.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/d3.tip.js" afterPath="$PROJECT_DIR$/js/libs/d3.tip.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/electoralMain.js" afterPath="$PROJECT_DIR$/js/electoralCollege/electoralMain.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/electoralMap.js" afterPath="$PROJECT_DIR$/js/electoralCollege/electoralMap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.min.js" afterPath="$PROJECT_DIR$/js/libs/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.min.map" afterPath="$PROJECT_DIR$/js/libs/jquery.min.map" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/queue.v1.min.js" afterPath="$PROJECT_DIR$/js/libs/queue.v1.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/slider.js" afterPath="$PROJECT_DIR$/js/libs/slider.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/topojson.v1.min.js" afterPath="$PROJECT_DIR$/js/libs/topojson.v1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/carbonInequality.html" afterPath="$PROJECT_DIR$/carbonInequality.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/carbonemissions.html" afterPath="$PROJECT_DIR$/carbonemissions.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/electoralcollege.html" afterPath="$PROJECT_DIR$/electoralcollege.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extremetemperatures.html" afterPath="$PROJECT_DIR$/extremetemperatures.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="cs171proj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/electoralcollege.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="78" column="12" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -116,7 +133,24 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs171proj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs171proj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs171proj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scratches" />
       <pane id="Scope" />
@@ -129,6 +163,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zac\Documents\Harvard\Senior Fall\CS171\Final Project\cs171proj\js\libs" />
+      <recent name="C:\Users\Zac\Documents\Harvard\Senior Fall\CS171\Final Project\cs171proj\js\electoralCollege" />
       <recent name="C:\Users\Zac\Documents\Harvard\Senior Fall\CS171\Final Project\cs171proj\js\extremeTemps" />
       <recent name="C:\Users\Zac\Documents\Harvard\Senior Fall\CS171\Final Project\cs171proj\js\carbonemissions" />
     </key>
@@ -248,18 +284,18 @@
       <workItem from="1481519340693" duration="65000" />
       <workItem from="1481519465975" duration="8694000" />
       <workItem from="1481562882751" duration="216000" />
-      <workItem from="1481577293927" duration="4206000" />
+      <workItem from="1481577293927" duration="4349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154957000" />
+    <option name="totallyTimeSpent" value="155100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="191" y="33" width="1466" height="1014" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24861495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24861495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900944" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900944" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -373,7 +409,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/d3.min.js">
+    <entry file="file://$PROJECT_DIR$/js/libs/d3.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="0" column="982" selection-start-line="0" selection-start-column="982" selection-end-line="0" selection-end-column="982" />
@@ -388,7 +424,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/slider.js">
+    <entry file="file://$PROJECT_DIR$/js/libs/slider.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -414,7 +450,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
+    <entry file="file://$PROJECT_DIR$/js/libs/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -584,7 +620,7 @@
     <entry file="file://$PROJECT_DIR$/electoralcollege.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="78" column="12" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding />
         </state>
       </provider>
