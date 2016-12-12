@@ -20,7 +20,7 @@ CongressVis.prototype.initVis = function() {
 
     vis.margin = {top: 100, right: 10, bottom: 0, left: 30};
     vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right;
-    vis.height = 2000 - vis.margin.top - vis.margin.bottom;
+    vis.height = 1300 - vis.margin.top - vis.margin.bottom;
 
     // SVG drawing area
     vis.svg = d3.select(vis.parentElement).append("svg")
@@ -53,21 +53,12 @@ CongressVis.prototype.initVis = function() {
 
     vis.sortParam = d3.select(".form-control").property("value");
 
-    vis.textLabels = {
-        CurrentAge: ["30-39","40-49","50-59","60-69","70-79","80-89"],
-        AgeAtTakingOfficeYear: ["30-39","40-49","50-59","60-69","70-79"],
-        YearsInOffice: ["0-9","10-19","20-29","30-39","40-49","50-59"],
-        YearNextElection: ["2018","2020","2022"],
-        Party: ["Democratic","Republican","Independent"],
-        State: ["All"]
-    };
-
     vis.axisInfo = {
         CurrentAge: {numSenSections:6, numRepSections:6, rowsPerSection:2, repRowsPerSection:4},
         AgeAtTakingOfficeYear: {numSenSections:4, numRepSections:5, rowsPerSection:2, repRowsPerSection:4},
         YearsInOffice: {numSenSections:5, numRepSections:6, rowsPerSection:3, repRowsPerSection:8},
         YearNextElection: {numSenSections:3, numRepSections:1, rowsPerSection:3, repRowsPerSection:11},
-        Party: {numSenSections:3, numRepSections:2, rowsPerSection:4, repRowsPerSection:11},
+        Party: {numSenSections:3, numRepSections:2, rowsPerSection:5, repRowsPerSection:11},
         State: {numSenSections:1, numRepSections:1, rowsPerSection:5, repRowsPerSection:11}
     };
 
@@ -77,7 +68,7 @@ CongressVis.prototype.initVis = function() {
             AgeAtTakingOfficeYear: {Places:[0,0,1,1,2,2,3,3], Labels:["30-39","40-49","50-59","60-69"]},
             YearsInOffice: {Places:[0,0,1,1,2,2,3,3,4,4], Labels:["0-9","10-19","20-29","30-39","40-49"]},
             YearNextElection: {Places:[0,0,1,1,2,2], Labels:["2018","2020","2022"]},
-            Party: {Places:[0,0,1,1,2,2], Labels:["Democratic","Republican","Independent"]},
+            Party: {Places:[0,0,1,1,2,2], Labels:["Dem","Rep","Ind"]},
             State: {Places:[0,0], Labels:["All"]}
         },
         rep: {
@@ -85,7 +76,7 @@ CongressVis.prototype.initVis = function() {
             AgeAtTakingOfficeYear: {Places:[0,0,1,1,2,2,3,3,4,4], Labels:["30-39","40-49","50-59","60-69","70-79"]},
             YearsInOffice: {Places:[0,0,1,1,2,2,3,3,4,4,5,5], Labels:["0-9","10-19","20-29","30-39","40-49","50-59"]},
             YearNextElection: {Places:[0,0], Labels:["2018"]},
-            Party: {Places:[0,0,1,1], Labels:["Democratic","Republican"]},
+            Party: {Places:[0,0,1,1], Labels:["Dem","Rep"]},
             State: {Places:[0,0], Labels:["All"]}
         }
     }
@@ -528,7 +519,6 @@ CongressVis.prototype.updateVis = function() {
             }
         })
         .attr("x2", function(d,index) {
-            console.log(index)
             if (index % 2 == 1) {
                 return vis.width/2 + vis.senWidth/2 - vis.aisle/2 - 5
             } else {
@@ -561,7 +551,6 @@ CongressVis.prototype.updateVis = function() {
             }
         })
         .attr("x2", function(d,index) {
-            console.log(index)
             if (index % 2 == 1) {
                 return vis.width/2 + vis.senWidth/2 - vis.aisle/2 - 5
             } else {

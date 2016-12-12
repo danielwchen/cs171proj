@@ -14,6 +14,10 @@ body {
     font-style: italic;
 }
 
+.themap {
+    fill-opacity: .5;
+}
+
 .r-arrow {
     font-size: 10em;
     color: orange;
@@ -43,6 +47,20 @@ body {
     font-size: 35px;
     font-weight: bolder;
     /*fill-opacity: .5;*/
+}
+
+.repLabels, .senLabels {
+    font-weight: bold;
+}
+#state-name {
+    color: red;
+    font-size: 30px;
+    font-weight: bolder;
+}
+#state-1-1, #state-2-0, #state-2-2 {
+    color: red;
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 /*#home-BG {*/
@@ -377,6 +395,6 @@ body {
     padding: 10px;
 }
 
-table, th {
+#state-hover {
     text-align: center;
 }
