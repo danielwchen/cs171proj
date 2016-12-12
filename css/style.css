@@ -43,11 +43,10 @@ body {
     /*background-attachment: fixed;*/
 /*}*/
 
-/*#carbonemissions-BG {*/
-    /*background-image: url("../img/traffic.jpg");*/
-    /*background-repeat: initial;*/
-    /*background-attachment: fixed;*/
-/*}*/
+#carbonemissions-BG {
+    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
+    background-color: #fffddf;
+}
 
 /*#electoral-college-BG {*/
     /*background-image: url("../img/United_States_Capitol_-_west_front.jpg");*/
@@ -71,10 +70,10 @@ body {
 }
 
 #boring-chart {
-    margin-left:135px;
+    margin-left:125px;
     margin-top:20px;
     border: solid;
-    padding:10px
+    padding:10px;
 }
 
 #footprint-vis {
