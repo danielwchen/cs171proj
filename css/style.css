@@ -14,6 +14,10 @@ body {
     font-style: italic;
 }
 
+.themap {
+    fill-opacity: .5;
+}
+
 .r-arrow {
     font-size: 10em;
     color: orange;
@@ -45,28 +49,19 @@ body {
     /*fill-opacity: .5;*/
 }
 
-/*#home-BG {*/
-    /*background-image: url("../img/dramatic_tree.jpg");*/
-/*}*/
-
-/*#extreme-Temps-BG {*/
-    /*background-image: url("../img/clay-ground-seamless.jpg");*/
-    /*opacity: 50;*/
-/*}*/
-
-/*#footprint-BG {*/
-    /*background-image: url("../img/v2-smog.jpg");*/
-    /*background-repeat: initial;*/
-    /*background-attachment: fixed;*/
-/*}*/
-/*MEG FONT*/
-#carbonemissions-BG {
-    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
+.repLabels, .senLabels {
+    font-weight: bold;
 }
-
-/*#electoral-college-BG {*/
-    /*background-image: url("../img/United_States_Capitol_-_west_front.jpg");*/
-/*}*/
+#state-name, #congress-name {
+    color: red;
+    font-size: 30px;
+    font-weight: bolder;
+}
+#state-1-1, #state-2-0, #state-2-2 {
+    color: red;
+    font-size: 25px;
+    font-weight: bolder;
+}
 
 #title {
     font-size: 4em;
@@ -377,7 +372,7 @@ body {
     padding: 10px;
 }
 
-table, th {
+#state-hover,#congress-hover {
     text-align: center;
 }
 
@@ -391,4 +386,31 @@ table, th {
 
 #quote, #label1 {
     font-style: italic;
+}
+
+/*MEG FONT*/
+#carbonemissions-BG {
+    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
+}
+
+
+/* Stuff for Daniel */
+.pretty-box-1 {
+    margin-top: 10px;
+    height: auto;
+    width:670px;
+    background-color: lightgrey;
+    opacity: .7;
+    border-radius: 25px;
+}
+
+.pretty-box-2 {
+    margin-top:10px;
+    height: 700px;
+    width:350px;
+    background-color: lightgrey;
+    opacity: .7;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
