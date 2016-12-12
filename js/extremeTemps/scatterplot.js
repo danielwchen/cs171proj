@@ -120,9 +120,6 @@ function updateYear(){
 
     var current = svg.selectAll(".current").data(filteredData);
 
-
-
-
     current
         .enter()
         .append("circle")
@@ -134,7 +131,7 @@ function updateYear(){
             return y(data.Temperature)
         })
         .attr("r", 3)
-        .attr("fill", "darkred");
+        .attr("fill", "red");
 
     current.exit().remove()
 }
