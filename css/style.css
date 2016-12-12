@@ -52,7 +52,7 @@ body {
 .repLabels, .senLabels {
     font-weight: bold;
 }
-#state-name {
+#state-name, #congress-name {
     color: red;
     font-size: 30px;
     font-weight: bolder;
@@ -372,7 +372,7 @@ body {
     padding: 10px;
 }
 
-#state-hover {
+#state-hover,#congress-hover {
     text-align: center;
 }
 
@@ -411,4 +411,6 @@ body {
     background-color: lightgrey;
     opacity: .7;
     border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
 }

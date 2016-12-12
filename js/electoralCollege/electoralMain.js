@@ -110,14 +110,13 @@ function createVis() {
         }
     });
     $(EventHandler).bind("repOver", function(event, rep){
-        console.log(rep);
         if (repPinned) {
 
         } else {
             updateCongressTable(rep);
         }
 
-        if (statePinned) {
+        if (pinned) {
 
         } else {
             updateCongressTable(rep);
@@ -146,8 +145,8 @@ function createVis() {
         } else {
             electoralMap.highlightState(offData[rep].State);
             congressVis.highlightRep(rep);
-            repPinned = false;
-            statePinned = true;
+            repPinned = true;
+            statePinned = false;
             pinned = true;
             updateStateTable(offData[rep].State);
             updateCongressTable(rep);
