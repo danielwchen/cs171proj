@@ -100,7 +100,7 @@ function initializeScatterPlot() {
                 return "visible";
             }
         })
-        .attr("fill", "grey");
+        .attr("fill", "lightgray");
 
     updateYear();
 }
@@ -225,7 +225,7 @@ function updateMinMax() {
         .enter()
         .append("circle")
         .attr("class", "circle")
-        .attr("fill", "blue");
+        .attr("fill", "gray");
 
     lows
         .transition()

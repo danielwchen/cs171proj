@@ -371,6 +371,9 @@ body {
     text-align: center;
 }
 
+#state-hover {
+    padding-top: 20px;
+}
 #congress-hover {
     margin-top: -30px;
 }
