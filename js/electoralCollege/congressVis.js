@@ -750,74 +750,90 @@ CongressVis.prototype.highlightState = function(state) {
     if (vis.enableHighlight) {
         if (state) {
             vis.senIcons.transition().duration(80)
-                .attr("fill", function (d) {
+                .style("opacity",function(d) {
                     if (d.State == state) {
-                        if (d.Party == "Republican") {
-                            return "red"
-                        }
-                        else if (d.Party == "Democratic") {
-                            return "blue";
-                        } else {
-                            return "green"
-                        }
+                        return 1;
                     } else {
-                        if (d.Party == "Republican") {
-                            return "#ff9696"
-                        }
-                        else if (d.Party == "Democratic") {
-                            return "#9696ff"
-                        }
-                        else {
-                            return "#96ff96"
-                        }
+                        return .3
                     }
                 });
+                // .attr("fill", function (d) {
+                //     if (d.State == state) {
+                //         if (d.Party == "Republican") {
+                //             return "red"
+                //         }
+                //         else if (d.Party == "Democratic") {
+                //             return "blue";
+                //         } else {
+                //             return "green"
+                //         }
+                //     } else {
+                //         if (d.Party == "Republican") {
+                //             return "#ff9696"
+                //         }
+                //         else if (d.Party == "Democratic") {
+                //             return "#9696ff"
+                //         }
+                //         else {
+                //             return "#96ff96"
+                //         }
+                //     }
+                // });
             vis.repIcons.transition().duration(80)
-                .attr("fill", function (d) {
+                .style("opacity",function(d) {
                     if (d.State == state) {
-                        if (d.Party == "Republican") {
-                            return "red"
-                        }
-                        else if (d.Party == "Democratic") {
-                            return "blue";
-                        } else {
-                            return "green"
-                        }
+                        return 1;
                     } else {
-                        if (d.Party == "Republican") {
-                            return "#ff9696"
-                        }
-                        else if (d.Party == "Democratic") {
-                            return "#9696ff"
-                        }
-                        else {
-                            return "#96ff96"
-                        }
+                        return .3
                     }
                 });
+                // .attr("fill", function (d) {
+                //     if (d.State == state) {
+                //         if (d.Party == "Republican") {
+                //             return "red"
+                //         }
+                //         else if (d.Party == "Democratic") {
+                //             return "blue";
+                //         } else {
+                //             return "green"
+                //         }
+                //     } else {
+                //         if (d.Party == "Republican") {
+                //             return "#ff9696"
+                //         }
+                //         else if (d.Party == "Democratic") {
+                //             return "#9696ff"
+                //         }
+                //         else {
+                //             return "#96ff96"
+                //         }
+                //     }
+                // });
         } else {
             vis.senIcons.transition().duration(80)
-                .attr("fill", function (d) {
-                    if (d.Party == "Republican") {
-                        return "red"
-                    }
-                    else if (d.Party == "Democratic") {
-                        return "blue";
-                    } else {
-                        return "green"
-                    }
-                });
+                .style("opacity",1);
+                // .attr("fill", function (d) {
+                //     if (d.Party == "Republican") {
+                //         return "red"
+                //     }
+                //     else if (d.Party == "Democratic") {
+                //         return "blue";
+                //     } else {
+                //         return "green"
+                //     }
+                // });
             vis.repIcons.transition().duration(80)
-                .attr("fill", function (d) {
-                    if (d.Party == "Republican") {
-                        return "red"
-                    }
-                    else if (d.Party == "Democratic") {
-                        return "blue";
-                    } else {
-                        return "green"
-                    }
-                });
+                .style("opacity",1);
+                // .attr("fill", function (d) {
+                //     if (d.Party == "Republican") {
+                //         return "red"
+                //     }
+                //     else if (d.Party == "Democratic") {
+                //         return "blue";
+                //     } else {
+                //         return "green"
+                //     }
+                // });
         }
 
     }
@@ -828,46 +844,62 @@ CongressVis.prototype.highlightRep = function(rep) {
     if (vis.enableHighlight) {
         if (rep) {
             vis.senIcons.transition().duration(120)
-                .attr("fill",function(d) {
-                    if(d.Name == rep) {
-                        if (d.Party == "Republican") {return "red"}
-                        else if (d.Party == "Democratic") {
-                            return "blue";
-                        } else { return "green" }
+                .style("opacity",function(d) {
+                    if (d.Name == rep) {
+                        return 1;
                     } else {
-                        if (d.Party == "Republican") {return "#ff9696"}
-                        else if (d.Party == "Democratic") {return "#9696ff"}
-                        else { return "#96ff96"}
+                        return .3
                     }
                 });
+                // .attr("fill",function(d) {
+                //     if(d.Name == rep) {
+                //         if (d.Party == "Republican") {return "red"}
+                //         else if (d.Party == "Democratic") {
+                //             return "blue";
+                //         } else { return "green" }
+                //     } else {
+                //         if (d.Party == "Republican") {return "#ff9696"}
+                //         else if (d.Party == "Democratic") {return "#9696ff"}
+                //         else { return "#96ff96"}
+                //     }
+                // });
             vis.repIcons.transition().duration(120)
-                .attr("fill",function(d) {
-                    if(d.Name == rep) {
-                        if (d.Party == "Republican") {return "red"}
-                        else if (d.Party == "Democratic") {
-                            return "blue";
-                        } else { return "green" }
+                .style("opacity",function(d) {
+                    if (d.Name == rep) {
+                        return 1;
                     } else {
-                        if (d.Party == "Republican") {return "#ff9696"}
-                        else if (d.Party == "Democratic") {return "#9696ff"}
-                        else { return "#96ff96"}
+                        return .3
                     }
                 });
+                // .attr("fill",function(d) {
+                //     if(d.Name == rep) {
+                //         if (d.Party == "Republican") {return "red"}
+                //         else if (d.Party == "Democratic") {
+                //             return "blue";
+                //         } else { return "green" }
+                //     } else {
+                //         if (d.Party == "Republican") {return "#ff9696"}
+                //         else if (d.Party == "Democratic") {return "#9696ff"}
+                //         else { return "#96ff96"}
+                //     }
+                // });
         } else {
             vis.senIcons.transition().duration(80)
-                .attr("fill",function(d) {
-                    if (d.Party == "Republican") {return "red"}
-                    else if (d.Party == "Democratic") {
-                        return "blue";
-                    } else { return "green" }
-                });
+                .style("opacity",1);
+                // .attr("fill",function(d) {
+                //     if (d.Party == "Republican") {return "red"}
+                //     else if (d.Party == "Democratic") {
+                //         return "blue";
+                //     } else { return "green" }
+                // });
             vis.repIcons.transition().duration(80)
-                .attr("fill",function(d) {
-                    if (d.Party == "Republican") {return "red"}
-                    else if (d.Party == "Democratic") {
-                        return "blue";
-                    } else { return "green" }
-                });
+                .style("opacity",1);
+                // .attr("fill",function(d) {
+                //     if (d.Party == "Republican") {return "red"}
+                //     else if (d.Party == "Democratic") {
+                //         return "blue";
+                //     } else { return "green" }
+                // });
         }
     }
 

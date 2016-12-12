@@ -1,5 +1,7 @@
 document.getElementById("state-hover").style.visibility = 'hidden';
 document.getElementById("congress-hover").style.visibility = 'hidden';
+document.getElementById("tableline").style.visibility = 'hidden';
+
 
 var stateTotalData = {
 };
@@ -83,6 +85,7 @@ function createVis() {
             electoralMap.highlightState(state);
             congressVis.highlightState(state);
             updateStateTable(state);
+            document.getElementById("tableline").style.visibility = 'visible';
         }
     });
     $(EventHandler).bind("stateOff", function(event){
@@ -90,6 +93,7 @@ function createVis() {
             electoralMap.highlightState(null);
             congressVis.highlightState(null);
             document.getElementById("state-hover").style.visibility = 'hidden';
+            document.getElementById("tableline").style.visibility = 'hidden';
         }
 
     });
@@ -107,6 +111,7 @@ function createVis() {
             repPinned = false;
             pinned = true;
             updateStateTable(state)
+            document.getElementById("tableline").style.visibility = 'visible';
         }
     });
     $(EventHandler).bind("repOver", function(event, rep){
@@ -114,6 +119,7 @@ function createVis() {
 
         } else {
             updateCongressTable(rep);
+            document.getElementById("tableline").style.visibility = 'visible';
         }
 
         if (pinned) {
@@ -123,6 +129,7 @@ function createVis() {
             electoralMap.highlightState(offData[rep].State);
             congressVis.highlightRep(rep);
             updateStateTable(offData[rep].State);
+            document.getElementById("tableline").style.visibility = 'visible';
         }
     });
     $(EventHandler).bind("repOff", function(event){
@@ -132,6 +139,8 @@ function createVis() {
             electoralMap.highlightState(null);
             congressVis.highlightRep(null);
             document.getElementById("congress-hover").style.visibility = 'hidden';
+            document.getElementById("state-hover").style.visibility = 'hidden';
+            document.getElementById("tableline").style.visibility = 'hidden';
         }
     });
     $(EventHandler).bind("repPress", function(event, rep){
@@ -150,6 +159,7 @@ function createVis() {
             pinned = true;
             updateStateTable(offData[rep].State);
             updateCongressTable(rep);
+            document.getElementById("tableline").style.visibility = 'visible';
         }
 
     });
@@ -166,6 +176,7 @@ function updateStateTable(state) {
 
 function updateCongressTable(rep) {
     var temprep = offData[rep]
+    console.log(temprep)
     document.getElementById("congress-name").innerHTML = rep;
     if (temprep.Position == "sen") {
         document.getElementById("congress-1-0").innerHTML = "Senator";
@@ -180,9 +191,9 @@ function updateCongressTable(rep) {
     }
 
     
-    document.getElementById("optional").innerHTML = "Climate Champion or Denier";
+    document.getElementById("optional").innerHTML = "";
 
-    if (temprep.Gender == "Male") {
+    if (temprep.Gender == "M") {
         document.getElementById("pronoun1").innerHTML = "him";
         document.getElementById("pronoun2").innerHTML = "him";
     } else {
@@ -192,9 +203,9 @@ function updateCongressTable(rep) {
 
     document.getElementById("congress-4-1").innerHTML = temprep.Phone;
     if (temprep.Contact_URL != undefined) {
-        document.getElementById("congress-5-1").innerHTML = "<a href=\""+temprep.Contact_URL + "\">" + temprep.Contact_URL + "</a>";
+        document.getElementById("congress-5-1").innerHTML = "<a href=\""+temprep.Contact_URL + "\">Click here!</a>";
     } else {
-        document.getElementById("congress-5-1").innerHTML = "<a href=\""+temprep.Url + "\">" + temprep.Url + "</a>";
+        document.getElementById("congress-5-1").innerHTML = "<a href=\""+temprep.Url + "\">Click here!</a>";
     }
 
     document.getElementById("congress-6-1").innerHTML = temprep.Address;
