@@ -3,12 +3,10 @@
  FootFixed - Object constructor for side scrolling footprint vis
  */
 
-FootFixed = function(_parentElement, _data, _radiusScale, _meanTotal, _meanPC){
+FootFixed = function(_parentElement, _data, _radiusScale){
     this.parentElement = _parentElement;
     this.data = _data;
     this.r = _radiusScale;
-    this.meanTotal = _meanTotal;
-    this.meanPC = _meanPC;
     this.initVis();
 };
 
@@ -67,6 +65,8 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
             return (index > stepNum) ? 0 : 50;
         });
 
+    console.log(vis.circs);
+
     // Exit
     vis.circs.exit().remove();
 
@@ -98,7 +98,7 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
 FootFixed.prototype.initLegend = function(){
     var continents = ["Africa", "Asia", "Europe", "North-America", "Oceania", "South-America"];
 
-    var legendsvg = d3.select("#fixed-carbonInequality-legend").append("svg")
+    var legendsvg = d3.select("#fixed-footprints-legend").append("svg")
       .attr("height", 40)
       .attr("width", 500);
 
