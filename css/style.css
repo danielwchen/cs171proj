@@ -63,29 +63,6 @@ body {
     font-weight: bolder;
 }
 
-/*#home-BG {*/
-    /*background-image: url("../img/dramatic_tree.jpg");*/
-/*}*/
-
-/*#extreme-Temps-BG {*/
-    /*background-image: url("../img/clay-ground-seamless.jpg");*/
-    /*opacity: 50;*/
-/*}*/
-
-/*#footprint-BG {*/
-    /*background-image: url("../img/v2-smog.jpg");*/
-    /*background-repeat: initial;*/
-    /*background-attachment: fixed;*/
-/*}*/
-/*MEG FONT*/
-#carbonemissions-BG {
-    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
-}
-
-/*#electoral-college-BG {*/
-    /*background-image: url("../img/United_States_Capitol_-_west_front.jpg");*/
-/*}*/
-
 #title {
     font-size: 4em;
     text-align: center;
@@ -411,6 +388,13 @@ body {
     font-style: italic;
 }
 
+/*MEG FONT*/
+#carbonemissions-BG {
+    font-family: "Mercury Text G1 A","Mercury Text G1 B","Georgia","Times New Roman","Times",sans-serif;
+}
+
+
+/* Stuff for Daniel */
 .pretty-box-1 {
     margin-top: 10px;
     height: auto;
