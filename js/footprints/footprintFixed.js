@@ -21,17 +21,17 @@ FootFixed.prototype.initVis = function(){
 
     vis.spacing = 50;
 
-    vis.width = 800 - vis.margin.left - vis.margin.right,
+    vis.width = 700 - vis.margin.left - vis.margin.right,
         vis.height = 800 - vis.margin.top - vis.margin.bottom;
 
     vis.svg = d3.select(vis.parentElement).append("svg")
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom);
 
-    vis.xPositions = [45, 340, 300, 430, 590, 90, 130, 260, 150, 520];
-    vis.yPositions = [30, 120, 330, 50, 40, 320, 400, 410, 150, 280];
-    vis.xPCPositions = [40, 260, 590, 450, 290, 340, 310, 130, 130, 530];
-    vis.yPCPositions = [40, 50, 50, 50, 250, 120, 400, 380, 140, 270];
+    vis.xPositions = [250, 340, 280, 430, 590, 90, 130, 260, 150, 500];
+    vis.yPositions = [270, 120, 330, 50, 40, 320, 400, 410, 150, 260];
+    vis.xPCPositions = [40, 250, 590, 450, 270, 310, 280, 120, 130, 515];
+    vis.yPCPositions = [40, 40, 50, 50, 250, 120, 390, 360, 140, 270];
 
     vis.updateVis(false, vis.r, 0);
 };
