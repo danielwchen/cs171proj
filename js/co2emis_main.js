@@ -10,7 +10,7 @@ var totalData = [];
 var parseDate = d3.time.format("%Y").parse;
 
 // Set ordinal color scale
-var colorScale = d3.scale.ordinal().range(["#8c510a", "#d8b365", "#f6e8c3", "#f5f5f5", "#c7eae5", "#5ab4ac", "#01665e"]); //d3.scale.category10();
+var colorScale = d3.scale.ordinal().range(["#8c510a", "#d8b365", "#ffde4f", "#72ea82", "#72e4ea", "#72acea", "#47709b"]); //d3.scale.category10();
 var colorScale2 = d3.scale.category10();
 
 // Variables for the visualization instances
@@ -128,7 +128,6 @@ function createVis() {
 	// TO-DO: Instantiate visualization objects here
 	// areachart = new ...
 	areachart = new StackedAreaChart("stacked-area-chart", allData, totalData, interactiveData);
-	interactivechart = new BarChart("bar-chart", interactiveData);
 
 
 }
