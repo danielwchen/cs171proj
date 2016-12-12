@@ -2,8 +2,723 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fe79b0e-37a0-4079-abe9-be1ee1428af7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/carbonInequality.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/brainstorm/vis-01-01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/brainstorm/vis.ai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/footprint.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/afghanistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/akrotiri.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/aland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/albania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/algeria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/americansamoa.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/andorra.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/angola.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/anguilla.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/antarctica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/antiguaandbarb.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/argentina.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/armenia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/aruba.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/ashmoreandcartieris.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/australia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/austria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/azerbaijan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/bahamas.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/bahrain.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/baikonur.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/bajonuevobankpetrelis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/bangladesh.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/barbados.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/belarus.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/belgium.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/belize.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/benin.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/bermuda.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/bhutan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/bolivia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/bosniaandherz.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/botswana.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/brazil.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/brindianoceanter.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/britishvirginis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/brunei.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/bulgaria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/burkinafaso.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/burundi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/cambodia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/cameroon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/canada.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/capeverde.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/caymanis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/centralafricanrep.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/chad.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/chile.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/china.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/clippertoni.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/colombia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/comoros.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/congo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/cookis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/coralseais.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/costarica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/croatia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/ctedivoire.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/cuba.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/curaao.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/cyprus.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/cyprusunbufferzone.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/czechrep.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/demrepcongo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/demrepkorea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/denmark.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/dhekelia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/djibouti.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/dominica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/dominicanrep.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/ecuador.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/egypt.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/elsalvador.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/eqguinea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/eritrea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/estonia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/ethiopia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/faeroeis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/falklandis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/fiji.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/finland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/france.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/frpolynesia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/frsantarcticlands.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/gabon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/gambia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/georgia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/germany.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/ghana.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/gibraltar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/greece.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/greenland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/grenada.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/guam.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/guatemala.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/guernsey.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/guinea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/guineabissau.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/guyana.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/haiti.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/heardiandmcdonaldis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/honduras.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/hongkong.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/hungary.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/iceland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/india.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/indianoceanter.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/indonesia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/iran.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/iraq.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/ireland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/isleofman.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/israel.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/italy.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/jamaica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/japan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/jersey.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/jordan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/kazakhstan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/kenya.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/kiribati.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/korea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/kosovo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/kuwait.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/kyrgyzstan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/laopdr.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/latvia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/lebanon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/lesotho.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/liberia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/libya.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/liechtenstein.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/lithuania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/luxembourg.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/macao.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/macedonia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/madagascar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/malawi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/malaysia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/maldives.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/mali.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/malta.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/marshallis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/mauritania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/mauritius.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/mexico.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/micronesia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/moldova.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/monaco.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/mongolia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/montenegro.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/montserrat.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/morocco.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/mozambique.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/myanmar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/namibia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/nauru.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/ncyprus.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/nepal.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/netherlands.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/newcaledonia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/newzealand.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/nicaragua.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/niger.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/nigeria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/niue.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/nmarianais.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/norfolkisland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/norway.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/oman.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/pakistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/palau.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/palestine.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/panama.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/papuanewguinea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/paraguay.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/peru.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/philippines.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/pitcairnis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/poland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/portugal.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/puertorico.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/qatar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/romania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/russia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/rwanda.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/sainthelena.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/saintlucia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/samoa.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/sanmarino.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/saudiarabia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/scarboroughreef.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/senegal.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/serbia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/serranillabank.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/seychelles.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/sgeoandssandwis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/siachenglacier.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/sierraleone.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/singapore.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/sintmaarten.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/slovakia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/slovenia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/solomonis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/somalia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/somaliland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/sotomandprincipe.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/southafrica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/spain.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/spratlyis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/srilanka.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/ssudan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/stbarthlemy.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/stkittsandnevis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/stmartin.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/stpierreandmiquelon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/stvinandgren.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/sudan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/suriname.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/swaziland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/sweden.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/switzerland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/syria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/taiwan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/tajikistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/tanzania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/thailand.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/timorleste.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/togo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/tonga.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/trinidadandtobago.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/tunisia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/turkey.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/turkmenistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/turksandcaicosis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/tuvalu.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/uganda.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/ukraine.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/unitedarabemirates.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/unitedkingdom.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/unitedstates.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/uruguay.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/usminoroutlyingis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/usnbguantanamobay.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/usvirginis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/uzbekistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/vanuatu.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/vatican.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/venezuela.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/vietnam.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/wallisandfutunais.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/wsahara.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/yemen.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/zambia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_10m_admin_0_countries.geo.json/zimbabwe.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/afghanistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/albania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/algeria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/angola.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/antarctica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/argentina.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/armenia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/australia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/austria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/azerbaijan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/bahamas.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/bangladesh.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/belarus.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/belgium.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/belize.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/benin.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/bhutan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/bolivia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/bosniaandherz.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/botswana.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/brazil.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/brunei.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/bulgaria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/burkinafaso.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/burundi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/cambodia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/cameroon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/canada.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/centralafricanrep.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/chad.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/chile.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/china.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/colombia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/congo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/costarica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/croatia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/ctedivoire.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/cuba.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/cyprus.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/czechrep.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/demrepcongo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/demrepkorea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/denmark.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/djibouti.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/dominicanrep.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/ecuador.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/egypt.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/elsalvador.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/eqguinea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/eritrea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/estonia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/ethiopia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/falklandis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/fiji.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/finland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/france.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/frsantarcticlands.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/gabon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/gambia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/georgia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/germany.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/ghana.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/greece.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/greenland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/guatemala.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/guinea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/guineabissau.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/guyana.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/haiti.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/honduras.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/hungary.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/iceland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/india.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/indonesia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/iran.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/iraq.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/ireland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/israel.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/italy.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/jamaica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/japan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/jordan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/kazakhstan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/kenya.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/korea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/kosovo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/kuwait.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/kyrgyzstan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/laopdr.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/latvia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/lebanon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/lesotho.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/liberia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/libya.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/lithuania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/luxembourg.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/macedonia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/madagascar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/malawi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/malaysia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/mali.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/mauritania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/mexico.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/moldova.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/mongolia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/montenegro.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/morocco.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/mozambique.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/myanmar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/namibia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/ncyprus.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/nepal.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/netherlands.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/newcaledonia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/newzealand.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/nicaragua.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/niger.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/nigeria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/norway.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/oman.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/pakistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/palestine.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/panama.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/papuanewguinea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/paraguay.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/peru.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/philippines.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/poland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/portugal.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/puertorico.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/qatar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/romania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/russia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/rwanda.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/saudiarabia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/senegal.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/serbia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/sierraleone.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/slovakia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/slovenia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/solomonis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/somalia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/somaliland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/southafrica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/spain.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/srilanka.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/ssudan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/sudan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/suriname.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/swaziland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/sweden.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/switzerland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/syria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/taiwan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/tajikistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/tanzania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/thailand.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/timorleste.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/togo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/trinidadandtobago.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/tunisia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/turkey.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/turkmenistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/uganda.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/ukraine.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/unitedarabemirates.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/unitedkingdom.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/unitedstates.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/uruguay.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/uzbekistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/vanuatu.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/venezuela.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/vietnam.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/wsahara.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/yemen.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/zambia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_110m_admin_0_countries.geo.json/zimbabwe.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/afghanistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/aland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/albania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/algeria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/americansamoa.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/andorra.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/angola.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/anguilla.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/antarctica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/antiguaandbarb.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/argentina.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/armenia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/aruba.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/ashmoreandcartieris.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/australia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/austria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/azerbaijan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/bahamas.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/bahrain.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/bangladesh.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/barbados.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/belarus.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/belgium.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/belize.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/benin.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/bermuda.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/bhutan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/bolivia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/bosniaandherz.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/botswana.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/brazil.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/brindianoceanter.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/britishvirginis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/brunei.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/bulgaria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/burkinafaso.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/burundi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/cambodia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/cameroon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/canada.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/capeverde.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/caymanis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/centralafricanrep.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/chad.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/chile.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/china.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/colombia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/comoros.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/congo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/cookis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/costarica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/croatia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/ctedivoire.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/cuba.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/curaao.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/cyprus.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/czechrep.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/demrepcongo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/demrepkorea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/denmark.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/djibouti.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/dominica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/dominicanrep.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/ecuador.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/egypt.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/elsalvador.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/eqguinea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/eritrea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/estonia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/ethiopia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/faeroeis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/falklandis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/fiji.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/finland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/france.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/frpolynesia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/frsantarcticlands.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/gabon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/gambia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/georgia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/germany.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/ghana.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/greece.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/greenland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/grenada.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/guam.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/guatemala.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/guernsey.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/guinea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/guineabissau.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/guyana.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/haiti.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/heardiandmcdonaldis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/honduras.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/hongkong.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/hungary.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/iceland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/india.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/indianoceanter.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/indonesia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/iran.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/iraq.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/ireland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/isleofman.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/israel.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/italy.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/jamaica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/japan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/jersey.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/jordan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/kazakhstan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/kenya.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/kiribati.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/korea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/kosovo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/kuwait.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/kyrgyzstan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/laopdr.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/latvia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/lebanon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/lesotho.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/liberia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/libya.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/liechtenstein.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/lithuania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/luxembourg.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/macao.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/macedonia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/madagascar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/malawi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/malaysia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/maldives.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/mali.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/malta.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/marshallis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/mauritania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/mauritius.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/mexico.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/micronesia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/moldova.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/monaco.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/mongolia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/montenegro.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/montserrat.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/morocco.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/mozambique.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/myanmar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/namibia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/nauru.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/ncyprus.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/nepal.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/netherlands.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/newcaledonia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/newzealand.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/nicaragua.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/niger.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/nigeria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/niue.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/nmarianais.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/norfolkisland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/norway.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/oman.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/pakistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/palau.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/palestine.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/panama.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/papuanewguinea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/paraguay.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/peru.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/philippines.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/pitcairnis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/poland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/portugal.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/puertorico.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/qatar.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/romania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/russia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/rwanda.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/sainthelena.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/saintlucia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/samoa.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/sanmarino.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/saudiarabia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/senegal.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/serbia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/seychelles.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/sgeoandssandwis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/siachenglacier.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/sierraleone.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/singapore.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/sintmaarten.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/slovakia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/slovenia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/solomonis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/somalia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/somaliland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/sotomandprincipe.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/southafrica.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/spain.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/srilanka.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/ssudan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/stbarthlemy.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/stkittsandnevis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/stmartin.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/stpierreandmiquelon.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/stvinandgren.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/sudan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/suriname.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/swaziland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/sweden.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/switzerland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/syria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/taiwan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/tajikistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/tanzania.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/thailand.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/timorleste.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/togo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/tonga.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/trinidadandtobago.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/tunisia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/turkey.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/turkmenistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/turksandcaicosis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/uganda.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/ukraine.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/unitedarabemirates.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/unitedkingdom.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/unitedstates.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/uruguay.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/usvirginis.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/uzbekistan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/vanuatu.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/vatican.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/venezuela.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/vietnam.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/wallisandfutunais.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/wsahara.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/yemen.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/zambia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/ne_50m_admin_0_countries.geo.json/zimbabwe.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/source/ne_10m_admin_0_countries.geo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/source/ne_110m_admin_0_countries.geo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/geojson-regions-master/source/ne_50m_admin_0_countries.geo.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/testisland.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/testisland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/old/testislandxy.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/footPrint.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/Icon" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/co2InteractiveChart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/islandMaps.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/junk/TuvaluPlaceholder.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/junk/biodiv.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/junk/carcar_shoe.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/junk/carpoolKaraoke.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/junk/disasters.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/junk/impact.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/junk/kiribati.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/junk/seaLevel.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/junk/test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/percentbubble.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/placeholder.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storyboard.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_scrolling.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/co2emis_main.js" afterPath="$PROJECT_DIR$/js/carbonemissions/co2emis_main.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/extremeTemperaturesMain.js" afterPath="$PROJECT_DIR$/js/extremeTemps/extremeTemperaturesMain.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/recordMap.js" afterPath="$PROJECT_DIR$/js/extremeTemps/recordMap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/scatterplot.js" afterPath="$PROJECT_DIR$/js/extremeTemps/scatterplot.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/sliderpercent.js" afterPath="$PROJECT_DIR$/js/carbonemissions/sliderpercent.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/stackedAreaChart.js" afterPath="$PROJECT_DIR$/js/carbonemissions/stackedAreaChart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/carbonemissions.html" afterPath="$PROJECT_DIR$/carbonemissions.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/electoralcollege.html" afterPath="$PROJECT_DIR$/electoralcollege.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extremetemperatures.html" afterPath="$PROJECT_DIR$/extremetemperatures.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="cs171proj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,6 +741,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#h1#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="electoralcollege.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/electoralcollege.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -36,19 +775,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="electoralcollege.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/electoralcollege.html">
+      <file leaf-file-name="extremetemperatures.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extremetemperatures.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+            <state relative-caret-position="182">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="carbonInequality.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/carbonInequality.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="81" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,11 +816,13 @@
         <option value="$PROJECT_DIR$/js/recordMap.js" />
         <option value="$PROJECT_DIR$/js/footprints/homepage.js" />
         <option value="$PROJECT_DIR$/js/homepage.js" />
-        <option value="$PROJECT_DIR$/carbonemissions.html" />
-        <option value="$PROJECT_DIR$/extremetemperatures.html" />
         <option value="$PROJECT_DIR$/test_scrolling.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/co2emis_main.js" />
+        <option value="$PROJECT_DIR$/carbonemissions.html" />
+        <option value="$PROJECT_DIR$/carbonInequality.html" />
+        <option value="$PROJECT_DIR$/extremetemperatures.html" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/electoralcollege.html" />
       </list>
     </option>
@@ -92,7 +850,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -105,17 +863,44 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs171proj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs171proj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs171proj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.electoralcollege.html">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zac\Documents\Harvard\Senior Fall\CS171\Final Project\cs171proj\js\extremeTemps" />
+      <recent name="C:\Users\Zac\Documents\Harvard\Senior Fall\CS171\Final Project\cs171proj\js\carbonemissions" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.carbonemissions.html">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs171proj/index.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="test_scrolling.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs171proj/test_scrolling.html">
       <method />
     </configuration>
     <configuration default="false" name="extremetemperatures.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cs171proj/extremetemperatures.html">
@@ -125,6 +910,9 @@
       <method />
     </configuration>
     <configuration default="false" name="electoralcollege.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/cs171proj/electoralcollege.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="carbonemissions.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/cs171proj/carbonemissions.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -182,18 +970,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.test_scrolling.html (1)" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.extremetemperatures.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.electoralcollege.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.extremetemperatures.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.electoralcollege.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.carbonemissions.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.electoralcollege.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.extremetemperatures.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.test_scrolling.html (1)" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.carbonemissions.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.electoralcollege.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.extremetemperatures.html" />
       </list>
     </recent_temporary>
   </component>
@@ -226,20 +1014,21 @@
       <workItem from="1481519340693" duration="65000" />
       <workItem from="1481519465975" duration="8694000" />
       <workItem from="1481562882751" duration="216000" />
-      <workItem from="1481577293927" duration="2030000" />
+      <workItem from="1481577293927" duration="3339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152781000" />
+    <option name="totallyTimeSpent" value="154090000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="191" y="33" width="1466" height="1014" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24861495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24861495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900944" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900944" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -251,7 +1040,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -271,22 +1059,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/biodiv.html" />
-    <entry file="file://$PROJECT_DIR$/disasters.html" />
-    <entry file="file://$PROJECT_DIR$/footPrint.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
@@ -402,7 +1174,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/stackedAreaChart.js">
+    <entry file="file://$PROJECT_DIR$/js/carbonemissions/stackedAreaChart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2193">
           <caret line="129" column="16" selection-start-line="129" selection-start-column="16" selection-end-line="129" selection-end-column="16" />
@@ -416,23 +1188,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/co2emis_main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/shanghai_smog.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/footPrint.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2754">
-          <caret line="108" column="28" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
@@ -456,7 +1214,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/extremeTemperaturesMain.js">
+    <entry file="file://$PROJECT_DIR$/js/extremeTemps/extremeTemperaturesMain.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
@@ -470,14 +1228,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/recordMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/scatterplot.js">
+    <entry file="file://$PROJECT_DIR$/js/extremeTemps/scatterplot.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5508">
           <caret line="219" column="32" selection-start-line="219" selection-start-column="32" selection-end-line="219" selection-end-column="32" />
@@ -499,13 +1250,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/carbonemissions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/footprints/footPrintStep.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -513,28 +1257,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extremetemperatures.html">
+    <entry file="file://$PROJECT_DIR$/js/extremeTemps/recordMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_scrolling.html">
+    <entry file="file://$PROJECT_DIR$/js/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3059">
-          <caret line="147" column="60" selection-start-line="147" selection-start-column="60" selection-end-line="147" selection-end-column="60" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/carbonemissions/co2emis_main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2666">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -546,13 +1289,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/footPrint.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/percentbubble.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_scrolling.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="147" column="60" selection-start-line="0" selection-start-column="0" selection-end-line="161" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/carbonemissions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/electoralcollege.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+        <state relative-caret-position="289">
+          <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extremetemperatures.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/carbonInequality.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="81" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
