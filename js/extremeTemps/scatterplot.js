@@ -40,7 +40,7 @@ var timeline = svg
 timeline
     .attr("y1", 0)
     .attr("y2", height)
-    .attr("stroke", "blue")
+    .attr("stroke", "gray")
     .attr("stroke-width", 2);
 
 

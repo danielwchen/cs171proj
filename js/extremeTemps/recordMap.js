@@ -89,7 +89,7 @@ RecordMap.prototype.updateVis = function(){
     var selValue = document.querySelector('input[name="view"]:checked').id;
     if (selValue == "switch_3_left"){
         if (vis.year < maxStep){
-            console.log(vis.year);
+            // console.log(vis.year);
             setTimeout(function(){
                 vis.year++;
                 slider.value(vis.year);
