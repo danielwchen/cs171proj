@@ -408,6 +408,11 @@ body {
     padding-right: 10px;
 }
 
+.para {
+    margin: 40px;
+    font-size: larger;
+}
+
 .note {
     font-size: smaller;
 }
