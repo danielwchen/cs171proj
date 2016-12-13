@@ -84,7 +84,11 @@ RecordMap.prototype.updateVis = function(){
         .transition()
         .duration(50)
         .attr("class", "records tooltip-circle")
-        .on('mouseover', tip.show)
+        .on('mouseover', function(d){
+            console.log(d);
+            console.log("mouseover")
+            return tip.show;
+        })
         .on('mouseout', tip.hide)
         .attr("r", 3)
         .attr("cx", function(d){
