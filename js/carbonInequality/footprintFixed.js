@@ -65,8 +65,6 @@ FootFixed.prototype.updateVis = function(newData, radiusScale, stepNum){
             return (index > stepNum) ? 0 : 50;
         });
 
-    console.log(vis.circs);
-
     // Exit
     vis.circs.exit().remove();
 

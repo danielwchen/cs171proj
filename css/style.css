@@ -130,7 +130,6 @@ body {
     z-index: 90;
     scroll-snap-type: mandatory;
     scroll-snap-destination: 0 100%;
-    scroll-snap-points-y: repeat(100%);
 }
 
 .step {
@@ -410,6 +409,11 @@ body {
     border-radius: 25px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.para {
+    margin: 40px;
+    font-size: larger;
 }
 
 .note {
