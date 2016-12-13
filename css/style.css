@@ -130,7 +130,6 @@ body {
     z-index: 90;
     scroll-snap-type: mandatory;
     scroll-snap-destination: 0 100%;
-    scroll-snap-points-y: repeat(100%);
 }
 
 .step {
