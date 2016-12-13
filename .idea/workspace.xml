@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0b4e065-94bc-41db-b513-4cc2ee6116a7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/carbonInequality.html" afterPath="$PROJECT_DIR$/carbonInequality.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/electoralcollege.html" afterPath="$PROJECT_DIR$/electoralcollege.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extremetemperatures.html" afterPath="$PROJECT_DIR$/extremetemperatures.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/carbonInequality/footprintFixed.js" afterPath="$PROJECT_DIR$/js/carbonInequality/footprintFixed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/carbonInequality/footprints_main.js" afterPath="$PROJECT_DIR$/js/carbonInequality/footprints_main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/electoralCollege/congressVis.js" afterPath="$PROJECT_DIR$/js/electoralCollege/congressVis.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/electoralCollege/electoralMain.js" afterPath="$PROJECT_DIR$/js/electoralCollege/electoralMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/electoralCollege/electoralMap.js" afterPath="$PROJECT_DIR$/js/electoralCollege/electoralMap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/extremeTemps/recordMap.js" afterPath="$PROJECT_DIR$/js/extremeTemps/recordMap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/extremeTemps/scatterplot.js" afterPath="$PROJECT_DIR$/js/extremeTemps/scatterplot.js" />
-    </list>
+    <list default="true" id="d0b4e065-94bc-41db-b513-4cc2ee6116a7" name="Default" comment="" />
     <ignored path="cs171proj.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -39,8 +26,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="132" column="34" selection-start-line="132" selection-start-column="34" selection-end-line="132" selection-end-column="34" />
+            <state relative-caret-position="30">
+              <caret line="114" column="1" selection-start-line="114" selection-start-column="1" selection-end-line="114" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -65,7 +52,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="50" />
+    <option name="y" value="61" />
     <option name="width" value="990" />
     <option name="height" value="716" />
   </component>
@@ -93,15 +81,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1481587044891</updated>
-      <workItem from="1481587046152" duration="133000" />
+      <workItem from="1481587046152" duration="184000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133000" />
+    <option name="totallyTimeSpent" value="184000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="990" height="716" extended-state="0" />
+    <frame x="50" y="61" width="990" height="716" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -140,8 +128,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="132" column="34" selection-start-line="132" selection-start-column="34" selection-end-line="132" selection-end-column="34" />
+        <state relative-caret-position="30">
+          <caret line="114" column="1" selection-start-line="114" selection-start-column="1" selection-end-line="114" selection-end-column="1" />
           <folding />
         </state>
       </provider>
