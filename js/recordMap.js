@@ -68,6 +68,16 @@ RecordMap.prototype.updateVis = function(){
 
     // console.log(vis.records);
 
+    // tooltips
+    tip
+        .offset([-10, 10])
+        .attr("class", "d3-tip")
+        .html(function(d) {
+            return "<p>"  +d.City + "<br>" + d.Month + ", " +  d.Temperature + " (C) </p>"
+        });
+
+    svg.call(tip);
+
     vis.records
         .enter().append("circle")
         .attr("fill", "darkred")
@@ -91,15 +101,6 @@ RecordMap.prototype.updateVis = function(){
     vis.records.exit().remove();
 
 
-    // tooltips
-    tip
-        .offset([-10, 10])
-        .attr("class", "d3-tip")
-        .html(function(d) {
-            return "<p>"  +d.City + "<br>" + d.Month + ", " +  d.Temperature + " (C) </p>"
-        });
-
-    svg.call(tip);
 
 
     var selValue = document.querySelector('input[name="view"]:checked').id;
