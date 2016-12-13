@@ -83,7 +83,7 @@ RecordMap.prototype.updateVis = function(){
         .attr("fill", "darkred")
         .transition()
         .duration(50)
-        .attr("class", "records")
+        .attr("class", "records tooltip-circle")
         .on('mouseover', tip.show)
         .on('mouseout', tip.hide)
         .attr("r", 3)
