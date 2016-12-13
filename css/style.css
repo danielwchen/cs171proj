@@ -80,6 +80,7 @@ body {
     margin-top:20px;
     border: solid;
     padding:10px;
+    border-radius: 25px;
 }
 .brightness {
     background-color: #268ede;
