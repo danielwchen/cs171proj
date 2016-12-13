@@ -366,6 +366,9 @@ body {
     text-align: center;
 }
 
+#state-hover {
+    padding-top: 20px;
+}
 #congress-hover {
     margin-top: -30px;
 }
@@ -400,13 +403,13 @@ body {
 
 .pretty-box-2 {
     margin-top:10px;
-    height: 700px;
+    height: 850px;
     width:350px;
     background-color: lightgrey;
     opacity: .7;
     border-radius: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .para {
@@ -440,4 +443,8 @@ hr.style-seven:before { /* Not really supposed to work, but does */
     border-color: red;
     border-width: 0 0 1px 0;
     border-radius: 20px;
+}
+
+.bodyemphasis {
+    font-weight: bold;
 }

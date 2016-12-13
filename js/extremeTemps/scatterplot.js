@@ -40,7 +40,7 @@ var timeline = svg
 timeline
     .attr("y1", 0)
     .attr("y2", height)
-    .attr("stroke", "blue")
+    .attr("stroke", "gray")
     .attr("stroke-width", 2);
 
 
@@ -100,7 +100,7 @@ function initializeScatterPlot() {
                 return "visible";
             }
         })
-        .attr("fill", "grey");
+        .attr("fill", "lightgray");
 
     updateYear();
 }
@@ -225,7 +225,7 @@ function updateMinMax() {
         .enter()
         .append("circle")
         .attr("class", "circle")
-        .attr("fill", "blue");
+        .attr("fill", "gray");
 
     lows
         .transition()
